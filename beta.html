@@ -147,7 +147,7 @@
   <p class="lede">Alles, was du für den Testflug brauchst: TestFlight einrichten, die App in zehn Minuten
   verstehen, jede Funktion nachschlagen — und wissen, worauf ich diesmal besonders schaue.
   Das Inhaltsverzeichnis links führt zu jedem Artikel.</p>
-  <p class="stand">Stand 01.09.2026 · Build 1.0 (2) · Fragen und Rückmeldungen: <a href="mailto:support@etmar.app">support@etmar.app</a></p>
+  <p class="stand">Stand 02.09.2026 · Build 1.0 (2) · Fragen und Rückmeldungen: <a href="mailto:support@etmar.app">support@etmar.app</a></p>
 </header>
 
 <div class="cols">
@@ -161,9 +161,10 @@
 <li><a href="#a1">A1 Was Etmar ist — und was nicht</a></li>
 <li><a href="#a2">A2 TestFlight einrichten</a></li>
 <li><a href="#a3">A3 In zehn Minuten startklar</a></li>
-<li><a href="#a4">A4 Worauf ich diesmal schaue</a></li>
-<li><a href="#a5">A5 Feedback geben</a></li>
-<li><a href="#a6">A6 Deine Daten im Test</a></li>
+<li><a href="#a4">A4 Plus und Pro im Test: buchen ohne zu zahlen</a></li>
+<li><a href="#a5">A5 Worauf ich diesmal schaue</a></li>
+<li><a href="#a6">A6 Feedback geben</a></li>
+<li><a href="#a7">A7 Deine Daten im Test</a></li>
 </ol>
 
 <h2>B · Grundlagen</h2>
@@ -300,7 +301,7 @@ Ein oranger Balken zeigt den Demo-Zustand; beim Beenden werden alle Demo-Daten w
     <ol class="marks">
       <li><b>Demo starten</b> — Beispieldaten plus simulierte Instrumente; bei laufender Demo steht hier „Demo aktiv“ und darunter die <b>Demo-Stufe</b> (Pro / Plus / Free).</li>
       <li><b>Tutorials</b> — die eingebauten Anleitungen je Bereich, teils als Tour durch die echte Oberfläche.</li>
-      <li><b>Feedback senden</b> — Fehler, Idee oder Frage als vorbereitete Mail (siehe <a href="#a5">A5</a>).</li>
+      <li><b>Feedback senden</b> — Fehler, Idee oder Frage als vorbereitete Mail (siehe <a href="#a6">A6</a>).</li>
     </ol>
   </div>
 </figure>
@@ -327,7 +328,40 @@ können — oder fehlt dir etwas, bevor du das erste Mal ablegst?
 </article>
 
 <article id="a4">
-<h3><span class="num">A4</span>Worauf ich diesmal schaue</h3>
+<h3><span class="num">A4</span>Plus und Pro im Test: buchen ohne zu zahlen</h3>
+<p class="sub">In der Beta kannst du beide Abo-Stufen frei ausprobieren. Es wird nichts abgebucht, und es entsteht kein echtes Abo.</p>
+<p>Etmar hat drei Stufen: <b>Free</b>, <b>Plus</b> und <b>Pro</b> (was wo liegt, steht in <a href="#b3">B3</a>).
+In der fertigen App sind Plus und Pro Abos über den App Store. In der TestFlight-Fassung laufen
+alle Käufe über Apples <b>Sandbox</b>: Der Kaufvorgang sieht aus wie im App Store, kostet aber
+nichts. Du kannst Plus oder Pro also einfach buchen, um die Funktionen zu testen.</p>
+<h4>So buchst du Plus oder Pro</h4>
+<ol class="steps">
+<li>Tippe auf eine Funktion mit <b>Schloss</b> — oder öffne <span class="path">Werkzeuge → Einstellungen → Stufe &amp; Demo</span>. Die Paywall zeigt oben die Funktion, von der du kamst, darunter die Stufen mit Preisen.</li>
+<li>Wähle Plus oder Pro, Jahres- oder Monatsabo. Apples Kaufblatt erscheint und trägt den Hinweis <b>„Sandbox“</b> (englisch „Environment: Sandbox“). Das ist das Zeichen, dass es ein Testkauf ist.</li>
+<li>Bestätige mit Face ID, Touch ID oder deinem Apple-Account-Passwort wie bei einem echten Kauf. Es wird <b>kein Geld abgebucht</b>, in deinem Apple-Account entsteht <b>kein Abo</b>, und es kommt keine Rechnung.</li>
+<li>Die Schlösser sind weg; unter <span class="path">Einstellungen → Stufe &amp; Demo</span> steht die gebuchte Stufe. Die Preise und der Hinweis „14 Tage kostenlos“ auf der Paywall sind die späteren App-Store-Konditionen — im Test sind sie ohne Bedeutung.</li>
+</ol>
+<div class="box">
+<b class="lbl">Sandbox-Eigenheiten</b>
+Laufzeiten sind stark verkürzt: Aus einem Jahr wird rund eine Stunde, aus zwei Wochen Gratiszeit werden wenige Minuten. Das Testabo verlängert sich ein paar Mal von selbst und läuft dann aus — dann stehen die Schlösser wieder da, und du buchst einfach erneut. Das ist kein Fehler der App. „Käufe wiederherstellen“ unten auf der Paywall holt ein noch laufendes Testabo zurück, etwa nach einer Neuinstallation. Mit der App-Store-Version hat das alles nichts zu tun: Was du hier buchst, überträgt sich nicht, und gekauft wird erst dort.
+</div>
+<h4>Ohne Kaufvorgang: die Demo-Stufe</h4>
+<p>Wer nur schnell sehen will, wie sich Free, Plus oder Pro anfühlen, braucht nicht mal die Sandbox:
+<span class="path">Werkzeuge → Hilfe &amp; Demo → Demo starten</span>, dann <b>Demo-Stufe</b> auf Pro, Plus oder
+Free stellen. Die App verhält sich wie die gewählte Stufe — mit Schlössern, Paywall und simulierten
+Bordinstrumenten. Für alles mit eigener Bordelektronik und eigenen Törns brauchst du dagegen das
+Testabo aus den Schritten oben, weil die Demo nur mit Beispieldaten läuft.</p>
+<div class="box test">
+<b class="lbl">Bitte testen</b>
+Buche einmal Plus und einmal Pro aus einer gesperrten Funktion heraus: Steht oben auf der Paywall die
+richtige Funktion? Verschwinden nach dem Kauf genau die Schlösser, die zur Stufe gehören? Und ist dir
+an irgendeiner Stelle unklar, dass es ein Testkauf ist?
+</div>
+<a class="back" href="#top">↑ Zum Inhaltsverzeichnis</a>
+</article>
+
+<article id="a5">
+<h3><span class="num">A5</span>Worauf ich diesmal schaue</h3>
 <p class="sub">Sechs Punkte aus dem aktuellen Build. Alles andere ist trotzdem willkommen.</p>
 <ol class="steps">
 <li><b>Die Karte ist die Arbeitsfläche.</b> Der grüne Knopf auf der Karte startet Törn, Regatta
@@ -362,8 +396,8 @@ melden, was noch deutsch steht.</p>
 <a class="back" href="#top">↑ Zum Inhaltsverzeichnis</a>
 </article>
 
-<article id="a5">
-<h3><span class="num">A5</span>Feedback geben</h3>
+<article id="a6">
+<h3><span class="num">A6</span>Feedback geben</h3>
 <p class="sub">Drei Wege, alle landen bei mir. Der erste ist der beste.</p>
 <h4>Aus TestFlight heraus — mit Screenshot</h4>
 <p>Mach im Moment des Problems einen <b>Screenshot</b> (Seitentaste + Lauter). Es erscheint kurz
@@ -389,8 +423,8 @@ Welle“ ist ein vollwertiger Fehlerbericht.
 <a class="back" href="#top">↑ Zum Inhaltsverzeichnis</a>
 </article>
 
-<article id="a6">
-<h3><span class="num">A6</span>Deine Daten im Test</h3>
+<article id="a7">
+<h3><span class="num">A7</span>Deine Daten im Test</h3>
 <p class="sub">Was wohin fließt — und wie du dich absicherst.</p>
 <ul>
 <li><b>Kein Server, kein Konto.</b> Törns, Trimm, Häfen und Bilder liegen auf dem Gerät. Ist iCloud
@@ -2499,17 +2533,21 @@ kann? Versteht ein Plus-Nutzer, wo Pro anfängt?
 
 <figure class="shot">
   <div class="frame">
-    <img src="bilder/demo-stufe.jpg" alt="Werkzeuge-Tab bei laufender Demo, unten der Abschnitt App mit Einstellungen und Hilfe &amp; Demo" loading="lazy" width="760" height="1652">
-    <span class="hl" style="left:18%;top:7%;width:64%;height:3.4%"><b>1</b></span>
-    <span class="hl" style="left:4%;top:81%;width:44%;height:9.5%"><b>2</b></span>
-    <span class="hl right" style="left:52%;top:81%;width:44%;height:9.5%"><b>3</b></span>
+    <img src="bilder/demo-stufe.jpg" alt="Hilfe und Demo bei laufender Demo: Demo aktiv, Demo-Stufe Pro, Tutorials, Feedback senden" loading="lazy" width="760" height="1652">
+    <span class="hl" style="left:4%;top:6.8%;width:92%;height:3.4%"><b>1</b></span>
+    <span class="hl" style="left:4%;top:23.5%;width:92%;height:6%"><b>2</b></span>
+    <span class="hl" style="left:4%;top:30.8%;width:92%;height:5.6%"><b>3</b></span>
+    <span class="hl" style="left:4%;top:56%;width:92%;height:5.5%"><b>4</b></span>
+    <span class="hl" style="left:4%;top:62%;width:92%;height:5.3%"><b>5</b></span>
   </div>
   <div>
-    <figcaption>Werkzeuge bei laufender Demo, ans Ende gescrollt: Der Abschnitt „App" führt zu Einstellungen und Hilfe &amp; Demo.</figcaption>
+    <figcaption>Hilfe &amp; Demo bei laufender Demo: Stufe umschalten, Tutorials, Feedback.</figcaption>
     <ol class="marks">
       <li><b>Demo-Banner</b> — steht über jedem Screen, solange die Demo läuft; ein Tipp darauf beendet sie und löscht die Demo-Daten.</li>
-      <li><b>Einstellungen</b> (Zahnrad-Kachel) — die Liste der Unterseiten aus diesem Artikel.</li>
-      <li><b>Hilfe &amp; Demo</b> (Fragezeichen-Kachel) — Demo starten, Demo-Stufe wählen, Tutorials, Feedback senden.</li>
+      <li><b>Demo aktiv</b> — dieselbe Zeile, auf der vorher „Demo starten“ stand; auch hier beendet ein Tipp die Demo (mit Rückfrage).</li>
+      <li><b>Demo-Stufe</b> — Pro (alles), Plus oder Free: Die App verhält sich wie die gewählte Stufe, mit Schlössern und Paywall (<a href="#a4">A4</a>).</li>
+      <li><b>Tutorials</b> — die eingebauten Anleitungen je Bereich.</li>
+      <li><b>Feedback senden</b> — Fehler, Idee oder Frage als vorbereitete Mail (<a href="#a6">A6</a>).</li>
     </ol>
   </div>
 </figure>
@@ -2822,7 +2860,7 @@ kann? Versteht ein Plus-Nutzer, wo Pro anfängt?
 </div>
 
 <footer>
-<p>Etmar Beta-Handbuch · Stand 01.09.2026 · Screenshots aus dem Demo-Modus, teils vom Stand vor dem aktuellen Build.
+<p>Etmar Beta-Handbuch · Stand 02.09.2026 · Screenshots aus dem Demo-Modus, teils vom Stand vor dem aktuellen Build.
 Kontakt: <a href="mailto:support@etmar.app">support@etmar.app</a> ·
 <a href="index.html">Startseite</a> · <a href="datenschutz.html">Datenschutz</a> · <a href="impressum.html">Impressum</a></p>
 <p>Etmar ersetzt keine Seekarte und keinen Kartenplotter. Seezeichen und Tiefen stammen aus OpenStreetMap und EMODnet — keine amtlichen Quellen.</p>
