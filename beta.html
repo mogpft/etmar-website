@@ -115,6 +115,9 @@
   @media (min-width: 34rem) { .shot { grid-template-columns: 15rem minmax(0, 1fr); align-items: start; } }
   .frame { position: relative; width: 100%; max-width: 15rem; border-radius: 14px; overflow: hidden; border: 1px solid var(--line); background: #000; line-height: 0; }
   .frame img { width: 100%; height: auto; display: block; }
+  /* Querformat-Aufnahmen: ein 15-rem-Rahmen macht sie 110 px hoch — unlesbar. */
+  .shot.wide .frame { max-width: 30rem; }
+  @media (min-width: 34rem) { .shot.wide { grid-template-columns: 30rem minmax(0, 1fr); } }
   .hl { position: absolute; border: 2.5px solid var(--mark); border-radius: 7px; box-shadow: 0 0 0 2px rgba(255,255,255,0.5), 0 0 14px rgba(217,95,30,0.45); }
   .hl b { position: absolute; top: -0.62rem; left: -0.62rem; min-width: 1.25rem; height: 1.25rem; border-radius: 999px; background: var(--mark); color: #fff; font-size: 0.72rem; line-height: 1.25rem; text-align: center; font-weight: 800; padding: 0 0.2rem; }
   .hl.right b { left: auto; right: -0.62rem; }
@@ -147,7 +150,7 @@
   <p class="lede">Alles, was du für den Testflug brauchst: TestFlight einrichten, die App in zehn Minuten
   verstehen, jede Funktion nachschlagen — und wissen, worauf ich diesmal besonders schaue.
   Das Inhaltsverzeichnis links führt zu jedem Artikel.</p>
-  <p class="stand">Stand 02.09.2026 · Build 1.0 (2) · Fragen und Rückmeldungen: <a href="mailto:support@etmar.app">support@etmar.app</a></p>
+  <p class="stand">Stand 04.09.2026 · Build 1.0 (12) · Fragen und Rückmeldungen: <a href="mailto:support@etmar.app">support@etmar.app</a></p>
 </header>
 
 <div class="cols">
@@ -285,10 +288,18 @@ zurück, sofern iCloud aktiv war). Sicherung siehe <a href="#c16">C16</a>.
 <h4>1. Demo-Modus starten</h4>
 <p><span class="path">Werkzeuge → Hilfe &amp; Demo → Demo starten</span>. Die App füllt sich mit
 Beispieldaten: Demo-Boot „Vertigo Express“, ein Törn Kühlungsborn–Gedser mit Motorstrecke und
-Funkspruch, ein offener Tagestörn mit Etappenplan, eine Mittwochsregatta mit vollständiger
-Auswertung, Trimm-Einträge, Kalendertermine, Seezeichen und Tiefen der Mecklenburger Bucht.
+Funkspruch, ein offener Tagestörn mit Etappenplan, eine Regatta mit vollständiger Auswertung,
+Trimm-Einträge, Kalendertermine, Seezeichen und Tiefen der Mecklenburger Bucht.
 Dazu simuliert die App NMEA-Daten — du siehst also auch die Instrumente, ohne Bordelektronik.
 Ein oranger Balken zeigt den Demo-Zustand; beim Beenden werden alle Demo-Daten wieder gelöscht.</p>
+<p>Die Regatta darin ist <b>keine gerechnete</b>: Es ist die Mittwochsregatta des Neustädter
+Segler-Vereins, wirklich gesegelt, mit 1600 Trackpunkten im 5-Sekunden-Takt, den neun Bahnmarken
+der Vereinsbahn, Känguru-Start und Wind zwischen 4 und 16 kn mit echten Drehern. Eine Auswertung
+ohne Dellen und Fehler zeigt nicht, wofür sie da ist — deshalb steht dort eine Wettfahrt, die
+jemand tatsächlich gefahren ist.</p>
+<p>Ein kurzer Blick in eine andere App beendet die Demo nicht: Sie pausiert im Hintergrund und
+läuft beim Zurückkommen weiter. Bleibt die App länger als eine Minute weg oder wird sie
+geschlossen, endet die Demo und räumt ihre Daten auf.</p>
 <figure class="shot">
   <div class="frame">
     <img src="bilder/hilfe-demo.jpg" alt="Seite Hilfe und Demo mit Demo starten, Tutorials und Feedback senden" loading="lazy" width="760" height="1652">
@@ -362,7 +373,34 @@ an irgendeiner Stelle unklar, dass es ein Testkauf ist?
 
 <article id="a5">
 <h3><span class="num">A5</span>Worauf ich diesmal schaue</h3>
-<p class="sub">Sechs Punkte aus dem aktuellen Build. Alles andere ist trotzdem willkommen.</p>
+<p class="sub">Sieben Punkte aus dem aktuellen Build. Alles andere ist trotzdem willkommen.</p>
+
+<p><b>Vorweg: Deine bisherigen Regatta-Auswertungen zeigen mit diesem Build andere Zahlen.</b>
+Das ist beabsichtigt. Nach der ersten vollständig aufgezeichneten Regatta ließ sich jede
+Auswertung gegen echte Messdaten nachrechnen statt nur gegen den Code lesen — und dabei kamen
+Fehler heraus, die am Schreibtisch nicht zu sehen waren. Die Auswertung wird bei jedem Öffnen
+frisch aus dem Track gerechnet, deshalb gelten die Korrekturen rückwirkend für alle deine Rennen.
+Was sich ändert:</p>
+<ul>
+<li><b>Polar-Leistung steigt um rund drei Prozentpunkte</b>, am Wind mehr. Das ORC-Raster endet
+bei 52° und 150°; alles enger oder tiefer wurde bisher gegen den Randwert gemessen — in einem
+echten Rennen betraf das 60 % aller Punkte. Jetzt werden die Beat- und Run-Optima deiner Polare
+als zusätzliche Stützstellen genutzt, und zwischen den Spalten wird gekrümmt statt geradlinig
+interpoliert.</li>
+<li><b>Wenden und Halsen werden anders gezählt.</b> Die Art des Manövers kommt jetzt vom
+Windwinkel am Bugwechsel statt von der Einstufung des ganzen Schenkels. In einem Testrennen
+wurden aus „6 Wenden, 1 Halse, 4 Kurswechsel“ die tatsächlichen 7 Wenden und 4 Halsen.</li>
+<li><b>Der Startverlust in Metern verschwindet bei Rennen, die nicht am Wind starten.</b> Er
+verglich Luv-Fortschritt gegen ein Boot, das dieselbe Zeit gekreuzt wäre — auf einem
+Raumschots-Start eine sinnlose Zahl. Stattdessen steht der Fortschritt zur ersten Marke.</li>
+<li><b>Mehrweg zählt anders.</b> Statt „gesegelt ÷ Luftlinie“ (auf der Kreuz nie unter 130 %)
+jetzt der Überschuss über das kurstypisch Nötige — aus 141 % wird +8 %.</li>
+<li><b>OCS wird seltener behauptet.</b> Auf einer gezeichneten Linie sind 20 m Zeichenfehler,
+kein Frühstart.</li>
+</ul>
+<p><i>Wenn eine deiner Zahlen sich stärker verschiebt, als dir plausibel erscheint: schreib mir.
+Genau dafür ist die Beta da.</i></p>
+
 <ol class="steps">
 <li><b>Die Karte ist die Arbeitsfläche.</b> Der grüne Knopf auf der Karte startet Törn, Regatta
 oder Training — direkt von dort, ohne Umweg übers Logbuch. Routen planst du ebenfalls auf der
@@ -385,6 +423,13 @@ ORC-Zertifikats als PDF — Polare, Bootsdaten und Segel in einem Schritt.
 <li><b>Wetter im Logbuch — noch experimentell.</b> Neue Einträge belegen Wind, Böen, Luftdruck und
 Wetterlage automatisch vor. Mit NMEA an Bord haben die eigenen Instrumente Vorrang.
 <i>Kommt etwas an? Leere Felder sind kein Fehler, sondern fehlendes Netz.</i></li>
+<li><b>Die Karte im Querformat.</b> Quer sieht der Kartenbildschirm jetzt anders aus: Die
+Tab-Leiste ist eine Kapsel mit vier Symbolen, blendet sich nach zehn Sekunden und bei der ersten
+Kartengeste aus und kommt über den Griff am unteren Rand zurück; die Instrumentenspalte startet
+schmal mit SOG und COG. Dazu in der Regatta-Auswertung das <b>Kartenbild</b>: Ein Tipp auf ein
+Manöver, einen Schlag, eine Marke oder den Start zeigt die Stelle im Track.
+<i>Ist die Kapsel da, wenn du sie brauchst, und weg, wenn du die Karte brauchst? Erkennst du im
+Kartenbild wieder, wo du warst?</i></li>
 <li><b>Ablesbarkeit an Deck.</b> Das Wichtigste: Kannst du die Werte bei Sonne, bei Nässe und
 nachts lesen? Triffst du die Knöpfe einhändig, mit nassen Fingern, bei Welle?
 <i>Alles, was dort hakt, will ich wissen.</i></li>
@@ -495,7 +540,7 @@ am aktiven Boot.</p>
 <p><b>iPad:</b> Dieselben Ziele erscheinen als Seitenleiste statt als Tab-Leiste unten — quer am
 Kartentisch bleibt die volle Fläche für die Karte. Der Instrumente-Knopf legt die Werte dort
 <i>neben</i> die Karte statt darüber.</p>
-<p><b>Nachtmodus:</b> Mond-Symbol auf Karte, Logbuch und Dashboard oder Schalter in den
+<p><b>Nachtmodus:</b> im Ebenen-Menü der Karte, als Mond-Symbol in Logbuch und Dashboard oder als Schalter in den
 Einstellungen — legt einen roten Filter über die ganze App. Automatik „ab Sonnenuntergang“ schaltet
 nach dem Sonnenstand an deiner Position. Auf der SOS-Seite ist der Filter bewusst ausgesetzt.</p>
 <figure class="shot">
@@ -537,10 +582,11 @@ nach dem Sonnenstand an deiner Position. Auf der SOS-Seite ist der Filter bewuss
     <figcaption>Hauptkarte bei laufendem Törn: Track in Bugfarbe, eigenes Boot als blauer Pfeil, Etappenziel als Flagge, AIS-Ziel (Fähre).</figcaption>
     <ol class="marks">
       <li><b>Kontextleiste</b> — hier der Etappen-Chip (1/2) und der Hinweis „Revier nicht gespeichert“. Mit gesetztem Ziel steht hier das Go-To-Banner, im Vorstart der Countdown. Tap öffnet den Kontext-Tab.</li>
-      <li><b>Linke Knopfspalte</b>: Ebenen (Leuchtturm), Nachtmodus, Instrumente-Datenband, Offline-Paket speichern.</li>
+      <li><b>Linke Knopfspalte</b>: Ebenen (Leuchtturm) und Instrumente-Datenband. Im Ebenen-Menü liegen darunter Nachtmodus, „Anker setzen“, „Auf Kartenmitte hinzufügen“, „Tab-Leiste ausblenden“, Kartenstil und „Diesen Ausschnitt offline speichern“ — auf der Karte selbst stehen nur die Knöpfe, die unter Fahrt gebraucht werden.</li>
+      <li><b>Tab-Leiste quer</b>: Im Querformat trägt die Karte eine eigene, schmale Leiste — vier Symbole in einer Kapsel statt eines beschrifteten Bandes über die halbe Breite. Sie geht von selbst: zehn Sekunden ohne Bedienung, oder sofort, sobald du die Karte anfasst. Zurück holt sie ein Griff (Pfeil nach oben) am unteren Rand — oder „Tab-Leiste ausblenden“ im Ebenen-Menü als Dauerschalter. Das gilt nur für die Karte; Törn, Logbuch und Werkzeuge behalten die beschriftete Leiste, und hochkant bleibt alles wie gehabt.</li>
       <li><b>Zoom +/−</b> und <b>„Nord oben“</b> — mit Handschuh verlässlicher als Pinch.</li>
       <li><b>Standort</b>: auf das Boot zentrieren und folgen; jede eigene Geste löst den Follow-Modus.</li>
-      <li><b>Fadenkreuz</b>: das Lang-Druck-Menü für die Kartenmitte — Hafen, Ankerplatz, Wegpunkt, Go&nbsp;To, Route.</li>
+      <li><b>„Auf Kartenmitte hinzufügen“</b> (im Ebenen-Menü): das Lang-Druck-Menü für die Kartenmitte — Hafen, Ankerplatz, Wegpunkt, Go&nbsp;To, Route.</li>
       <li><b>MOB</b> — 0,6 s halten. Fester Platz, in jedem Modus.</li>
       <li><b>Logbuch-Knopf</b> (bei Törn) bzw. grüner <b>Losfahren-Knopf</b> (ohne Törn) — dieselbe Stelle.</li>
     </ol>
@@ -559,7 +605,10 @@ Ziel unter der Mitte liegt, tippen. Mit nassen Händen der verlässlichere Griff
 ein; jede eigene Kartengeste löst ihn wieder.</li>
 <li><b>Zoom-Knöpfe und „Nord oben“</b>: Mit Handschuh ist Pinch unzuverlässig.</li>
 <li><b>Instrumente-Knopf</b>: legt die Werte <i>zur</i> Karte statt darüber — im Hochformat als
-Datenband unten, im Querformat und auf dem iPad als Spalte rechts.</li>
+Datenband unten, im Querformat und auf dem iPad als Spalte rechts. Die Spalte startet schmal
+(SOG und COG, zwei Kacheln untereinander); breiter ziehen geht über den Pfeil in ihrer Kopfzeile,
+und der Segelkompass hat nur noch im Vollbild Platz — in einer 210 pt breiten Spalte war er
+kleiner als das Zifferblatt einer Armbanduhr.</li>
 </ul>
 <h4>Was oben und unten liegt</h4>
 <p>Oben die <b>Kontextleiste</b>: unter Fahrt Ziel, Restdistanz, Ankunftszeit und Etappe; im Vorstart
@@ -570,6 +619,34 @@ Kontext-Tab.</p>
 Training), bei laufendem Törn der <b>Logbuch-Knopf</b> mit den sechs Aktionen als Kreismenü. Gleiche
 Stelle, damit der Daumen den Platz nicht neu lernen muss. <b>MOB</b> und <b>Ankerwache</b> behalten
 ihre eigenen Knöpfe an fester Stelle — die müssen blind zu treffen sein.</p>
+
+<h4>Querformat: die Karte bekommt den Platz</h4>
+<p>Quer ist die Karte breit und flach — jedes Band über die volle Breite kostet dort mehr als
+hochkant. Deshalb sieht der Bildschirm quer anders aus: Die Tab-Leiste ist eine Kapsel mit vier
+Symbolen ohne Text, sie blendet sich nach zehn Sekunden ohne Bedienung selbst aus und geht sofort,
+sobald du die Karte anfasst; ein Griff am unteren Rand holt sie zurück. Die Knöpfe der Karte rücken
+hoch, solange die Kapsel steht, damit sie nicht darunter geraten. Die Instrumentenspalte liegt
+rechts <i>neben</i> der Karte und ist schmal voreingestellt: SOG und COG, zwei Kacheln
+untereinander, große Ziffern. Breiter geht sie über den Pfeil in ihrer Kopfzeile, ganz weg mit
+demselben Knopf, mit dem du sie geholt hast.</p>
+<figure class="shot wide">
+  <div class="frame">
+    <img src="bilder/karte-quer.jpg" alt="Hauptkarte im Querformat mit Tab-Kapsel, Instrumentenspalte und hochgerückten Knöpfen" loading="lazy" width="760" height="349">
+    <span class="hl" style="left:34%;top:77%;width:31%;height:17%"><b>1</b></span>
+    <span class="hl right" style="left:68%;top:5%;width:31%;height:42%"><b>2</b></span>
+    <span class="hl" style="left:7%;top:60%;width:23%;height:20%"><b>3</b></span>
+    <span class="hl" style="left:6%;top:5%;width:16%;height:13%"><b>4</b></span>
+  </div>
+  <div>
+    <figcaption>Querformat im Demo-Modus: Tab-Kapsel statt Tab-Band, Instrumentenspalte rechts, Karte dazwischen.</figcaption>
+    <ol class="marks">
+      <li><b>Tab-Kapsel</b> — vier Symbole ohne Text: Karte · Kontext-Feld · Logbuch · Werkzeuge. Nach zehn Sekunden oder bei der ersten Kartengeste weg, der Griff (Pfeil nach oben) holt sie zurück.</li>
+      <li><b>Instrumentenspalte</b> — schmal voreingestellt mit SOG und COG. Der Pfeil oben links klappt sie zu, das Symbol daneben öffnet das Vollbild-Dashboard (dort liegt auch der Segelkompass).</li>
+      <li><b>Knöpfe weichen aus</b> — MOB, Ebenen und Instrumente rücken hoch, solange die Kapsel steht, und wieder herunter, wenn sie geht.</li>
+      <li><b>Kontextleiste</b> — Etappen-Chip, Revier-Hinweis und Warnungen stapeln sich darunter, nie dahinter.</li>
+    </ol>
+  </div>
+</figure>
 <figure class="shot">
   <div class="frame">
     <img src="bilder/losfahren.jpg" alt="Losfahren-Menü auf der Karte" loading="lazy" width="760" height="1652">
@@ -1053,7 +1130,7 @@ kann? Versteht ein Plus-Nutzer, wo Pro anfängt?
 <li>Der <b>Go To</b>-Knopf in der Punkt-Karte eines Hafens, einer Bahnmarke oder eines Seezeichens. Seezeichen sind antippbar und zeigen Name, Typ, Peilung und Distanz.</li>
 <li>Die Zielwahl der nächsten offenen Etappe („Wohin heute?" — ein Tipp wählt das Tagesziel) im Kontext-Feld „Törn": „Als Ziel" heißt navigieren, nicht nur verbuchen — die Kurslinie erscheint auf der Karte, die Plotter-Kacheln BRG/DTW/VMC/TTG laufen mit.</li>
 </ul>
-<p>Das blaue Banner oben zeigt Peilung und Distanz groß. Darunter stehen der Kursfehler — COG gegen Peilung als ◀ oder ▶ mit Grad, ab 5° gelb —, die ETA und die Abweichung von der Ausgangslinie (XTE) — wie weit du seitlich von der ursprünglichen Kurslinie Boot → Ziel liegst. Auf der Karte liegt die Kurslinie vom Boot zum Ziel. Das Ziel bleibt aktiv, bis du es mit „×" beendest — auch über einen Neustart der App hinweg. Peilung, Distanz und der COG-Abgleich sind frei.</p>
+<p>Auf der Karte steht das Go-To als <b>eine blaue Zeile</b> links oben: Peilung, Distanz, Kursfehler und das <b>×</b> zum Beenden — mehr braucht der Blick auf dem Weg zur Tonne nicht, und die Karte bleibt frei. Ein Tipp auf die Zeile klappt die volle Kachel auf, noch einer wieder zu: Peilung und Distanz groß, darunter der Kursfehler (COG gegen Peilung als ◀ oder ▶ mit Grad, ab 5° gelb), die ETA und die Abweichung von der Ausgangslinie (XTE) — wie weit du seitlich von der ursprünglichen Kurslinie Boot → Ziel liegst. Auf der Karte liegt die Kurslinie vom Boot zum Ziel. Das Ziel bleibt aktiv, bis du es mit „×“ beendest — auch über einen Neustart der App hinweg. Peilung, Distanz und der COG-Abgleich sind frei.</p>
 <div class="box warn"><b class="lbl">Wichtig</b>Go-To ist eine Peilung, kein Routing: Die Kurslinie zum Ziel und jeder Schenkel einer Route laufen geradeaus, auch über Land und Untiefen. Ob ein Schenkel frei ist, prüfst du selbst auf der Seekarte.</div>
 
 <h4>ETA: aus der Annäherung, nicht aus der Momentanfahrt</h4>
@@ -1177,7 +1254,7 @@ kann? Versteht ein Plus-Nutzer, wo Pro anfängt?
     <figcaption>Logbuch vor dem Start: Countdown bis zum Vorstart, Bias-Zeile, Sync und Startverschiebung, darunter die beiden Renn-Knöpfe.</figcaption>
     <ol class="marks">
       <li><b>Countdown</b> — läuft groß, letzte Minute rot; nach dem Schuss grüne Rennzeit.</li>
-      <li><b>Bias / Wind setzen</b> <span class="tier plus">Plus</span> — öffnet die Windrose; ohne gesetzten Wind steht „Bias: Wind fehlt“.</li>
+      <li><b>Bias / Wind setzen</b> <span class="tier plus">Plus</span> — öffnet die Windrose; ohne gesetzten Wind steht „Bias: Wind fehlt“. Steht der Wind fast in der Linie, nennt die App kein bevorzugtes Ende mehr, sondern „Kein Luv-Start“ — dort gibt es keinen Endenvorteil zu holen.</li>
       <li><b>Sync</b> — beim Signal einmal tippen, der Startschuss wird auf die nächste volle Minute gerundet.</li>
       <li><b>−5 Min / +5 Min</b> — Start verschieben: AP-Verschiebung und Rücknahme in vollen Fünf-Minuten-Schritten.</li>
       <li><b>Marker / Ereignis</b> — die beiden Renn-Knöpfe: GPS-Punkt setzen bzw. volles Formular.</li>
@@ -1201,7 +1278,7 @@ kann? Versteht ein Plus-Nutzer, wo Pro anfängt?
 
 <h4>Zieldurchfahrt und Gastboot</h4>
 <p>Beenden geht manuell über „Regatta beenden“ (mit Bestätigung) — oder automatisch: Ist in der Bahn eine Ziellinie oder ein Zielbereich angelegt, erkennt die App die Querung der Linie. Dann entsteht der Ziel-Eintrag, die Regatta wird abgeschlossen, Tracking und Countdown stoppen, und die Mitteilung „Zieldurchfahrt!“ erscheint. In den ersten 60 Sekunden nach dem Start gilt eine Karenz, weil Start- und Ziellinie oft nah beieinander liegen. Als Sicherheitsnetz fragt die App nach zwei Stunden Stillstand per Mitteilung, ob das Rennen vorbei ist.</p>
-<p>Woanders mitgesegelt? Über <span class="path">Törn bearbeiten → Boot</span> ordnest du eine Regatta (oder jeden Törn) nachträglich einem anderen deiner Boote zu — oder markierst sie als „Auf fremdem Boot mitgesegelt“ mit dem Namen des Gastboots. Solche Törns bleiben im Logbuch (blaues Badge mit dem Bootsnamen), zählen aber nicht in die Meilen- und Motorstatistik deines eigenen Boots; in der Statistik lassen sie sich per Schalter zuschalten. Die Demo zeigt das an der „Mittwochsregatta Kühlungsborn“ auf dem Gastboot „Fenja“.</p>
+<p>Woanders mitgesegelt? Über <span class="path">Törn bearbeiten → Boot</span> ordnest du eine Regatta (oder jeden Törn) nachträglich einem anderen deiner Boote zu — oder markierst sie als „Auf fremdem Boot mitgesegelt“ mit dem Namen des Gastboots. Solche Törns bleiben im Logbuch (blaues Badge mit dem Bootsnamen), zählen aber nicht in die Meilen- und Motorstatistik deines eigenen Boots; in der Statistik lassen sie sich per Schalter zuschalten. In der Demo steht dafür der Kalendertermin „Clubregatta — Mitsegeln“ auf dem Gastboot „Freya“.</p>
 
 <div class="box test"><b class="lbl">Bitte testen</b>
 <ul>
@@ -1698,7 +1775,7 @@ kann? Versteht ein Plus-Nutzer, wo Pro anfängt?
 </figure>
 
 <h4>Teilen</h4>
-<p>Eine Bahn verlässt die App auf drei Wegen, alle frei. <b>Etmar-Freigabe:</b> Gedrückt halten in der Bahn-Liste → „Teilen (Etmar-Freigabe)“ erzeugt eine .brokkolishare-Datei für AirDrop, Mail oder Messenger; Info-Punkte wandern mit, der Empfänger übernimmt sie nach einer Vorschau mit einem Tipp. <b>GPX für den Plotter:</b> „Als GPX teilen (Plotter)“ am selben Ort exportiert die Bahn als GPX-1.1-Datei für B&amp;G, Garmin, Raymarine &amp; Co. — Tonnen werden Wegpunkte, die Bahnreihenfolge eine GPX-Route. <b>An Etmar senden:</b> Derselbe Menüpunkt wie beim Feedback öffnet einen fertigen Brief mit Anhang; abgeschickt wird er von dir, nie von der App, was mitgeht steht samt Rechteerklärung im Brieftext. Kein Server, kein Konto: Geprüft wird von Hand, ausgeliefert mit dem nächsten Update.</p>
+<p>Eine Bahn verlässt die App auf drei Wegen, alle frei. <b>Etmar-Freigabe:</b> Gedrückt halten in der Bahn-Liste → „Teilen (Etmar-Freigabe)“ erzeugt eine .etmarshare-Datei für AirDrop, Mail oder Messenger; Info-Punkte wandern mit, der Empfänger übernimmt sie nach einer Vorschau mit einem Tipp. <b>GPX für den Plotter:</b> „Als GPX teilen (Plotter)“ am selben Ort exportiert die Bahn als GPX-1.1-Datei für B&amp;G, Garmin, Raymarine &amp; Co. — Tonnen werden Wegpunkte, die Bahnreihenfolge eine GPX-Route. <b>An Etmar senden:</b> Derselbe Menüpunkt wie beim Feedback öffnet einen fertigen Brief mit Anhang; abgeschickt wird er von dir, nie von der App, was mitgeht steht samt Rechteerklärung im Brieftext. Kein Server, kein Konto: Geprüft wird von Hand, ausgeliefert mit dem nächsten Update.</p>
 
 <div class="box test"><b class="lbl">Bitte testen</b>
 <ul>
@@ -1716,8 +1793,8 @@ kann? Versteht ein Plus-Nutzer, wo Pro anfängt?
 
 <h4>Einstieg und Kernzahlen</h4>
 <p>Alle Auswertungen liegen unter <span class="path">Werkzeuge → Vorbereiten → Auswertungen</span> (ebenso <span class="path">Boot → Regatta &amp; Training auswerten</span>): Regatta-Auswertungen, Trainings und Statistik — auch ohne Daten, dann mit dem Grund und dem Weg zum Anlegen. Nach dem Zieleinlauf zeigt das Törn-Detail der Regatta die Kernzahlen; ein Tipp darauf öffnet die vollständige Auswertung.</p>
-<p>Kostenlos aus dem iPhone-GPS: Renndauer, Distanz im Rennen, Ø und Max SOG, SOG beim Startschuss. Gerechnet wird nur über die Rennphase von der Querung der Startlinie bis zum Ziel — Vorstart und Rückweg in den Hafen würden Distanz, Ø SOG und Bug-Bilanz verfälschen. Daneben steht die offizielle Zeit ab Startschuss, die Differenz als Startverlust.</p>
-<p>Der Abschnitt „Auswertungsfenster" nennt die Herkunft beider Grenzen: Linienquerung, Logeintrag, Startschuss oder — orange markiert — nur das Trackende. Unter „Grenzen korrigieren" setzt du beide von Hand oder stellst sie auf automatisch zurück. Am zuverlässigsten wird das Fenster mit angelegter Start- und Ziellinie.</p>
+<p>Kostenlos aus dem iPhone-GPS: Renndauer, Distanz im Rennen, Ø und Max SOG, Fahrt beim Startschuss (mit Logge am NMEA-Netz die Fahrt durchs Wasser, sonst über Grund — Polaren gelten durchs Wasser, deshalb hat die Logge Vorrang). Gerechnet wird nur über die Rennphase von der Querung der Startlinie bis zum Ziel — Vorstart und Rückweg in den Hafen würden Distanz, Ø SOG und Bug-Bilanz verfälschen. Daneben steht die offizielle Zeit ab Startschuss, die Differenz als Startverlust.</p>
+<p>Der Abschnitt „Auswertungsfenster" nennt die Herkunft beider Grenzen: Linienquerung, Logeintrag, Startschuss oder — orange markiert — nur das Trackende. Unter „Grenzen korrigieren" setzt du beide von Hand oder stellst sie auf automatisch zurück. Dort steht auch der <b>Startschuss</b> — falls er falsch im Törn stand, etwa beim Kängurustart mit eigener Startzeit. Entweder direkt als Uhrzeit oder über den Weg, den man an Bord wirklich hat: „Ich war X Sekunden zu spät über der Linie". An ihm hängen OCS-Urteil, Verzug, Fahrt beim Schuss und die offizielle Zeit, die du mit der Ergebnisliste vergleichst. Am zuverlässigsten wird das Fenster mit angelegter Start- und Ziellinie.</p>
 <p>Die Zeile „Wertung" deckt Rennen ohne Zieldurchgang ab: „Wettfahrt abgebrochen" (die Wettfahrtleitung hat abgebrochen, Flagge N) oder „Aufgegeben" (das eigene Boot ist ausgestiegen) — getrennt geführt, weil es zwei verschiedene Dinge sind. Gerechnet wird dann bis zum Ende der Aufzeichnung oder bis zur Grenze aus dem Auswertungsfenster; die Warnung „aus Trackende" entfällt, weil das Trackende hier die richtige Antwort ist. Fahrleistung, Schläge und erreichte Marken bleiben voll ausgewertet — ein abgebrochenes Rennen ist als Training genauso brauchbar. Die Zeile steht in allen Stufen, weil sie die Kernzahlen verändert.</p>
 <p>In der Gratis-Version bleibt alles Weitere unter den Kernzahlen als Sektion mit Schloss sichtbar.</p>
 
@@ -1740,9 +1817,10 @@ kann? Versteht ein Plus-Nutzer, wo Pro anfängt?
 
 <h4>Plus: Bahn, Start und Manöver</h4>
 <p>Mit <span class="tier plus">Plus</span> rechnet die Auswertung aus dem GPS-Track weiter: SOG-Verlauf und, mit angelegter Bahn, Distanz zur Linie beim Schuss, Zeit bis zur Linienquerung, Rundungszeit an jeder Marke samt Schenkelzeit seit der vorherigen Marke (bei Rundkursen pro Runde), Schläge, Wenden und Halsen. „Bahn anpassen" in der Bahn-Sektion führt in die Bahn-Liste; nach einer Korrektur rechnet die Auswertung neu.</p>
-<p><b>Rennkarte</b> <span class="tier plus">Plus</span> — drei Sätze am Anfang: was der Start gekostet hat, der Mehrweg zur ersten Marke, beste und schlechteste Wende (mit Pro stattdessen die Kreuzleistung). Der eine Blick; wer gräbt, scrollt.</p>
-<p><b>Schenkel-Bilanz</b> <span class="tier plus">Plus</span> — je Schenkel Zeit, gesegelte Strecke, Mehrweg und VMC, der Fortschritt zur nächsten Marke: Höhe, Speed und Mehrweg in einer Zahl, ohne Winddaten. Mehrweg ist gesegelte Strecke geteilt durch Luftlinie; auf der Kreuz sind 100 % unerreichbar (bei 42° Halbwendewinkel rund 135 %), Maßstab ist dein eigener Bestwert.</p>
-<p><b>Startbilanz</b> <span class="tier plus">Plus</span> — Abstand zur Linie beim Schuss, Verzug bis zur Querung und die Position auf der Linie (Pin-Drittel, Mitte, Schiff) als Marke zwischen Pin und Schiff. Mit dem im Vorstart eingegebenen Handwind auch der Linien-Bias beim Schuss und ob das bevorzugte Ende genommen wurde, dazu der Speed-Aufbau von 30 s vor bis 60 s nach dem Schuss. War das Boot beim Schuss über der Linie (ab 5 m, darunter ist GPS-Streuung), steht das rot. Live im Vorstart zeigen Kontextleiste und Logbuch dann „ÜBER x m" statt Abstand und Time-to-burn; beide verschwinden, sobald der GPS-Fix älter als 10 s ist — ein eingefrorener Fix kostet sonst einen Frühstart.</p>
+<p><b>Rennkarte</b> <span class="tier plus">Plus</span> — drei Sätze am Anfang: was der Start gekostet hat, der Schenkel mit dem größten Mehrweg, beste und schlechteste Wende (mit Pro stattdessen die Kreuzleistung). Der eine Blick; wer gräbt, scrollt.</p>
+<p><b>Schläge</b> <span class="tier plus">Plus</span> — die Liste schneidet einen Schlag nicht nur am Bugwechsel, sondern auch an jeder gerundeten Bahnmarke. Wer auf demselben Bug um die Tonne geht und danach einen ganz anderen Kurs fährt, bekam sonst Kreuz und Vorwind in einem Schlag gemittelt — und damit eine VMG, die es nie gab.</p>
+<p><b>Schenkel-Bilanz</b> <span class="tier plus">Plus</span> — je Schenkel Zeit, gesegelte Strecke, Mehrweg und VMC, der Fortschritt zur nächsten Marke: Höhe, Speed und Mehrweg in einer Zahl, ohne Winddaten. Mehrweg zählt nur, was über das kurstypisch Nötige hinausgeht: Der Zickzack einer Kreuz steckt im Halbwendewinkel deiner Polare schon drin, <b>+0 % heißt also so kurz, wie es geht</b>. Eine gute Kreuz landet bei wenigen Prozent. Ohne Polare steht stattdessen der rohe <b>Umweg</b> (gesegelt ÷ Luftlinie), der auf der Kreuz nie unter rund 130 % fällt.</p>
+<p><b>Startbilanz</b> <span class="tier plus">Plus</span> — Abstand zur Linie beim Schuss, Verzug bis zur Querung und die Position auf der Linie (Pin-Drittel, Mitte, Schiff) als Marke zwischen Pin und Schiff. Mit dem im Vorstart eingegebenen Handwind auch der Linien-Bias beim Schuss und ob das bevorzugte Ende genommen wurde, dazu der Speed-Aufbau von 30 s vor bis 60 s nach dem Schuss. War das Boot beim Schuss über der Linie, steht das rot — aber nur, wenn der Abstand größer ist als die Linie genau ist: <b>gepingt ±5 m, in die Karte gezeichnet ±25 m</b>. Auf einer gezeichneten Linie sind 20 m Zeichenfehler, kein Frühstart; dann sagt die Bilanz das und weist auf das Pingen hin. Welche Seite die Kursseite ist, kommt aus der Bahn (auf welcher Seite liegt die erste Marke) und nur ersatzweise aus dem Wind — bei einem Start, der nicht nach Luv geht, ist die Luv-Seite gar nicht bestimmt. Live im Vorstart zeigen Kontextleiste und Logbuch dann „ÜBER x m" statt Abstand und Time-to-burn; beide verschwinden, sobald der GPS-Fix älter als 10 s ist — ein eingefrorener Fix kostet sonst einen Frühstart.</p>
 
 <figure class="shot">
   <div class="frame">
@@ -1765,7 +1843,7 @@ kann? Versteht ein Plus-Nutzer, wo Pro anfängt?
   </div>
 </figure>
 
-<p><b>Manöver einzeln</b> <span class="tier plus">Plus</span> — jede Wende und Halse mit Kosten in Sekunden, Speed-Delle in Prozent und Erholzeit bis 95 % der Fahrt vor dem Manöver. Beste, mittlere und schlechteste Wende oben, Durchschnittskosten je Windband darunter, dahinter die aufklappbare Liste aller Manöver mit Uhrzeit und Windband. Ein Tipp auf ein Manöver springt in den SOG-Verlauf, der die Manöver als Marken zeigt und das gewählte rot hervorhebt. Braucht die 5-s-Regatta-Aufzeichnung; Einzelwerte streuen in Böen und Welle, über viele Manöver sind sie belastbar.</p>
+<p><b>Manöver einzeln</b> <span class="tier plus">Plus</span> — jede Wende und Halse mit Kosten in Sekunden, Speed-Delle in Prozent und Erholzeit bis 95 % der Fahrt vor dem Manöver. Ob ein Bugwechsel Wende oder Halse war, entscheidet der Windwinkel unmittelbar davor und danach: Bei der Wende geht der Bug durch den Wind, bei der Halse das Heck. Manöver direkt an einer Tonne werden damit richtig zugeordnet, auch wenn der Schenkel davor oder danach im Mittel schon Raumschots war. Beste, mittlere und schlechteste Wende oben, Durchschnittskosten je Windband darunter, dahinter die aufklappbare Liste aller Manöver mit Uhrzeit und Windband. Ein Tipp auf ein Manöver öffnet das <b>Kartenbild</b> (siehe unten) und hebt es zugleich im SOG-Verlauf rot hervor — die Liste bleibt dabei stehen, statt unter dem Finger wegzuscrollen. Braucht die 5-s-Regatta-Aufzeichnung; Einzelwerte streuen in Böen und Welle, über viele Manöver sind sie belastbar.</p>
 
 <figure class="shot">
   <div class="frame">
@@ -1790,8 +1868,36 @@ kann? Versteht ein Plus-Nutzer, wo Pro anfängt?
 
 <p><b>Rundungsqualität und Zielanflug</b> <span class="tier plus">Plus</span> — jede gewertete Tonnenrundung aus dem SOG-Profil ±60 s: Speed-Delle an der Marke, Erholzeit und die Kosten gegen die Anfahrt-Fahrt (beim Rundkurs mit Δ zur besten eigenen Rundung derselben Tonne), dazu die Drehung vor und nach der Tonne als Form-Zahl. Rundungsseite und Abstand bleiben bewusst draußen, beides liegt unter der GPS-Genauigkeit. Der Zielanflug zeigt die letzten 200 m: gewähltes Linien-Ende mit Position auf der Linie, Ø Speed und den Weg in Prozent der Luftlinie — 100 % heißt schnurgerade, Mehrweg auf den letzten Metern ist fast immer verschenkte Zeit.</p>
 
+<h4>Kartenbild: wo das passiert ist</h4>
+<p>Eine Zahl in einer Liste sagt <i>was</i>, nicht <i>wo</i>. Deshalb hat jede Zeile, die sich auf
+einen Moment oder einen Abschnitt des Rennens bezieht, ein Kartenbild: <b>Manöver</b>,
+<b>Schläge</b>, <b>Bahnmarken</b>, <b>Schenkel</b>, <b>Start</b> und <b>Zielanflug</b>. Ein Tipp auf
+die Zeile öffnet es als Blatt von unten — der ganze Track grau, der gemeinte Teil in Farbe, bei
+einem Moment (Wende, Rundung, Schuss) ein Kreis um die Stelle und zwei Minuten Track drumherum.
+Die Karte lässt sich schieben und mit <b>+</b> und <b>−</b> zoomen; sie nutzt dieselben
+Offline-Pakete wie die Hauptkarte, funktioniert also auch ohne Netz. Darunter stehen die Zahlen
+der Zeile noch einmal: Uhrzeit, Dauer, Strecke, Fahrt.</p>
+<figure class="shot">
+  <div class="frame">
+    <img src="bilder/kartenbild-schlag.jpg" alt="Kartenbild eines Schlags: ganzer Track grau, der gewählte Schlag blau hervorgehoben" loading="lazy" width="760" height="1652">
+    <span class="hl" style="left:5%;top:50%;width:90%;height:5%"><b>1</b></span>
+    <span class="hl" style="left:5%;top:56%;width:90%;height:29%"><b>2</b></span>
+    <span class="hl right" style="left:79%;top:58%;width:16%;height:11%"><b>3</b></span>
+    <span class="hl" style="left:5%;top:86%;width:50%;height:11%"><b>4</b></span>
+  </div>
+  <div>
+    <figcaption>Kartenbild zu „Schlag 2“ der Demo-Regatta: die Kreuz in der Neustädter Bucht, blau hervorgehoben im grauen Gesamttrack.</figcaption>
+    <ol class="marks">
+      <li><b>Titel</b> — welche Zeile du angetippt hast; „Fertig“ schließt das Blatt.</li>
+      <li><b>Karte</b> — ganzer Track grau, der gewählte Abschnitt in Farbe. Schieben geht, der Rest des Rennens bleibt als Zusammenhang stehen.</li>
+      <li><b>Zoom</b> — mit Handschuh verlässlicher als Pinch, wie auf der Hauptkarte.</li>
+      <li><b>Zahlen zur Zeile</b> — hier Zeitfenster, Strecke und Ø Fahrt des Schlags.</li>
+    </ol>
+  </div>
+</figure>
+
 <h4>Wo die Zeit geblieben ist</h4>
-<p>Ganz oben in der Auswertung zerlegt der <b>Zeitverlust-Wasserfall</b> <span class="tier plus">Plus</span> deinen Rückstand in Posten: Renndauer, Referenzzeit, + Start, + Manöver (n × Ø), + Mehrweg (sm), + Speed &amp; Übriges. Die Summe geht exakt auf; was die Messposten nicht erklären, steht als Rest. Das priorisiert: Kostet Mehrweg acht Minuten und Manöver 1:39, ist Wendetraining die falsche Investition. Referenz mit Plus ist dein bestes eigenes Rennen auf derselben Bahn (erkannt an ihrer Signatur). Referenz mit <span class="tier pro">Pro</span> ist die polar-optimale Zeit der Bahn beim gemessenen Wind: Kreuz über das Beat-VMG (der nötige Zickzack steckt in der Referenz), Vorwind über das Run-VMG; Mehrweg zählt dann nur den Weg über den Halbwendewinkel hinaus.</p>
+<p>Ganz oben in der Auswertung zerlegt der <b>Zeitverlust-Wasserfall</b> <span class="tier plus">Plus</span> deinen Rückstand in Posten: Renndauer, Referenzzeit, + Start, + Manöver (n × Ø), + Mehrweg (sm), + Speed &amp; Rest. Die Summe geht exakt auf; was die Messposten nicht erklären, steht als Rest. Das priorisiert: Kostet Mehrweg acht Minuten und Manöver 1:39, ist Wendetraining die falsche Investition. Referenz mit Plus ist dein bestes eigenes Rennen auf derselben Bahn (erkannt an ihrer Signatur). Referenz mit <span class="tier pro">Pro</span> ist die polar-optimale Zeit der Bahn, <b>je Schenkel mit dem Wind, der dort tatsächlich stand</b>: Kreuz über das Beat-VMG (der nötige Zickzack steckt in der Referenz), Vorwind über das Run-VMG, Raumschots gegen die Polar-Zielfahrt für den anliegenden Windwinkel. Mehrweg zählt nur den Weg über das kurstypisch Nötige hinaus. Der letzte Posten heißt „Speed &amp; Rest" — darin steckt neben dem Speed auch die Ungenauigkeit der Referenz, denn sie ist eine Modellrechnung.</p>
 <p><b>Verkürzung und Verlängerung werten</b> <span class="tier plus">Plus</span> — die Verkürzung wertet die App nie automatisch: Ob verkürzt wurde, hängt daran, wann der Erste im Feld an der Marke war, und das sieht dein Gerät nicht. Sie schlägt vor („Ab 16:00 wird verkürzt. Erste Marke danach: Tonne 4 um 16:04. Dort werten?"); bestätigst du, wird diese Durchfahrt zum Zieldurchgang, alles dahinter steht ausgegraut in der Bahn. Die Verlängerung wertet die App nur, wenn sie zweifelsfrei ist — in genau zwei Fällen: Du bist selbst vor der hinterlegten Uhrzeit durchs erste Ziel gegangen, oder die Tonnen des Zusatzschenkels liegen in deinem Track. Warst du selbst zu spät, heißt das nicht „keine Verlängerung", der Erste kann trotzdem vor der Zeit durch gewesen sein; dann fragt die Auswertung nach und wertet bis zu deiner Antwort die kurze Bahn. Überstimmen geht immer in beide Richtungen. Was aus dem ersten Ziel wird, regelt der Schalter „Bei Verlängerung als Tor mitnehmen" an der Bahn: aus — es steht ungewertet in der Auswertung; an — es zählt als Tor mit Durchfahrtszeit und genommener Tonne. Ohne Verlängerung bleibt es der normale Zieldurchgang.</p>
 
 <h4>Pro: Wind, Polare und Bug</h4>
@@ -2142,7 +2248,7 @@ kann? Versteht ein Plus-Nutzer, wo Pro anfängt?
 </figure>
 
 <h4>Datenband auf der Karte</h4>
-<p>Der runde Instrumente-Knopf in der linken Knopfspalte der Karte legt die Werte zur Karte statt darüber: im Hochformat als Datenband unten — eine Reihe mit drei Kacheln über der Tab-Leiste, wie die Instrument-Bar eines Plotters; Blättern per Knopf links, Vollbild und Schließen rechts, je Seite die ersten drei Felder —, im Querformat und auf dem iPad als Spalte rechts. Karte, Werte und Tab-Leiste bleiben gleichzeitig sichtbar; erneutes Tippen blendet aus. Der Vollbild-Knopf in Band und Spalte öffnet das Dashboard als „Nur Zahlen"-Modus dahinter; die Werkzeuge-Kachel „Instrumente" führt direkt dorthin.</p>
+<p>Der runde Instrumente-Knopf in der linken Knopfspalte der Karte legt die Werte zur Karte statt darüber: im Hochformat als Datenband unten — eine Reihe mit drei Kacheln über der Tab-Leiste, wie die Instrument-Bar eines Plotters; Blättern per Knopf links, Vollbild und Schließen rechts, je Seite die ersten drei Felder —, im Querformat und auf dem iPad als Spalte rechts. Die Spalte ist schmal voreingestellt — SOG und COG untereinander, große Ziffern; zwei weitere Breiten liegen hinter dem Pfeil in ihrer Kopfzeile, und welche Felder darin stehen, bestimmst du wie überall über den Seiten-Manager. Der Segelkompass erscheint nur noch im Vollbild: In einer 210 pt schmalen Spalte war seine Rose kleiner als das Zifferblatt einer Armbanduhr und damit unter Fahrt nicht mehr ablesbar. Karte, Werte und Tab-Leiste bleiben gleichzeitig sichtbar; erneutes Tippen blendet aus. Der Vollbild-Knopf in Band und Spalte öffnet das Dashboard als „Nur Zahlen"-Modus dahinter; die Werkzeuge-Kachel „Instrumente" führt direkt dorthin.</p>
 
 <h4>Bildschirmsperre</h4>
 <p>Das Schloss oben rechts im Dashboard sperrt das Display gegen Fehltouches durch Spritzwasser. Gesperrt heißt gesperrt: Auch Wischen wechselt keine Seite, und ein dauerhafter Sperr-Hinweis zeigt den Zustand. Entsperrt wird durch 3 s Halten auf einer 88 pt großen Fläche, mit Haptik als Rückmeldung.</p>
@@ -2231,7 +2337,7 @@ kann? Versteht ein Plus-Nutzer, wo Pro anfängt?
 
 <h4>Apple-POIs und Teilen per Datei</h4>
 <p>Auf der Vollbild-Karte eines Zielorts blendet der Pin-Button oben rechts Apples Points of Interest ein: Restaurants, Läden, Tankstellen, Apotheken und mehr rund um den Hafen. Das braucht Internet — deshalb ein Hafen-Feature, nichts für unterwegs. Ein Tap auf einen Apple-POI zeigt eine Übernahme-Card; <b>Ins Hafenhandbuch übernehmen</b> macht ihn zum eigenen POI des Zielorts, die Kategorie wird automatisch zugeordnet — danach ist er auch offline dabei.</p>
-<p>Zielorte lassen sich als Datei weitergeben: <span class="path">Zielort-Detail → ⋯ → Teilen (Etmar-Freigabe)</span> erzeugt eine Etmar-Freigabe-Datei (.brokkolishare) mit Position, Radius, Kategorie, Notizen und Hafeninfos, POIs und Bild-Thumbnails — per AirDrop, Mail oder Messenger. Dasselbe gibt es für Regatta-Bahnen (<span class="path">Werkzeuge → Bahnen &amp; Wegpunkte</span>, Wisch nach rechts oder langer Druck) und Routen (<span class="path">Werkzeuge → Routen</span>). Auf der Empfängerseite: Datei antippen → Vorschau mit Karte, Details und Doubletten-Hinweis („In der Nähe gibt es schon …"; bei gleichem Namen entsteht eine Kopie mit Zusatz) → <b>Übernehmen</b>, ein Tap. Dateien einer neueren Version werden sauber abgewiesen. Kein Server, kein Account — die Datei ist der Weg.</p>
+<p>Zielorte lassen sich als Datei weitergeben: <span class="path">Zielort-Detail → ⋯ → Teilen (Etmar-Freigabe)</span> erzeugt eine Etmar-Freigabe-Datei (.etmarshare) mit Position, Radius, Kategorie, Notizen und Hafeninfos, POIs und Bild-Thumbnails — per AirDrop, Mail oder Messenger. Dasselbe gibt es für Regatta-Bahnen (<span class="path">Werkzeuge → Bahnen &amp; Wegpunkte</span>, Wisch nach rechts oder langer Druck) und Routen (<span class="path">Werkzeuge → Routen</span>). Auf der Empfängerseite: Datei antippen → Vorschau mit Karte, Details und Doubletten-Hinweis („In der Nähe gibt es schon …"; bei gleichem Namen entsteht eine Kopie mit Zusatz) → <b>Übernehmen</b>, ein Tap. Dateien einer neueren Version werden sauber abgewiesen. Kein Server, kein Account — die Datei ist der Weg.</p>
 
 <div class="box test"><b class="lbl">Bitte testen</b>
 <ul>
@@ -2263,7 +2369,7 @@ kann? Versteht ein Plus-Nutzer, wo Pro anfängt?
 <p>Der Alarm endet nur über <b>Beenden</b> — Person geborgen oder Fehlalarm, jeweils mit Rückfrage. Das Ende wird im Logbuch vermerkt. Ein App-Neustart beendet den Alarm nicht.</p>
 
 <h4>Ankeralarm</h4>
-<p>Den Anker setzt du über die Kachel <span class="path">Logbuch → Anker</span> — sie ist mit und ohne offenen Törn da — oder über den Anker-Knopf in der linken Knopfspalte der <span class="path">Karte</span>. Ein Tipp setzt den Anker auf die aktuelle Position mit <b>50 m Radius</b>; bei einem Fehltouch erscheint ein Rückgängig-Balken. Im Logbuch steht dann ein Banner wie „Anker liegt · 23 m / 50 m · seit 21:04", auf der Karte siehst du den Kreis und den Anker-Pin.</p>
+<p>Den Anker setzt du über die Kachel <span class="path">Logbuch → Anker</span> — sie ist mit und ohne offenen Törn da — oder über „Anker setzen“ im Ebenen-Menü der <span class="path">Karte</span>. Ein Tipp setzt den Anker auf die aktuelle Position mit <b>50 m Radius</b>; bei einem Fehltouch erscheint ein Rückgängig-Balken. Im Logbuch steht dann ein Banner wie „Anker liegt · 23 m / 50 m · seit 21:04", auf der Karte siehst du den Kreis und den Anker-Pin.</p>
 <p>Verlässt das Boot den Kreis, wird der Banner rot, das iPhone vibriert und gibt Ton, und die Mitteilung „ANKER SLIPPT: 62 m vom Anker" kommt auch auf das gesperrte Handy in der Koje — als zeitkritische Mitteilung, und <b>alle 60 Sekunden erneut</b>, solange das Boot draußen bleibt. Damit am Rand des Kreises kein Fehlalarm entsteht, rechnet Etmar eine Toleranz für die GPS-Streuung ein: die halbe angezeigte Genauigkeit. Für die Wache läuft ein eigener GPS-Wächter im Hintergrund weiter (blaue Statusanzeige von iOS), unabhängig vom Törn-Tracking.</p>
 
 <figure class="shot">
@@ -2496,7 +2602,7 @@ kann? Versteht ein Plus-Nutzer, wo Pro anfängt?
 <h4>Datensicherung</h4>
 <p><span class="path">Einstellungen → Datensicherung</span> beginnt mit der <b>iCloud-Status-Zeile</b>: aktiv, synchronisiert, Fehler, kein Konto oder nur lokal, dazu der letzte Abgleich. Die App gleicht alle Daten über deine private iCloud zwischen deinen Geräten ab. Das ist Komfort, keine Sicherung — ein Fehler wird mitsynchronisiert. Für den Ernstfall gibt es die Vollsicherung als Datei:</p>
 <ol class="steps">
-<li>Tipp auf <b>Sicherung speichern / teilen</b>. Die Sicherungsdatei (.brokkolibackup) mit allen Daten inklusive Bilder liegt beim Öffnen schon bereit, die Größe steht daneben.</li>
+<li>Tipp auf <b>Sicherung speichern / teilen</b>. Die Sicherungsdatei (.etmarbackup) mit allen Daten inklusive Bilder liegt beim Öffnen schon bereit, die Größe steht daneben.</li>
 <li>Ziel wählen: Dateien, iCloud Drive oder AirDrop auf ein anderes Gerät.</li>
 </ol>
 <p><b>Sicherung einspielen</b> wählt eine solche Datei, verlangt eine ausdrückliche Bestätigung und ersetzt beim nächsten App-Start alle Daten; der vorherige Stand bleibt intern beiseitegelegt. Die Sicherung ist bewusst eine vollständige Kopie des Datenbestands statt eines eigenen Austauschformats: verlustfrei, kein Server.</p>
@@ -2600,7 +2706,7 @@ kann? Versteht ein Plus-Nutzer, wo Pro anfängt?
 <li><b>Stufe:</b> Countdown, Pings, Abstand zur Linie und Kernzahlen frei; Linien-Bias und die Auswertung aus dem Track <span class="tier plus">Plus</span>; Live-Werte und Bug-Bilanz <span class="tier pro">Pro</span>.</li>
 </ul>
 <ol class="steps">
-<li>Bahn holen: <span class="path">Werkzeuge → Bahnen &amp; Wegpunkte</span> → „Bahnen aus der Community“ → Bahn öffnen → „Beitreten“. Auf der Karte ist die Bahn die karierte Flagge; Antippen zeichnet sie sofort und bietet „Beitreten“ im Blatt darunter. <b>Erwartung:</b> Eine eigene Kopie entsteht, die künftigen Termine stehen als Serie im Kalender. Bei Jagd- oder Gruppenstart fragt die App direkt nach deiner eigenen Startzeit — sekundengenau, mit eigenem Sekundenfeld. Ohne passende Community-Bahn: Demo starten (<span class="path">Werkzeuge → Hilfe &amp; Demo</span>) — sie bringt Wegpunkte des Reviers mit, aus denen du in der Bahn-Bibliothek eine eigene Bahn steckst (Start- und Ziellinie aus je zwei Punkten, Marken antippen); dort läuft das Boot simuliert, der Ablauf lässt sich also auch am Schreibtisch durchspielen. Die fertige Demo-Regatta „Mittwochsregatta Kühlungsborn“ zeigt dir vorab, wie eine Auswertung aussieht.</li>
+<li>Bahn holen: <span class="path">Werkzeuge → Bahnen &amp; Wegpunkte</span> → „Bahnen aus der Community“ → Bahn öffnen → „Beitreten“. Auf der Karte ist die Bahn die karierte Flagge; Antippen zeichnet sie sofort und bietet „Beitreten“ im Blatt darunter — im Querformat stattdessen als Karte auf der Karte, damit die Bahn dabei sichtbar bleibt. <b>Erwartung:</b> Eine eigene Kopie entsteht, die künftigen Termine stehen als Serie im Kalender. Bei Jagd- oder Gruppenstart fragt die App direkt nach deiner eigenen Startzeit — sekundengenau, mit eigenem Sekundenfeld. Ohne passende Community-Bahn: Demo starten (<span class="path">Werkzeuge → Hilfe &amp; Demo</span>) — sie bringt Wegpunkte des Reviers mit, aus denen du in der Bahn-Bibliothek eine eigene Bahn steckst (Start- und Ziellinie aus je zwei Punkten, Marken antippen); dort läuft das Boot simuliert, der Ablauf lässt sich also auch am Schreibtisch durchspielen. Die fertige Demo-Regatta „Mittwochsregatta NSV“ — eine echte, gesegelte Wettfahrt — zeigt dir vorab, wie eine Auswertung aussieht.</li>
 <li>Regatta anlegen: Karte → Losfahren → „Regatta …“ (oder am Renntag im Kalender „Starten“, mit Rückfrage). Name, Startschuss 15–20 Minuten voraus, Bahn aus der Bahn-Zeile, Vorstart-Dauer (5/6/10/15 Minuten), Klasse und Wertung. <b>Erwartung:</b> Liegt heute ein Kalender-Termin mit Bahn an, ist sie vorbelegt. Nach dem Sichern heißt das Kontext-Feld „Regatta“ (Bahn, Auswertung), die Bahn liegt orange auf der Karte — Startlinie grün, Ziellinie rot, Bahnfolge gestrichelt — und der Countdown steht im Logbuch in der Phase „Warten“.</li>
 <li>Handy weglegen, bis der Vorstart beginnt. <b>Erwartung:</b> Von selbst: Vorstart-Eintrag, Tracking startet, Mitteilung auf dem Sperrbildschirm. Der Countdown läuft groß im Logbuch (gelb, letzte Minute rot), oben auf der Karte in der Kontextleiste und sekundengenau in der Live-Aktivität.</li>
 <li>Linie pingen: am Pin-Ende vorbeifahren → „Pin pingen“, am Startschiff → „Schiff pingen“ (Vorstart-Leiste auf der Karte oder im Logbuch). <b>Erwartung:</b> Häkchen je Ende, erneutes Pingen überschreibt einfach, Rückgängig-Balken. Sobald beide Enden stehen, zeigen Kontextleiste und Logbuch den Lot-Abstand zur Linie und Time-to-burn (rot = zu früh); bist du über der Linie, steht „ÜBER x m“; ist der GPS-Fix älter als 10 Sekunden, verschwinden beide Werte, statt eingefroren stehen zu bleiben. Ein Ping ohne GPS-Fix meldet sich. Mit <span class="tier plus">Plus</span> dazu der Linien-Bias („Pin +7° · 12 m“, unter 3° „Linie neutral“) — Wind über „Wind setzen“ mit der drehbaren Windrose oder „In den Wind schießen — Kurs übernehmen“.</li>
@@ -2707,7 +2813,6 @@ kann? Versteht ein Plus-Nutzer, wo Pro anfängt?
 
 <h4>Sonstiges</h4>
 <ul>
-<li><b>Die Freigabedatei heißt noch „.brokkolishare".</b> Die App hieß früher brokkoli, und die Endung der Freigabedatei ist noch die alte. Du siehst sie beim Teilen, in den Tutorials und in der Fehlermeldung „Die Datei ist keine Etmar-Freigabe (.brokkolishare)." Die Dateien funktionieren; nur der Name ist ein Rest.</li>
 <li><b>Wetter im Logbuch ist experimentell.</b> Neue Einträge belegen Wind, Böen, Luftdruck und Wetterlage automatisch vor. Mit NMEA an Bord <span class="tier pro">Pro</span> haben die eigenen Instrumente Vorrang; beim Abschließen des Törns wird der Wind von Ablege- und Ankunftseintrag über die ersten bzw. letzten zehn Minuten gemittelt. Kommt nichts an, bleiben die Felder leer — das ist kein Fehler, die Funktion trägt bewusst das Experimentell-Etikett.</li>
 </ul>
 
