@@ -150,7 +150,7 @@
   <p class="lede">Alles, was du für den Testflug brauchst: TestFlight einrichten, die App in zehn Minuten
   verstehen, jede Funktion nachschlagen — und wissen, worauf ich diesmal besonders schaue.
   Das Inhaltsverzeichnis links führt zu jedem Artikel.</p>
-  <p class="stand">Stand 11.09.2026 · Build 1.0 (12) · Fragen und Rückmeldungen: <a href="mailto:support@etmar.app">support@etmar.app</a></p>
+  <p class="stand">Stand 15.09.2026 · Build 1.0 (19) · Fragen und Rückmeldungen: <a href="mailto:support@etmar.app">support@etmar.app</a></p>
 </header>
 
 <div class="cols">
@@ -192,7 +192,7 @@
 <li><a href="#c11">C11 Instrumente &amp; NMEA</a></li>
 <li><a href="#c12">C12 Hafenhandbuch</a></li>
 <li><a href="#c13">C13 Sicherheit: MOB, Anker, SOS</a></li>
-<li><a href="#c14">C14 Winterlager</a></li>
+<li><a href="#c14">C14 Werkstatt</a></li>
 <li><a href="#c15">C15 Segelkalender</a></li>
 <li><a href="#c16">C16 Einstellungen &amp; Datensicherung</a></li>
 </ol>
@@ -239,7 +239,7 @@
 <p class="sub">Damit die Erwartung stimmt, bevor du ablegst.</p>
 <p>Etmar ist eine iOS-App für Segler (iPhone und iPad) und vereint digitales Logbuch,
 Regatta-Modul mit Auswertung, Trimm-Tagebuch, Instrumente aus dem NMEA-Netz, Hafenhandbuch,
-SOS-Sprechfunktafel, Winterlager-Planung und Segelkalender. Sie ist offline-first — auf See
+SOS-Sprechfunktafel, Werkstatt (Projekte und Winterlager-Planung) und Segelkalender. Sie ist offline-first — auf See
 braucht sie kein Netz —, kennt keinen Account und keinen Server. Deine Daten liegen auf dem
 Gerät und, wenn du magst, in deiner privaten iCloud.</p>
 <p>Das Leitbild dahinter: <b>Handy weglegen, segeln, hinterher nachschauen.</b> Alles, was
@@ -299,6 +299,8 @@ Funkspruch, ein offener Tagestörn mit Etappenplan, eine Regatta mit vollständi
 Trimm-Einträge, Kalendertermine, Seezeichen und Tiefen der Mecklenburger Bucht.
 Dazu simuliert die App NMEA-Daten — du siehst also auch die Instrumente, ohne Bordelektronik.
 Ein magentafarbener Balken zeigt den Demo-Zustand; beim Beenden werden alle Demo-Daten wieder gelöscht.</p>
+<p>Läuft gerade die Aufzeichnung eines eigenen Törns, startet die Demo nicht – die App sagt es und
+bittet, die Aufzeichnung zuerst zu beenden. Sonst landeten simulierte Positionen im echten Törn.</p>
 <p>Die Regatta darin ist <b>keine gerechnete</b>: Es ist die Mittwochsregatta des Neustädter
 Segler-Vereins, wirklich gesegelt, mit 1600 Trackpunkten im 5-Sekunden-Takt, den neun Bahnmarken
 der Vereinsbahn, Känguru-Start und Wind zwischen 4 und 16 kn mit echten Drehern. Eine Auswertung
@@ -382,6 +384,16 @@ ist?
 <article id="a5">
 <h3><span class="num">A5</span>Worauf ich diesmal schaue</h3>
 <p class="sub">Acht Punkte aus dem aktuellen Build. Alles andere ist trotzdem willkommen.</p>
+
+<p><b>Build 19 (Stand 14.09.2026) — vier Dinge zuerst:</b></p>
+<ul>
+<li><b>Demo-Modus:</b> Läuft gerade eine Aufzeichnung auf einem echten Törn, startet die Demo nicht mehr. Kommt die Meldung verständlich, und lässt sich die Demo nach dem Abschluss wieder starten?</li>
+<li><b>„Wieder öffnen“</b> im Törn-Detail holt Enddatum, Regatta-Timer und Aufzeichnung zurück; ein automatisch gesetztes Ziel bleibt als „Ziel (verworfen)“ stehen. Erscheint der Rückgängig-Balken unten, und nimmt er alles zurück?</li>
+<li><b>NMEA-Rohaufzeichnung (Pro):</b> Unter 500 MB freiem Speicher stoppt sie von selbst, mit Mitteilung; die Törn-Aufzeichnung läuft weiter. Nur wer wenig Speicher hat, sieht das.</li>
+<li><b>Regatta — nur mit einer Bahn, die eine Verlängerung kennt</b> (Zeitregel oder markierter Zusatzschenkel): Das Ziel beendet das Rennen, nicht den Törn. Die Aufzeichnung läuft bis zum Anlegen weiter, die Regatta bekommt beim Anlegen ihren Ablegeort als Zielort, zwei Stunden Stillstand beenden sie notfalls; nach dem gewerteten Ziel zeigt das Logbuch die Törn-Griffe (Anlegen) statt „Regatta beenden“. Ohne solche Bahn ändert sich nichts; der Bahn-Editor warnt, wenn zwei Ziellinien da sind und keine markiert ist. Die Mittwochsregatta NSV aus der Community-Bibliothek (Fassung 3) ist so eine Bahn, beitreten reicht; wer sie schon hat, bekommt „Neue Fassung übernehmen“ angeboten.</li>
+<li><b>Außerdem:</b> Nach einem Neustart der App landet der letzte bekannte Standort des Telefons nicht mehr als Punkt im Törn (der konnte Stunden alt und weit weg sein). Wer die App während eines Törns beendet und später wieder öffnet: Der Track sollte keinen Sprung zeigen.</li>
+<li><b>Werkstatt (bisher „Winterlager“),</b> für alle, die schon planen: Das Werkzeug heißt jetzt Werkstatt, weil Arbeiten am Boot nicht nur im Winter anfallen. Fotos gibt es jetzt auch am Projekt, der Fortschritt zählt überall gleich (Aufgaben samt Unteraufgaben, ohne Material). Neu: Aufgaben können ein Fälligkeitsdatum haben, Termine wie Kran oder Werft stehen oben im Projekt und im Kalender, und „Diese Woche“ (oben in der Werkstatt-Liste) sammelt über alle Projekte, was bis Sonntag ansteht — das ersetzt die Wochenend-Planung je Projekt. Erinnerungen kommen höchstens dreimal die Woche (Freitag 17 Uhr, am Abend vor einem Termin, am Morgen nach einer verpassten Fälligkeit), abschaltbar unter Einstellungen → Mitteilungen. Dazu Beträge am Material („Gekauft“ fragt nach dem tatsächlichen), eine Kosten-Zeile mit Budget im Projekt und ein Einkaufszettel über alle Projekte mit Teilen als Text. Außerdem „Betrifft“: Aufgaben hängen an einem Ausrüstungsteil, Abhaken fragt nach der Wartung, die Vorlagen Ein-/Auswinterung schlagen fällige Wartungen vor, und Projekte lassen sich abschließen (Historie je Winter). Und wer macht's: je Aufgabe Selbst, Werft oder Helfer mit Namen, ein Werft-Filter in der Checkliste und „Arbeitsliste teilen“ unter Planung — die Aufgaben einer Zuständigkeit als PDF mit Kästchen, Fotos und Bootsname. Fragen: Stimmen die Zahlen in der Freitags-Mitteilung mit „Diese Woche“? Fehlt in „Diese Woche“ etwas, was die alte Wochenend-Ansicht hatte? Stimmt die Summe im Projekt mit dem, was du eingetragen hast? Kommt die Arbeitsliste als PDF lesbar bei deiner Werft an?</li>
+</ul>
 
 <p><b>Vorweg: Deine bisherigen Regatta-Auswertungen zeigen mit diesem Build andere Zahlen.</b>
 Das ist beabsichtigt. Nach der ersten vollständig aufgezeichneten Regatta ließ sich jede
@@ -510,9 +522,10 @@ speichern / teilen</span> (eine Datei, alle Daten inklusive Bilder, siehe <a hre
 <b class="lbl">Gefahrlos ausprobieren</b>
 <b>MOB, Ankeralarm und SOS</b> sind echte Funktionen, aber sie alarmieren niemanden außerhalb
 deines Geräts — kein Notruf, keine DSC-Aussendung, kein Anruf. Du kannst sie im Hafen bedenkenlos
-durchspielen. Eine Einschränkung beim Ankeralarm: Der Ton setzt derzeit ein iPhone voraus, das
-<b>nicht</b> stummgeschaltet ist; bei gestelltem Stummschalter bleibt es bei Vibration. Verlass
-dich nachts vor Anker also noch nicht blind darauf.
+durchspielen. Neu beim Ankeralarm: Der Ton durchbricht Stummschalter und Schlaf-Fokus. Dafür
+fragt die App beim Ankerwerfen einmal nach <b>Kritischen Hinweisen</b> — erlaube das, sonst
+bleibt es bei Vibration. Probier den Alarm einmal im Hafen aus, bevor du dich nachts darauf
+verlässt.
 </div>
 <a class="back" href="#top">↑ Zum Inhaltsverzeichnis</a>
 </article>
@@ -536,7 +549,7 @@ selbst um, während du hinsiehst.</li>
 <li><b>Logbuch</b> — Törns, Einträge, Quick-Buttons, Countdown.</li>
 <li><b>Werkzeuge</b> — alles Übrige, nach Situation gegliedert: „An Bord“ (Instrumente, Trimm,
 Hafenhandbuch), „Vorbereiten“ (Kalender, Bahnen &amp; Wegpunkte, Routen, Auswertungen), „Boot“
-(Boot, Winterlager), „App“ (Einstellungen, Hilfe &amp; Demo). SOS steht in voller Breite darüber.</li>
+(Boot, Werkstatt), „App“ (Einstellungen, Hilfe &amp; Demo). SOS steht in voller Breite darüber.</li>
 </ul>
 <figure class="shot">
   <div class="frame">
@@ -551,7 +564,7 @@ Hafenhandbuch), „Vorbereiten“ (Kalender, Bahnen &amp; Wegpunkte, Routen, Aus
     <ol class="marks">
       <li><b>SOS</b> in voller Breite — die Sprechfunktafel, immer oben, immer frei.</li>
       <li><b>An Bord</b>: Instrumente, Trimm, Hafenhandbuch — was unterwegs gebraucht wird.</li>
-      <li><b>Vorbereiten</b>: Routen, Kalender, Bahnen &amp; Wegpunkte, Auswertungen. Darunter (scrollen) <b>Boot</b> mit Boot und Winterlager sowie <b>App</b> mit Einstellungen und Hilfe &amp; Demo.</li>
+      <li><b>Vorbereiten</b>: Routen, Kalender, Bahnen &amp; Wegpunkte, Auswertungen. Darunter (scrollen) <b>Boot</b> mit Boot und Werkstatt sowie <b>App</b> mit Einstellungen und Hilfe &amp; Demo.</li>
       <li>Die Tab-Leiste: Karte · Kontext-Feld (hier „Planung“) · Logbuch · Werkzeuge.</li>
     </ol>
   </div>
@@ -705,7 +718,7 @@ Qualität gestaffelt.</li>
 <thead><tr><th>Stufe</th><th>Was dazukommt</th><th>Preis</th></tr></thead>
 <tbody>
 <tr><td><span class="tier free">Free</span></td>
-<td>Logbuch mit Auto-Tracking, Trimm-Tagebuch, Hafenhandbuch, SOS, Winterlager, Kalender, Karte mit
+<td>Logbuch mit Auto-Tracking, Trimm-Tagebuch, Hafenhandbuch, SOS, Werkstatt, Kalender, Karte mit
 Seezeichen und Tiefen, zwei Offline-Pakete, Regatta anlegen und fahren mit Countdown, Linien-Ping,
 Kernzahlen der Auswertung, Polardiagramme, PDF-Bericht und Törn-Story, GPX-Export</td>
 <td>—</td></tr>
@@ -796,7 +809,7 @@ erkennt man schneller als den Namen: das Zickzack einer Kreuz, das Dreieck einer
 <li><b>Unter Segel</b> erscheint in der Checkliste eine Zeile „Segel“ mit der Kombination, die zuletzt oben war (Vorwindsegel bleiben draußen). Ein Tipp öffnet dieselbe Segelliste wie der Segelwechsel unterwegs – mit Windpassung, wenn der Wind bekannt ist. Die Wahl landet im Ablege-Eintrag, damit Segel-Vergleich und gefahrene Polare später wissen, was stand.</li>
 <li><b>Ablegen unter Motor</b> (Segment in der Checkliste darüber, Standard Motor) erzeugt zusätzlich einen „Motor an“-Eintrag: Die Hafenausfahrt zählt ab der ersten Sekunde als Motorstrecke (gelb auf der Karte, Motorstunden in der Statistik), und der Motor-Knopf steht danach auf „Motor aus“ für den Moment des Segelsetzens. Die Wahl gilt genauso im Eintragsformular (Typ „Ablegen“) und beim automatisch erkannten Ablegen; die App merkt sie sich.</li>
 </ul>
-<p>Wetter, Bilder oder Notizen ergänzt du jederzeit später über den Eintrag unter „Letzte Einträge“. Ein versehentlich abgeschlossener Törn lässt sich im Törn-Detail wieder öffnen – wichtig bei Mehrtagestörns.</p>
+<p>Wetter, Bilder oder Notizen ergänzt du jederzeit später über den Eintrag unter „Letzte Einträge“. Ein versehentlich abgeschlossener Törn lässt sich im Törn-Detail wieder öffnen – wichtig bei Mehrtagestörns. „Wieder öffnen“ nimmt das Enddatum zurück und holt die Aufzeichnung an diesen Törn – sofern gerade kein anderer Törn aufgezeichnet wird und der letzte Eintrag kein Anleger ist (nach einem Anleger geht es wie immer mit dem nächsten „Ablegen“ weiter); 6 s Rückgängig wie beim Abschließen.</p>
 <p><b>Bewegungs-Autostart.</b> Auch wer nichts tippt, bekommt ein Logbuch: Ist Auto-Tracking aktiv, aber noch kein Ablege-Eintrag da („Wartet auf Ablegen“), beobachtet die App das GPS. Macht das Boot länger als eine Minute durchgehend Fahrt (über 1,5 kn), entsteht automatisch ein Ablege-Eintrag – rückdatiert auf den Fahrtbeginn – und die Aufzeichnung beginnt. Die Minute Karenz filtert Verholen im Hafen und GPS-Ausreißer heraus. Eine Mitteilung auf dem Sperrbildschirm bestätigt: „Ablegen erkannt – Auto-Tracking zeichnet jetzt auf.“</p>
 <div class="box"><b class="lbl">Hinweis</b>Der Autostart setzt voraus, dass die App in diesem Moment NMEA-Daten empfängt (echtes Bordnetz oder Demo-Modus). Nur so ist sicher, dass sich das Handy mit dem Boot bewegt – Handy-GPS allein kann eine Auto- oder Radfahrt nicht von Bootsfahrt unterscheiden. Ohne NMEA-Daten zeigt die Statuszeile „Wartet auf Ablegen-Eintrag“, und der Törn startet über den Ablegen-Knopf oder einen manuellen Eintrag.</div>
 
@@ -961,7 +974,7 @@ ohnehin kein Unterschied mehr, und in der Sonne waschen sie aus.</p>
 </ul>
 <p>Bericht und Story sind bewusst frei – sie tragen den Törn zur Crew und in den Verein.</p>
 
-<p><b>Die Törn-Karte</b> öffnet so gezoomt, dass der komplette Track im Bild ist, mit nummerierten Pins pro Eintrag (Tipp öffnet Details samt Fotos). Die Pins skalieren mit dem Zoom: nah groß mit Nummer, weit herausgezoomt kleine Punkte in Typfarbe. Einträge mit Fotos zeigen beim Reinzoomen ihr Vorschaubild statt des Punkts, mit Nummer und Umrandung in der Ereignisfarbe; weiter draußen bleiben es Punkte mit Kamera-Symbol. Richtungspfeile entlang des Tracks zeigen, in welche Richtung gefahren wurde. Motorstrecken sind immer gelb. Mit Winddaten <span class="tier pro">Pro</span> wird der Track nach Bug gefärbt (Pastelltöne; Standard: rot = Wind von Steuerbord, grün = Wind von Backbord; umkehrbar über „Bug-Färbung umkehren“ im Törn-Detail, die Legende zeigt immer die aktuelle Zuordnung) – Kreuzschläge und Halsen sind auf einen Blick zu sehen. Der Tagesbericht <span class="tier pro">Pro</span> zeigt den wahren Wind je Stunde mit Richtungspfeil und Ø/Max-Geschwindigkeit, bei Mehrtagestörns pro Tag gruppiert. Bei offenem Törn stehen die offenen Etappenziele als türkise Flaggen auf der Karte; abgeschlossene Törns zeigen keine Ziele. Ereignis-Pins lassen sich direkt aus dem Karten-Sheet bearbeiten („Bearbeiten“-Knopf) – auch bei abgeschlossenen Törns. Häfen, Seezeichen, eigenes Boot und alle Karten-Griffe verhalten sich genau wie auf der Hauptkarte (<a href="#b2">B2</a>, <a href="#c3">C3</a>).</p>
+<p><b>Die Törn-Karte</b> öffnet so gezoomt, dass der komplette Track im Bild ist, mit nummerierten Pins pro Eintrag (Tipp öffnet Details samt Fotos). Die Pins skalieren mit dem Zoom: nah groß mit Nummer, weit herausgezoomt kleine Punkte in Typfarbe. Einträge mit Fotos zeigen beim Reinzoomen ihr Vorschaubild statt des Punkts, mit Nummer und Umrandung in der Ereignisfarbe; weiter draußen bleiben es Punkte mit Kamera-Symbol. Richtungspfeile entlang des Tracks zeigen, in welche Richtung gefahren wurde. Motorstrecken sind immer gelb. Mit Winddaten <span class="tier pro">Pro</span> wird der Track nach Bug gefärbt (Pastelltöne; Standard: rot = Wind von Steuerbord, grün = Wind von Backbord; umkehrbar über „Bug-Färbung umkehren“ im Törn-Detail, die Legende zeigt immer die aktuelle Zuordnung) – Kreuzschläge und Halsen sind auf einen Blick zu sehen. Dazu sitzt an jedem Bugwechsel ein kleiner Pfeil <span class="tier pro">Pro</span> <i>(ab dem nächsten Build)</i>; beim Herauszoomen verschwinden die Marker wieder, sonst läge die Kreuz unter ihnen begraben. Was ein Manöver gekostet hat und ob es Wende oder Halse war, steht in der Regatta-Auswertung – die Karte zeigt nur das Wo. Der Tagesbericht <span class="tier pro">Pro</span> zeigt den wahren Wind je Stunde mit Richtungspfeil und Ø/Max-Geschwindigkeit, bei Mehrtagestörns pro Tag gruppiert. Bei offenem Törn stehen die offenen Etappenziele als türkise Flaggen auf der Karte; abgeschlossene Törns zeigen keine Ziele. Ereignis-Pins lassen sich direkt aus dem Karten-Sheet bearbeiten („Bearbeiten“-Knopf) – auch bei abgeschlossenen Törns. Häfen, Seezeichen, eigenes Boot und alle Karten-Griffe verhalten sich genau wie auf der Hauptkarte (<a href="#b2">B2</a>, <a href="#c3">C3</a>).</p>
 <p>Der Knopf oben rechts schaltet in die <b>Törn-Story</b>: einfarbiger Track, Ereignisse als Fotos mit Nummern, Richtungspfeile – die aufgeräumte Ansicht zum Erinnern und Teilen (z. B. per Screenshot), ohne Legende, Etappenziele und Häfen; die Trackpunkt-Inspektion per Tap bleibt. Die Wahl wird pro Törn gemerkt, die Karte öffnet beim nächsten Mal in der zuletzt gewählten Ansicht; den Standard für Törns ohne eigene Wahl setzt „Karte öffnet mit“ in den Einstellungen.</p>
 
 <figure class="shot">
@@ -1350,7 +1363,8 @@ ohnehin kein Unterschied mehr, und in der Sonne waschen sie aus.</p>
 <p><b>Live-Auswertung</b> <span class="tier pro">Pro</span>: Der Regatta-Tab zeigt während des Rennens genau drei Werte — VMG gegen die Polare als Delta („+0,3 kn“ / „−0,4 kn“), den mittleren Wendewinkel der letzten Schläge (aus den Bugwechseln im Track; Patzer-Wenden und Halsen fallen raus) und den Abstand zur Layline der gesetzten Marke. Mehr bewusst nicht: Wendenzähler, Zeit auf dem falschen Bug und Distanzsummen brauchen einen Vergleich über die Zeit und gehören in die Auswertung nach dem Ziel — wer auf der Kreuz eine Tabelle liest, segelt nicht. Alle drei Werte hängen an wahrem Wind und Fahrt durchs Wasser, also am NMEA-Netz; die Layline zusätzlich an einer gesetzten Marke. Ohne Marke wäre sie geraten — und eine geratene Zahl, nach der gesteuert wird, ist schlechter als keine.</p>
 
 <h4>Zieldurchfahrt und Gastboot</h4>
-<p>Beenden geht manuell über „Regatta beenden“ (mit Bestätigung) — oder automatisch: Ist in der Bahn eine Ziellinie oder ein Zielbereich angelegt, erkennt die App die Querung der Linie. Dann entsteht der Ziel-Eintrag, die Regatta wird abgeschlossen, Tracking und Countdown stoppen, und die Mitteilung „Zieldurchfahrt!“ erscheint. In den ersten 60 Sekunden nach dem Start gilt eine Karenz, weil Start- und Ziellinie oft nah beieinander liegen. Als Sicherheitsnetz fragt die App nach zwei Stunden Stillstand per Mitteilung, ob das Rennen vorbei ist.</p>
+<p>Beenden geht manuell über „Regatta beenden“ (mit Bestätigung) — oder automatisch: Ist in der Bahn eine Ziellinie oder ein Zielbereich angelegt, erkennt die App die Querung der Linie. Dann entsteht der Ziel-Eintrag, der Countdown stoppt, und die Mitteilung „Zieldurchfahrt!“ erscheint. Die Aufzeichnung stoppt dabei nur auf Bahnen ohne mögliche Verlängerung; kennt die Bahn eine (Zeitregel oder markierter Zusatzschenkel), läuft sie im Törn-Takt weiter, bis du im Hafen bist – das Ziel beendet das Rennen, nicht den Törn. Dafür bekommt jede neue Regatta beim Anlegen ihren Ablegeort als Zielort (300 m Radius): Die Rückkehr dorthin beendet die Aufzeichnung, sonst zwei Stunden Stillstand. Bei Abbruch oder Aufgabe endet das Wertungsfenster an der letzten gewerteten Markendurchfahrt, nicht am Steg. In den ersten 60 Sekunden nach dem Start gilt eine Karenz, weil Start- und Ziellinie oft nah beieinander liegen. Als Sicherheitsnetz fragt die App nach zwei Stunden Stillstand per Mitteilung, ob das Rennen vorbei ist – und ist das Ziel schon gewertet, während die Aufzeichnung noch läuft, fragt sie nicht, sondern beendet sie: Anleger-Eintrag zum Zeitpunkt des Stillstands, Regatta abgeschlossen, Mitteilung „Aufzeichnung beendet“; Rückgängig im Törn-Detail über „Wieder öffnen“. Der Knopf „Angekommen?“ im Logbuch steht jetzt auch bei Regatten.</p>
+<p><b>Zu früh im Ziel?</b> Hat die Automatik an einer Linie ausgelöst, die noch einmal gequert wird, öffnest du die Regatta im Törn-Detail mit „Wieder öffnen“: Countdown, Bahn auf der Karte und Aufzeichnung kommen zurück. Das falsche Ziel bleibt als gewöhnlicher Eintrag „Ziel (verworfen)“ im Logbuch, bis du es löschst – mit Zeit, Position und allem, was du dort notiert hast. Die nächste Zieldurchfahrt zählt wieder; 6 s Rückgängig wie beim Beenden.</p>
 <p><b>Die Bahn auf der Karte.</b> Solange die Regatta läuft, liegt sie ohne Zutun auf der Hauptkarte – du musst sie nicht einblenden und nicht erst den Törn öffnen. Die <b>nächste</b> Tonne ist größer, trägt einen Ring und ihren Namen; die übrigen Marken sind gedämpft, aber voll deckend. Bewusst gedämpft statt durchsichtig: Auf nassem Glas in der Sonne verschwindet eine halbtransparente Marke, statt dezent zu sein – Größe und Form überstehen Sonne, Nässe und Rauszoomen. Nach der Zieldurchfahrt ist die Bahn wieder weg.</p>
 <p><b>Das Go-To folgt der Bahn.</b> Nach dem Startschuss setzt die App den ersten Wegpunkt, nach jeder Rundung den nächsten, am Ende die Ziellinie – dort auf den Punkt, der dir am nächsten liegt, nicht auf die Mitte. Im Vorstart bleibt es aus: Die Startlinie ist eine Linie, kein Punkt; dafür gibt es den Linien-Bias. Hast du selbst ein Ziel gesetzt, wird es nicht überschrieben – die App fragt an jeder Rundung neu, ob sie übernehmen soll. Nach dem Ziel räumt sie ihr eigenes Go-To ab, ein selbst gesetztes bleibt. Tore werden noch nicht einzeln gestempelt; am Leetor zeigt das Go-To auf die Marke dahinter.</p>
 <p><b>Die Bahn muss gefahren sein.</b> Auf vielen Bahnen ist die Ziellinie dieselbe Linie wie der Start, und im Vorstart fährt man sie mehrfach in beide Richtungen ab – die 60 Sekunden Karenz allein reichen dagegen nicht. Deshalb zählt eine Zieldurchfahrt erst, wenn das Boot seit dem Startschuss einmal näher an einer Bahnmarke war als an der Startlinie. Diese Bedingung kommt aus deiner Bahn, nicht aus einer Einstellung: Eine große Bahn hat große Abstände, eine kleine kleine. Sie braucht auch keine erkannte Rundung, sondern nur einen einzigen Trackpunkt auf dem Weg zur Marke – bei lückenhafter Aufzeichnung fehlen sonst gerade die Punkte an der Tonne.</p>
@@ -1599,6 +1613,7 @@ ohnehin kein Unterschied mehr, und in der Sonne waschen sie aus.</p>
 
 <li>
 <p>Am Ende der Liste liegt „Bahnänderung“. Verkürzung und Verlängerung sind Eingriffe der Wettfahrtleitung mit fester Uhrzeit in der Ausschreibung — deshalb gehören sie zur Bahn. „Bahnverkürzung ab Uhrzeit“ (hier 20:50): Wer ab dann erst eine Wendemarke erreicht, wird dort gewertet. „Bahnverlängerung bei Ziel vor“ (hier 20:30): Ist das erste Ziel vor dieser Zeit gequert, fährt das Feld den Zusatzschenkel; welche Marken dazugehören, legst du an einer Bahnmarke fest (Schritt 13). An der Zeile des ersten Ziels sitzt der Schalter „Bei Verlängerung als Tor mitnehmen“: aus heißt, das erste Ziel gehört bei Verlängerung nicht mehr zur Bahn; an heißt, es wird ein Tor mit Durchfahrtszeit. Gewertet wird das erst in der Auswertung <span class="tier plus">Plus</span>: Die Verkürzung schlägt die App nur vor, die Verlängerung wertet sie nur, wenn sie zweifelsfrei ist.</p>
+<p><b>Der Editor prüft mit.</b> Zwei Ziellinien, aber keine als Verlängerung markiert? Dann steht unter der Bahnreihenfolge eine Warnung mit dem Knopf „Zweite Ziellinie als Verlängerung markieren“ – er markiert das zweite Ziel und alles dazwischen, Rückgängig wie bei jedem Schritt. Eine Verlängerungszeit ohne Verlängerungsmarke bekommt an der Zeitregel den Hinweis, dass sie wirkungslos ist, und die Auswertung sagt es ebenfalls („Verlängerung: nicht anwendbar“), statt zu schweigen. Ohne Markierung endet jedes Rennen am ersten Ziel.</p>
 <figure class="shot">
   <div class="frame">
     <img src="bilder/bahnaenderung.jpg" alt="Abschnitt Bahnänderung mit Bahnverkürzung ab 20:50 und Bahnverlängerung bei Ziel vor 20:30" loading="lazy" width="760" height="1652">
@@ -1878,7 +1893,7 @@ ohnehin kein Unterschied mehr, und in der Sonne waschen sie aus.</p>
 <p>Geschnitten sind die Kapitel nach der <b>Frage, die man stellt</b>, nicht nach der Datenquelle. Deshalb liegt der SOG-Verlauf bei den Manövern — dort tippst du ein Manöver an, und es wird im Verlauf hervorgehoben. Die Zonen liegen beim Start, weil man sie aufmacht, wenn man wissen will, ob man vor dem Schuss sauber war. Und die Bahnänderung liegt bei der Wertung: Sie schreibt dasselbe Feld wie der Renn-Ausgang — getrennt geführt entstünden Widersprüche.</p>
 
 <h4>Ebene 1: der Überblick</h4>
-<p><b>Rennkarte</b> <span class="tier plus">Plus</span> — drei Sätze ganz oben: was der Start gekostet hat, der Schenkel mit dem größten Mehrweg, beste und schlechteste Wende (mit <span class="tier pro">Pro</span> stattdessen die Kreuzleistung). Der eine Blick; wer gräbt, öffnet ein Kapitel. Ist eine Platzierung eingetragen, steht in der Karte „3. von 14“ und daneben ein <b>Ändern</b>-Knopf; ohne Feldgröße „3. Platz“, ohne Eintrag die Aufforderung, sie einzutragen. Beide Wege führen ins Kapitel Wertung.</p>
+<p><b>Rennkarte</b> <span class="tier plus">Plus</span> — drei Sätze ganz oben: was der Start gekostet hat, der Schenkel mit dem größten Mehrweg, beste und schlechteste Wende (mit <span class="tier pro">Pro</span> stattdessen die Kreuzleistung). Der eine Blick — und zugleich der Weg nach unten: Jeder Satz ist antippbar und öffnet das Kapitel, das ihn erklärt <i>(ab dem nächsten Build)</i> (Start-Satz → <b>Start</b>, Mehrweg-Satz → <b>Bahn</b>, dritter Satz → <b>Manöver</b> bzw. <b>Speed &amp; Trimm</b>). Ist eine Platzierung eingetragen, steht in der Karte „3. von 14“ und daneben ein <b>Ändern</b>-Knopf; ohne Feldgröße „3. Platz“, ohne Eintrag die Aufforderung, sie einzutragen. Beide Wege führen ins Kapitel Wertung.</p>
 
 <p><b>Kernzahlen</b> — kostenlos aus dem iPhone-GPS: Renndauer, Distanz im Rennen, Ø und Max SOG, Fahrt beim Startschuss (mit Logge am NMEA-Netz die Fahrt durchs Wasser, sonst über Grund — Polaren gelten durchs Wasser, deshalb hat die Logge Vorrang). Gerechnet wird nur über die Rennphase von der Querung der Startlinie bis zum Ziel — Vorstart und Rückweg in den Hafen würden Distanz, Ø SOG und Bug-Bilanz verfälschen. Daneben steht die offizielle Zeit ab Startschuss, die Differenz als Startverlust.</p>
 
@@ -1971,6 +1986,7 @@ ohnehin kein Unterschied mehr, und in der Sonne waschen sie aus.</p>
 <h4>Kapitel Manöver <span class="tier plus">Plus</span></h4>
 <p><b>Wenden und Halsen</b> — jede einzeln mit Kosten in Sekunden, Speed-Delle in Prozent und Erholzeit bis 95 % der Fahrt vor dem Manöver. Ob ein Bugwechsel Wende oder Halse war, entscheidet der Windwinkel unmittelbar davor und danach: Bei der Wende geht der Bug durch den Wind, bei der Halse das Heck. Manöver direkt an einer Tonne werden damit richtig zugeordnet, auch wenn der Schenkel davor oder danach im Mittel schon Raumschots war. Beste, mittlere und schlechteste Wende oben, Durchschnittskosten je Windband darunter (bei 20 kn ist eine 12-s-Wende normal, bei 8 kn nicht), dahinter die aufklappbare Liste aller Manöver mit Uhrzeit und Windband. Braucht die 5-s-Regatta-Aufzeichnung; Einzelwerte streuen in Böen und Welle, über viele Manöver sind sie belastbar. Mit <span class="tier pro">Pro</span> kommt der geschätzte Manöververlust in Metern dazu, gemessen gegen den VMG der Nachbarschläge über das ganze Fenster bis zur Erholung.</p>
 <p><b>Schläge</b> — die Liste schneidet einen Schlag nicht nur am Bugwechsel, sondern auch an jeder gerundeten Bahnmarke. Wer auf demselben Bug um die Tonne geht und danach einen ganz anderen Kurs fährt, bekam sonst Kreuz und Vorwind in einem Schlag gemittelt — und damit eine VMG, die es nie gab. Jede Zeile nennt Bug, Kursart, Dauer und Fahrt; mit <span class="tier pro">Pro</span> kommen VMG und Polar-Leistung je Schlag dazu — wie viel Höhe der Schlag wirklich gebracht hat und wie gut er gegen deine Polare lief. Ohne Pro steht in der Zeile die Fahrt über Grund.</p>
+<p><b>Bester und schlechtester Schlag</b> <span class="tier pro">Pro</span> <i>(ab dem nächsten Build)</i> — in der Liste markiert, damit man nicht zwölf VMG-Zahlen vergleichen muss. Getrennt nach <b>Kreuz</b> und <b>Vorwind</b>: 5,5 kn VMG vor dem Wind sind nicht „besser“ als 3,6 kn auf der Kreuz, sie sind etwas anderes. Die Marke erscheint erst ab drei Schlägen derselben Kursart — bei zweien wäre einer zwangsläufig der beste und der andere der schlechteste. Raumschots-Schläge bleiben unmarkiert: Dort sagt die VMG zum Wind nichts über die Güte des Schlags.</p>
 <p><b>SOG-Verlauf</b> — die Fahrt über Grund über das ganze Rennen als Kurve. Er liegt in diesem Kapitel und nicht bei Speed &amp; Trimm, weil man ihn zusammen mit den Manövern liest: Ein Tipp auf ein Manöver öffnet das <b>Kartenbild</b> (siehe unten) und hebt das Manöver zugleich im SOG-Verlauf rot hervor — die Liste bleibt dabei stehen, statt unter dem Finger wegzuscrollen, und die Markierung steht nach dem Schließen des Kartenbilds noch da.</p>
 
 <figure class="shot">
@@ -2405,7 +2421,7 @@ der Zeile noch einmal: Uhrzeit, Dauer, Strecke, Fahrt.</p>
 <p>So verbindest du deine Bordelektronik:</p>
 <ol class="steps">
 <li>iPhone ins WLAN des Gateways bringen (das Boots-WLAN).</li>
-<li><span class="path">Werkzeuge → Einstellungen → NMEA-Verbindung</span> öffnen. Verbinden und Konfiguration stehen oben; Diagnose-Log, PGN-Zähler, Dämpfung und Datenaufzeichnung liegen auf der Unterseite „Erweitert", der Demo-Schalter ganz am Ende. Zur Dämpfung: Sie glättet nur die <b>Anzeige</b>, damit die Kacheln nicht springen — in den aufgezeichneten Track gehen seit Build 13 immer die Messwerte. Wer 10 s Dämpfung braucht, um überhaupt etwas ablesen zu können, verändert damit nicht mehr seine Auswertungsdaten.</li>
+<li><span class="path">Werkzeuge → Einstellungen → NMEA-Verbindung</span> öffnen. Verbinden und Konfiguration stehen oben; Diagnose-Log, PGN-Zähler, Dämpfung und Datenaufzeichnung liegen auf der Unterseite „Erweitert", der Demo-Schalter ganz am Ende. Zur Dämpfung: Sie glättet nur die <b>Anzeige</b>, damit die Kacheln nicht springen — in den aufgezeichneten Track gehen seit Build 13 immer die Messwerte. Wer 10 s Dämpfung braucht, um überhaupt etwas ablesen zu können, verändert damit nicht mehr seine Auswertungsdaten. Zur Datenaufzeichnung: Fällt der freie Speicher unter 500 MB, stoppt die App sie von selbst – mit Mitteilung und einem Hinweis am Schalter, warum er aus ist; die Törn-Aufzeichnung läuft weiter. Bei einer Regatta endet die Datenaufzeichnung mit der Wertung, nicht erst am Steg.</li>
 <li>Host und Port des Gateways eintragen — bei UDP den Port, auf dem das Gateway sendet.</li>
 <li>Verbinden. Die Seite zeigt das erkannte Datenformat; in der Live-Daten-Liste und unter „Erkannte Sensoren" siehst du, was ankommt.</li>
 </ol>
@@ -2502,7 +2518,7 @@ der Zeile noch einmal: Uhrzeit, Dauer, Strecke, Fahrt.</p>
 
 <p>Sicherheit ist in Etmar immer frei: Keine der drei Funktionen fragt nach einer Stufe. Alle drei arbeiten mit dem iPhone-GPS, die SOS-Tafel zusätzlich mit Bootsname, Rufzeichen und MMSI aus den Bootsdaten — ein Mobilfunknetz braucht keine davon. MOB und Ankeralarm überleben außerdem einen App-Neustart — was du ausgelöst hast, bleibt aktiv, bis du es selbst beendest.</p>
 
-<div class="box warn"><b class="lbl">Wichtig</b>Keine der drei Funktionen alarmiert jemanden außerhalb deines Geräts: kein DSC, kein Funkspruch, keine Meldung an Dritte. Du kannst MOB, Ankeralarm und die SOS-Tafel deshalb gefahrlos am Steg durchspielen. Für den Ton des Ankeralarms muss das iPhone hörbar sein — Stummschalter aus, Lautstärke hoch. Nutzt du nachts den Schlaf-Fokus, erlaube Etmar dort Mitteilungen, sonst bleibt der Alarm in der Koje stumm.</div>
+<div class="box warn"><b class="lbl">Wichtig</b>Keine der drei Funktionen alarmiert jemanden außerhalb deines Geräts: kein DSC, kein Funkspruch, keine Meldung an Dritte. Du kannst MOB, Ankeralarm und die SOS-Tafel deshalb gefahrlos am Steg durchspielen. Der Ton des Ankeralarms durchbricht Stummschalter, Schlaf-Fokus und Lautstärkeregler — vorausgesetzt, du hast beim Ankerwerfen die Nachfrage nach <b>Kritischen Hinweisen</b> erlaubt. Hast du abgelehnt, bleibt es bei Vibration; nachholen kannst du es unter <span class="path">Einstellungen → Mitteilungen → Etmar</span>.</div>
 
 <h4>MOB — Mann über Bord</h4>
 <p>Der rote MOB-Knopf sitzt an drei Stellen: auf der <span class="path">Karte</span> unten links, in der Aktionsleiste im <span class="path">Logbuch</span> und im Instrumenten-Dashboard unter <span class="path">Werkzeuge → Instrumente</span>. Du löst ihn nicht mit einem Tipp aus, sondern hältst ihn <b>0,6 Sekunden gedrückt</b> — ein Ring füllt sich dabei. Das Halten schützt vor Fehlalarmen, wenn das Boot in die Welle schlägt oder das Handy in der Hosentasche steckt.</p>
@@ -2587,13 +2603,17 @@ der Zeile noch einmal: Uhrzeit, Dauer, Strecke, Fahrt.</p>
 </article>
 
 <article id="c14">
-<h3><span class="num">C14</span>Winterlager</h3>
-<p class="sub">Das Winterlager organisiert die Saisonpause als Projektliste — Checklisten, Material, Fotos und Arbeits-Wochenenden, damit im Frühjahr nichts vergessen ist.</p>
+<h3><span class="num">C14</span>Werkstatt</h3>
+<p class="sub">Die Werkstatt (bis Build 19 „Winterlager“) organisiert Arbeiten am Boot als Projektliste — Einwinterung, Refit, Reparatur — mit Checklisten, Material, Fotos, Terminen und der Wochenübersicht, damit im Frühjahr nichts vergessen ist.</p>
 
 <h4>Projekte und Vorlagen</h4>
-<p>Du findest das Modul unter <span class="path">Werkzeuge → Winterlager</span>. Jedes Projekt ist eine Checkliste mit Punkten, Fotos und Notizen — zum Beispiel ein Refit oder das Einwintern. Was jedes Jahr gleich abläuft, legst du einmal als Vorlage an (etwa „Einwintern Motor" oder „Unterwasserschiff") und verwendest sie in jeder Saison wieder, statt die Liste neu zu tippen.</p>
-<p>Die Wochenend-Planung verteilt die offenen Punkte auf konkrete Arbeits-Wochenenden — so ist im Frühjahr nichts vergessen.</p>
-<p>Im Demo-Modus liegt das Projekt „Refit Winter 2026/27" mit drei Kategorien, Unteraufgaben und Material bereit — damit kannst du alles Folgende direkt ausprobieren.</p>
+<p>Du findest das Modul unter <span class="path">Werkzeuge → Werkstatt</span>. Jedes Projekt ist eine Checkliste mit Punkten, Fotos und Notizen — zum Beispiel ein Refit oder das Einwintern. Was jedes Jahr gleich abläuft, legst du einmal als Vorlage an (etwa „Einwintern Motor" oder „Unterwasserschiff") und verwendest sie in jeder Saison wieder, statt die Liste neu zu tippen.</p>
+<p>Jede Aufgabe kann ein <b>Fälligkeitsdatum</b> haben („Bearbeiten“ in der Aufgabe). Der Baum zeigt es klein rechts; ab dem Tag danach steht die Aufgabe orange als überfällig — Rot bleibt dem MOB vorbehalten. <b>Termine</b> wie Kran, Mastkran oder Werft legst du oben im Projekt an; sie stehen auch im Kalender (in der Werkstatt-Farbe) und wandern per Wisch nach rechts in den iOS-Kalender. Am Abend davor erinnert die App an die offenen Aufgaben.</p>
+<p><b>Diese Woche</b> — oben in der Werkstatt-Liste und im Projekt — sammelt über alle offenen Projekte des Boots, was bis Sonntag fällig ist, dazu alles, was du von Hand über „Für dieses Wochenende“ markiert hast: gruppiert nach Projekt, unter jeder Aufgabe ihr Material (der Wagen heißt noch kaufen, der Haken heißt eingepackt). <b>Woche abschließen</b> nimmt die Handmarkierung von allen erledigten Aufgaben; Aufgaben mit Datum verschwinden mit dem Sonntag von selbst. Erinnerungen, höchstens drei je Woche: Freitag um 17 Uhr, was am Wochenende ansteht und was noch zu kaufen ist; am Abend vor einem Termin, was noch offen ist; einmal am Morgen nach einer verpassten Fälligkeit — abschaltbar unter Einstellungen → Mitteilungen. Fotos gibt es am Projekt (Kranen, Winterplane) und an jeder Aufgabe (vorher/nachher).</p>
+<p><b>Beträge und Einkaufszettel.</b> Ein Betrag am Material ist optional (geplant); <b>Gekauft</b> fragt nach dem tatsächlichen Betrag, vorbelegt mit dem geplanten — ein Tap, wenn er stimmt. Das Projekt zeigt geplant / ausgegeben in einer Zeile, dazu ein Budget aus „Bearbeiten“; die Statistik des Boots nennt, was der Winter gekostet hat. Der <b>Einkaufszettel</b> oben in der Werkstatt-Liste sammelt über alle offenen Projekte, was noch zu kaufen ist — gruppiert nach Projekt, mit Beträgen; Antippen heißt gekauft, Teilen schickt ihn als Text an den, der einkauft. Keine Umrechnung, keine Steuer — der Bon ist die Wahrheit, die App die Übersicht.</p>
+<p><b>Wartung, Abschluss und Historie.</b> Eine Aufgabe kann ein Ausrüstungsteil betreffen („Bearbeiten“ → Betrifft). Hakst du sie ab und das Teil hat ein Wartungsintervall, fragt die App einmal, ob die Wartung auf heute gesetzt wird — rückgängig über den Toast. Beim Anlegen aus Ein- oder Auswinterung schlägt die Werkstatt fällige und bald fällige Wartungen als Aufgaben vor; das ist die einzige Stelle, an der sie von selbst etwas vorschlägt. <b>Projekt abschließen</b> unter Planung nimmt ein Projekt aus „Diese Woche“ und den Erinnerungen; es wandert unter „Abgeschlossen · Winter 2025/26“ und bleibt lesbar — Fotos und erledigte Aufgaben sind die Historie. Projekte aus der Zeit davor, deren Aufgaben alle erledigt sind, fragt die App beim ersten Öffnen einmal, ob sie abgeschlossen werden sollen.</p>
+<p><b>Wer macht's, und die Arbeitsliste für die Werft.</b> In „Bearbeiten“ wählst du je Aufgabe Selbst, Werft oder Helfer, dazu einen Namen („Werft Müller“, „Jens“). Selbst ist der Normalfall und steht nirgends dran; Werft und Helfer zeigt der Baum klein rechts, und das Segment über der Liste hat eine vierte Sicht „Werft“ mit nur den Werftaufgaben. Werftaufgaben haben keinen Einkauf/Mitbringen-Fluss — ihr Material besorgt die Werft, es steht in der Arbeitsliste statt im Einkaufszettel. <b>Arbeitsliste teilen</b> unter Planung macht aus den Aufgaben einer Zuständigkeit ein PDF: je Aufgabe ein Kästchen, Fälligkeit, Notiz, Unteraufgaben, Material und die Fotos, dazu Bootsname und Datum — über das Teilen-Blatt, wohin du willst. Für jede Stufe, denn auf dem Weg nach außen gibt es kein Gate.</p>
+<p>Im Demo-Modus liegt das Projekt „Refit Winter 2026/27" mit vier Kategorien, Unteraufgaben, Material, einer Werftaufgabe mit Foto und einer Helferaufgabe bereit — damit kannst du alles Folgende direkt ausprobieren.</p>
 
 <h4>Kategorien: Fortschritt und Zuklappen</h4>
 <p>Ein Refit hat schnell vierzig Punkte. Als eine lange Liste wäre das eine Wand aus Kästchen, deshalb ist die Checkliste in Kategorien gegliedert — „Vorbereitung", „Rumpf", „Rigg", „Motor". Jede Kategorie hat ein eigenes <b>Punkt hinzufügen</b> und zeigt in der Kopfzeile ihren Fortschritt, etwa „5/5".</p>
@@ -2623,21 +2643,63 @@ der Zeile noch einmal: Uhrzeit, Dauer, Strecke, Fahrt.</p>
 
 <figure class="shot">
   <div class="frame">
-    <img src="bilder/winterlager.jpg" alt="Winterlager-Projekt mit Kategorien, Fortschritt und Einkaufswagen-Zähler" loading="lazy" width="760" height="1652">
-    <span class="hl" style="left:7%;top:35%;width:86%;height:5%"><b>1</b></span>
-    <span class="hl" style="left:4%;top:42.5%;width:92%;height:5.5%"><b>2</b></span>
-    <span class="hl" style="left:14%;top:57%;width:52%;height:5.5%"><b>3</b></span>
-    <span class="hl right" style="left:73%;top:58%;width:15%;height:4%"><b>4</b></span>
-    <span class="hl" style="left:7%;top:86%;width:45%;height:5%"><b>5</b></span>
+    <img src="bilder/werkstatt.jpg" alt="Werkstatt-Projekt mit Kategorien, Fortschritt, Werft-Symbol und Einkaufswagen-Zähler" loading="lazy" width="760" height="1651">
+    <span class="hl" style="left:4%;top:15.5%;width:88%;height:4%"><b>1</b></span>
+    <span class="hl" style="left:6%;top:22.5%;width:86%;height:4.5%"><b>2</b></span>
+    <span class="hl" style="left:22%;top:36%;width:44%;height:5%"><b>3</b></span>
+    <span class="hl right" style="left:74%;top:36.5%;width:14%;height:4%"><b>4</b></span>
+    <span class="hl" style="left:45%;top:64.5%;width:8%;height:4%"><b>5</b></span>
+    <span class="hl" style="left:6%;top:84%;width:50%;height:4.5%"><b>6</b></span>
   </div>
   <div>
-    <figcaption>Projekt „Refit Winter 2026/27": Kategorien mit Fortschritt, „Vorbereitung" zugeklappt, darunter die offene Kategorie „Rumpf" mit Aufgabe und Unterpunkten.</figcaption>
+    <figcaption>Projekt „Refit Winter 2026/27": Kategorien mit Fortschritt, „Vorbereitung" zugeklappt, darunter die offene Kategorie „Rumpf" mit Aufgaben, Unteraufgaben und einer Werftaufgabe.</figcaption>
     <ol class="marks">
-      <li><b>Segment Aufgaben / Einkauf / Mitbringen</b> — schaltet zwischen der Checkliste, dem Einkaufszettel und der Mitbringliste um.</li>
-      <li><b>Zugeklappte Kategorie</b> — „Vorbereitung" ist eine Zeile; die Kopfzeile zeigt den Fortschritt „5/5". Tap öffnet sie wieder.</li>
-      <li><b>Aufgabe</b> — Tap auf den Titel öffnet die Aufgabe mit Material, Unteraufgaben und Fotos; das Kästchen links hakt sie ab.</li>
+      <li><b>Segment Aufgaben / Einkauf / Mitbringen / Werft</b> — schaltet zwischen der Checkliste, dem Einkaufszettel, der Mitbringliste und den Werftaufgaben um.</li>
+      <li><b>Zugeklappte Kategorie</b> — „Vorbereitung" ist eine Zeile; die Kopfzeile zeigt den Fortschritt „4/4". Tap öffnet sie wieder.</li>
+      <li><b>Aufgabe</b> — Tap auf den Titel öffnet die Aufgabe mit Material, Unteraufgaben und Fotos; das Kästchen links hakt sie ab. Der Kalender rechts ist die Fälligkeit.</li>
       <li><b>Einkaufswagen-Zähler</b> — so viele Material-Einträge dieser Aufgabe sind noch zu kaufen.</li>
-      <li><b>Punkt hinzufügen</b> — legt einen neuen Punkt direkt in dieser Kategorie an.</li>
+      <li><b>Werft-Symbol</b> — diese Aufgabe macht die Werft („Bearbeiten" → Wer macht's). Ihr Material steht nicht im Einkaufszettel, sondern in der Arbeitsliste.</li>
+      <li><b>Aufgabe hinzufügen</b> — legt eine neue Aufgabe direkt in dieser Kategorie an.</li>
+    </ol>
+  </div>
+</figure>
+
+<figure class="shot">
+  <div class="frame">
+    <img src="bilder/werkstatt-projekt.jpg" alt="Projektkopf mit Terminen, Notizen, Zeitraum und Kosten" loading="lazy" width="760" height="1651">
+    <span class="hl" style="left:4.5%;top:20%;width:91%;height:14.5%"><b>1</b></span>
+    <span class="hl" style="left:4.5%;top:35%;width:55%;height:4.5%"><b>2</b></span>
+    <span class="hl" style="left:4.5%;top:81%;width:91%;height:5%"><b>3</b></span>
+    <span class="hl" style="left:4.5%;top:86.5%;width:91%;height:4.5%"><b>4</b></span>
+  </div>
+  <div>
+    <figcaption>Der Kopf desselben Projekts: Termine zuerst, dann Notizen, Zeitraum und Kosten.</figcaption>
+    <ol class="marks">
+      <li><b>Termine</b> — Mastkran und Kranen mit Tag und Uhrzeit; sie stehen auch im Kalender in der Werkstatt-Farbe, ein Wisch nach rechts überträgt sie in den iOS-Kalender. Am Abend davor erinnert die App an die offenen Aufgaben.</li>
+      <li><b>Termin hinzufügen</b> — Titel, Datum, Uhrzeit, optional eine Notiz.</li>
+      <li><b>Geplant / ausgegeben</b> — die Summe der Beträge am Material: geplant links, tatsächlich gekauft rechts.</li>
+      <li><b>Budget</b> — aus „Bearbeiten"; daneben, was noch frei ist.</li>
+    </ol>
+  </div>
+</figure>
+
+<figure class="shot">
+  <div class="frame">
+    <img src="bilder/werkstatt-werft.jpg" alt="Werft-Sicht mit einer Werftaufgabe und dem Abschnitt Planung" loading="lazy" width="760" height="1651">
+    <span class="hl" style="left:72%;top:15.5%;width:21%;height:4%"><b>1</b></span>
+    <span class="hl" style="left:6%;top:27%;width:88%;height:19%"><b>2</b></span>
+    <span class="hl" style="left:6%;top:62%;width:60%;height:4.5%"><b>3</b></span>
+    <span class="hl" style="left:6%;top:73%;width:60%;height:4.5%"><b>4</b></span>
+    <span class="hl" style="left:6%;top:78.5%;width:60%;height:4.5%"><b>5</b></span>
+  </div>
+  <div>
+    <figcaption>Die Werft-Sicht: nur die Werftaufgaben mit ihren Unteraufgaben — und darunter Planung mit „Diese Woche", „Arbeitsliste teilen" und „Projekt abschließen".</figcaption>
+    <ol class="marks">
+      <li><b>Werft</b> — die vierte Sicht im Segment zeigt nur, was die Werft macht.</li>
+      <li><b>Werftaufgabe</b> — mit Foto, Fälligkeit und Unteraufgaben, abhaken und öffnen wie im Baum. Was hier steht, bekommt die Werft als Arbeitsliste.</li>
+      <li><b>Diese Woche</b> — sammelt über alle offenen Projekte des Boots, was bis Sonntag fällig oder von Hand markiert ist.</li>
+      <li><b>Arbeitsliste teilen</b> — je Zuständigkeit oder alle Aufgaben als PDF über das Teilen-Blatt: Kästchen, Fälligkeit, Notiz, Unteraufgaben, Material, Fotos, Bootsname.</li>
+      <li><b>Projekt abschließen</b> — nimmt das Projekt aus „Diese Woche" und den Erinnerungen; es bleibt unter seiner Saison lesbar, „Wieder öffnen" gibt es genauso.</li>
     </ol>
   </div>
 </figure>
@@ -2933,7 +2995,7 @@ der Zeile noch einmal: Uhrzeit, Dauer, Strecke, Fahrt.</p>
 <li>MOB: den roten Knopf 0,6 Sekunden gedrückt halten (der Ring füllt sich) — einmal nass, einmal mit Handschuh, dazu ein paar kurze Tipps darauf. <b>Erwartung:</b> Kurze Tipps lösen nicht aus. Beim Halten: rotes Banner mit Peilung, Distanz und Sekundenzähler, Rettungsring und rote Linie auf der Karte, bei offenem Törn ein Eintrag im Logbuch; „Beenden“ fragt nach. Niemand außerhalb des Geräts wird alarmiert.</li>
 <li>Ankerwache über Nacht: Anker-Knopf (Radius 50 m, Faustregel Kette + Bootslänge + 10 m), Handy in die Koje. <b>Erwartung:</b> Banner „Anker liegt · … m / 50 m · seit …“, Kreis und Anker-Pin auf der Karte, blaue Statusanzeige des GPS-Wächters. Am Morgen steht der Zustand noch — auch nach einem App-Neustart.</li>
 </ol>
-<div class="box warn"><b class="lbl">Wichtig</b>Der Ton des Ankeralarms setzt derzeit ein iPhone voraus, das nicht stummgeschaltet ist: Durch den Schlaf-Fokus kommt die Meldung durch, bei gestelltem Stummschalter bleibt es bei Vibration. Verlass dich nachts vor Anker noch nicht blind darauf.</div>
+<div class="box warn"><b class="lbl">Wichtig</b>Der Ankeralarm klingelt jetzt auch bei gestelltem Stummschalter und aktivem Schlaf-Fokus. Das hängt an einer Erlaubnis, die die App beim Ankerwerfen einmal erfragt (<b>Kritische Hinweise</b>) — ohne sie bleibt es bei Vibration. Der Ankeralarm-Screen sagt dir, was gerade gilt. Probier ihn einmal im Hafen aus, bevor du dich nachts darauf verlässt.</div>
 <p><b>Worauf achten:</b> Welcher Wert war nachts oder auf nassem Display nicht lesbar? Wo bist du unter dem Rotfilter hängengeblieben, weil ein Element verschwand? Welchen Knopf hast du mit nassem Daumen zweimal gebraucht? Hat ein Wischen versehentlich etwas ausgelöst?</p>
 <p><b>Was melden:</b> Jeden Knopf, der nicht traf oder falsch auslöste, mit Screen und Situation; jede Zahl, die zu klein oder zu kontrastarm war — am besten als Screenshot direkt aus TestFlight; Stellen, an denen der Rotfilter fehlt oder zu dunkel wird; ob die Ankerwache die Nacht überstanden hat.</p>
 <a class="back" href="#top">↑ Zum Inhaltsverzeichnis</a>
@@ -2953,7 +3015,7 @@ der Zeile noch einmal: Uhrzeit, Dauer, Strecke, Fahrt.</p>
 
 <h4>Mitteilungen und Alarme</h4>
 <ul>
-<li><b>Ankeralarm: Ton nur ohne Stummschalter.</b> Der Ankeralarm ist als zeitkritische Mitteilung angelegt und kommt durch den Schlaf-Fokus. Der Ton setzt aber ein iPhone voraus, das <b>nicht</b> stummgeschaltet ist — bei gestelltem Stummschalter bleibt es bei der Vibration. Wer sichergehen will, erlaubt Etmar zusätzlich ausdrücklich in den iOS-Einstellungen unter <span class="path">Fokus → Schlafen → Apps → Etmar</span>.</li>
+<li><b>Ankeralarm: hängt an einer Erlaubnis.</b> Ankeralarm und Tiefenalarm laufen als <b>kritische Hinweise</b> — sie durchbrechen Stummschalter, Fokus und Lautstärkeregler. Die App fragt beim Ankerwerfen einmal danach; wer ablehnt, bekommt nur Vibration. Nachholen unter <span class="path">Einstellungen → Mitteilungen → Etmar → Kritische Hinweise</span>. Alle anderen Meldungen (Regatta-Signale, AIS, Aufzeichnung) bleiben bewusst normale zeitkritische Mitteilungen — deinen Stummschalter übergeht Etmar nur da, wo das Boot in Gefahr ist.</li>
 <li><b>Keine Wachfunktion.</b> Einen wiederkehrenden Weckalarm („alle 20 Minuten") gibt es nicht. Für Einhand-Offshore ist das das zentrale Sicherheitswerkzeug; Ankeralarm (vor Anker) und AIS <span class="tier pro">Pro</span> (Ziele in der Nähe) decken den Fall nicht ab.</li>
 </ul>
 
@@ -3120,7 +3182,7 @@ der Zeile noch einmal: Uhrzeit, Dauer, Strecke, Fahrt.</p>
 </div>
 
 <footer>
-<p>Etmar Beta-Handbuch · Stand 09.09.2026 · Screenshots aus dem Demo-Modus, teils vom Stand vor dem aktuellen Build.
+<p>Etmar Beta-Handbuch · Stand 14.09.2026 · Screenshots aus dem Demo-Modus, teils vom Stand vor dem aktuellen Build.
 Kontakt: <a href="mailto:support@etmar.app">support@etmar.app</a> ·
 <a href="index.html">Startseite</a> · <a href="datenschutz.html">Datenschutz</a> · <a href="impressum.html">Impressum</a></p>
 <p>Etmar ersetzt keine Seekarte und keinen Kartenplotter. Seezeichen und Tiefen stammen aus OpenStreetMap und EMODnet — keine amtlichen Quellen.</p>
