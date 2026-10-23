@@ -150,7 +150,7 @@
   <p class="lede">Alles, was du für den Testflug brauchst: TestFlight einrichten, die App in zehn Minuten
   verstehen, jede Funktion nachschlagen — und wissen, worauf ich diesmal besonders schaue.
   Das Inhaltsverzeichnis links führt zu jedem Artikel.</p>
-  <p class="stand">Stand 23.10.2026 · Build 1.0 (42) · Fragen und Rückmeldungen: <a href="mailto:support@etmar.app">support@etmar.app</a></p>
+  <p class="stand">Stand 24.10.2026 · Build 1.0 (42) · Fragen und Rückmeldungen: <a href="mailto:support@etmar.app">support@etmar.app</a></p>
 </header>
 
 <div class="cols">
@@ -583,7 +583,7 @@ Stufe &amp; Demo</span>, Abschnitt „TestFlight-Beta“ (<a href="#a4">A4</a>).
 <li><b>Stufen-Vorschau statt Kauf</b> (<a href="#a4">A4</a>, <a href="#b3">B3</a>): Eine gesperrte Funktion öffnet eine Vorschau der Stufe ohne Preise und Kaufknopf; unten „Im Demo-Modus ausprobieren“. Unter <span class="path">Einstellungen → Stufe &amp; Demo</span> steht statt der Kaufknöpfe „Plus und Pro folgen in einem späteren Update“. <i>Verstehst du auf einen Blick, dass es nichts zu kaufen gibt, aber alles auszuprobieren? Schließt sich das Blatt, bevor die Demo startet?</i></li>
 <li><b>Seezeichen und Tiefen nur aus gespeicherten Revieren</b> (<a href="#c3">C3</a>): Das Nachladen von Seezeichen, Häfen und Tiefen aus Build 33 ist vorerst abgeschaltet, bis es zuverlässig läuft; „Karte online nachladen“ gilt nur noch für die Basiskarte. Was die Karte in Build 33 selbst geholt hat, bleibt und steht weiter unter „Automatisch geladen“. <i>Fahr mit Netz in ein Revier, das du nie gespeichert hast: Steht die Basiskarte, sagt der Chip „Seezeichen &amp; Tiefen hier nicht geladen“, und führt ein Tipp im Hafen in die Offline-Karten? Kommen nach „Nur Seezeichen &amp; Tiefen laden“ Tonnen und Tiefen?</i></li>
 <li><b>Teilen und Dateiauswahl im Nachtmodus</b> (<a href="#c16">C16</a>): Solange das Teilen-Blatt oder die Dateiauswahl offen ist, ruht der Rotfilter; bis Build 33 reagierten beide nachts nicht. <i>Teile nachts den Einkaufszettel, ein Inventar-PDF oder die Sicherung und spiel eine Datei ein: Reagiert jedes Blatt, und ist das Rot danach sofort wieder da?</i></li>
-<li><b>Grenze der geladenen Tiefen und Seezeichen</b> (<a href="#c3">C3</a>): Eine dünne gestrichelte blaugraue Linie <i>(ab Build 43; vorher orange)</i> mit der Aufschrift „Ende Tiefen und Seezeichen“ umrandet, wo beide auf dem Gerät liegen. <i>Siehst du die Linie am Rand deines gespeicherten Reviers, bevor die Tonnen aufhören — tags in der Sonne und nachts? Bekommen zwei aneinanderstoßende Reviere einen gemeinsamen Rand?</i></li>
+<li><b>Grenze der geladenen Tiefen und Seezeichen</b> (<a href="#c3">C3</a>): Eine dünne gestrichelte blaugraue Linie <i>(ab Build 43; vorher orange)</i> mit der Aufschrift „Ende Tiefen und Seezeichen“ umrandet, wo beide auf dem Gerät liegen. <i>(ab Build 45)</i> Die Linie ist fein gestrichelt und blass, die Aufschrift steht erst hineingezoomt und nur an langen Kanten. <i>Findest du die Linie am Rand deines gespeicherten Reviers, wenn du sie suchst — tags in der Sonne und nachts —, ohne dass sie Tonnen, Wind-Ebene und Track übertönt? Bekommen zwei aneinanderstoßende Reviere einen gemeinsamen Rand?</i></li>
 <li><b>Ablegen, Anker und MOB bei großer Schrift</b> (<a href="#c1">C1</a>, <a href="#b2">B2</a>): Ohne offenen Törn bleiben alle drei ganz im Bild, bei den größten Schriften stehen Anker und MOB untereinander. Im Anker-Banner wächst „Anker auf“ nicht weiter, damit Zustand und Distanz Platz behalten, und die Kreismenüs von Logbuch-Knopf und langem Druck bleiben ganz auf dem Schirm. <i>Stell in den Bedienungshilfen die größte Schrift ein: Triffst du Ablegen, Anker und MOB mit dem Daumen, und liest du jeden Eintrag eines Kreismenüs, auch am Bildschirmrand?</i> Mit laufendem Törn brechen auch die Beschriftungen der Quick-Buttons nicht mehr mitten im Wort. <i>Leg mit der größten Schrift ab und tipp sofort Segel oder Motor: Lässt der Rückgängig-Balken die Knöpfe frei, und liest du jede Beschriftung ganz, auch Eintrag und Funk? Musst du dafür rollen, schreib dazu, ob über den Knöpfen der Hafen steht.</i></li>
 <li><b>Kamera im Boot-Formular</b> (<a href="#c10">C10</a>): „Kamera“ schließt sich nicht mehr nach einer Sekunde von selbst und nimmt das Formular samt ungesicherter Eingaben nicht mehr mit; überall, wo du Fotos anhängst, bleiben Kamera und Vollbild offen, bis du sie schließt. <i>Leg ein Boot an, tipp ein paar Daten ein und nimm ein Foto auf: Steht danach alles noch da?</i></li>
 <li><b>Keine Demo neben Anker und MOB</b> (<a href="#c13">C13</a>): Liegt ein echter Anker oder läuft ein MOB-Alarm, startet die Demo nicht — wie schon bei laufender Aufzeichnung sagt die App, was zuerst zu beenden ist. Anker und Alarm laufen dabei weiter. <i>Anker setzen, dann Demo starten: Kommt der Satz, und bleibt die Wache an?</i></li>
@@ -950,11 +950,11 @@ simulierter Kompass gegen einen simulierten Strom — Linie und Vektor laufen ei
   <div class="frame">
     <img src="bilder/karte-kursvektor.jpg" alt="Hauptkarte im Demo-Modus bei Zoom 12 mit Maßstab, COG-Vektor mit Querstrich und Heading-Linie" loading="lazy" width="760" height="1652">
     <span class="hl" style="left:2.5%;top:59.2%;width:15.8%;height:4.7%"><b>1</b></span>
-    <span class="hl right" style="left:47%;top:45%;width:7%;height:4%"><b>2</b></span>
+    <span class="hl right" style="left:71%;top:47%;width:7%;height:4%"><b>2</b></span>
     <span class="hl right" style="left:44%;top:47.5%;width:11%;height:4.5%"><b>3</b></span>
   </div>
   <div>
-    <figcaption>Demo-Modus, Zoom 12, Kursvektor sechs Minuten: Das Boot läuft über Grund etwa nach Nordwesten, der simulierte Strom versetzt es einige Grad gegen den Steuerkurs; die dünne Linie reicht über den Querstrich hinaus.</figcaption>
+    <figcaption>Demo-Modus, Zoom 12, Kursvektor sechs Minuten: Das Boot läuft über Grund etwa nach Osten, der simulierte Strom versetzt es einige Grad gegen den Steuerkurs; die dünne Linie reicht über den Querstrich hinaus.</figcaption>
     <ol class="marks">
       <li><b>Maßstab</b> — hier 0,2 sm; die Länge des Balkens zwischen den Endstrichen ist die Strecke.</li>
       <li><b>Querstrich</b> am Ende des COG-Vektors: Dort bist du nach sechs Minuten bei gleichem Kurs und gleicher Fahrt.</li>
@@ -1623,16 +1623,16 @@ ohnehin kein Unterschied mehr, und in der Sonne waschen sie aus.</p>
 
 <figure class="shot">
   <div class="frame">
-    <img src="bilder/ebenen.jpg" alt="Leuchtturm-Menü der Hauptkarte mit Ebenen-Häkchen" loading="lazy" width="760" height="1652">
-    <span class="hl" style="left:4%;top:14.5%;width:60%;height:9%"><b>1</b></span>
-    <span class="hl" style="left:4%;top:26%;width:60%;height:24%"><b>2</b></span>
-    <span class="hl" style="left:4%;top:53%;width:60%;height:16.5%"><b>3</b></span>
+    <img src="bilder/ebenen.jpg" alt="Leuchtturm-Menü der Hauptkarte mit Untermenü Wind und Ebenen-Häkchen" loading="lazy" width="760" height="1652">
+    <span class="hl" style="left:4%;top:7.5%;width:60%;height:10%"><b>1</b></span>
+    <span class="hl" style="left:4%;top:19%;width:60%;height:29.5%"><b>2</b></span>
+    <span class="hl" style="left:4%;top:51%;width:60%;height:17%"><b>3</b></span>
   </div>
   <div>
-    <figcaption>Leuchtturm-Menü auf der Hauptkarte, zehn Einträge: oben Regatten und Törns, darunter die Ebenen mit Häkchen, unten die Aktionen — der Nachtmodus direkt über dem Daumen.</figcaption>
+    <figcaption>Leuchtturm-Menü auf der Hauptkarte, elf Einträge: oben Regatten und Törns, darunter „Wind“ und die Ebenen mit Häkchen, unten die Aktionen — der Nachtmodus direkt über dem Daumen.</figcaption>
     <ol class="marks">
       <li><b>Regatten, Törns</b> — frühere Fahrten des Boots einzeln einblenden.</li>
-      <li><b>Ebenen</b> — AIS-Ziele, Hafenhandbuch, Tiefenlinien, OSM-Häfen und Seezeichen einzeln schaltbar; der Zustand bleibt gespeichert. Ohne Tiefgang am Boot steht unter „Tiefenlinien“ ein Hinweis, wo du ihn einträgst.</li>
+      <li><b>Wind und Ebenen</b> — „Wind“ öffnet die Schalter für Modell und Stationen; AIS-Ziele, Hafenhandbuch, Tiefenlinien, OSM-Häfen und Seezeichen einzeln schaltbar; der Zustand bleibt gespeichert. Ohne Tiefgang am Boot steht unter „Tiefenlinien“ ein Hinweis, wo du ihn einträgst.</li>
       <li><b>Tab-Leiste ausblenden, Anker setzen, Nachtmodus</b> — Anker nur, solange keiner liegt. Kartenstil, „Alle Ebenen ein/aus“ und das Offline-Speichern stehen unter <span class="path">Einstellungen → Karte</span>.</li>
     </ol>
   </div>
@@ -1653,10 +1653,10 @@ ohnehin kein Unterschied mehr, und in der Sonne waschen sie aus.</p>
 <figure class="shot">
   <div class="frame">
     <img src="bilder/seezeichen.jpg" alt="Seezeichen und Häfen im Fahrwasser von Warnemünde" loading="lazy" width="760" height="1652">
-    <span class="hl" style="left:80%;top:50.3%;width:5.8%;height:4%"><b>1</b></span>
-    <span class="hl" style="left:40%;top:30.2%;width:16%;height:16.8%"><b>2</b></span>
-    <span class="hl" style="left:64%;top:55.2%;width:6%;height:3.4%"><b>3</b></span>
-    <span class="hl" style="left:73%;top:74.8%;width:4%;height:2.4%"><b>4</b></span>
+    <span class="hl" style="left:53%;top:45.5%;width:10%;height:5%"><b>1</b></span>
+    <span class="hl" style="left:49%;top:51%;width:14%;height:6%"><b>2</b></span>
+    <span class="hl" style="left:34.5%;top:22.5%;width:7%;height:5.5%"><b>3</b></span>
+    <span class="hl" style="left:68%;top:36.5%;width:5%;height:3%"><b>4</b></span>
   </div>
   <div>
     <figcaption>Fahrwasser Warnemünde: Lateraltonnen, Kardinaltonnen mit Topzeichen, Leuchtfeuer und OSM-Häfen — alles aus einem Abruf, offline verfügbar. Im Seekanal und auf der Unterwarnow stehen keine Tiefenlinien — schmaler als rund 800 m; vor der Einfahrt und in den breiten Hafenbecken bleiben sie. Oben und unten die blaugraue Grenze des geladenen Reviers.</figcaption>
@@ -1680,18 +1680,16 @@ ohnehin kein Unterschied mehr, und in der Sonne waschen sie aus.</p>
 <figure class="shot">
   <div class="frame">
     <img src="bilder/tiefen.jpg" alt="Tiefenlinien vor Heiligendamm im Demo-Modus: 10-m-Linie ruhig, 5-m-Linie als Sicherheitskontur kräftig, 2-m-Linie am Strand gestrichelt mit ≈" loading="lazy" width="760" height="1652">
-    <span class="hl" style="left:6%;top:39.4%;width:10%;height:3.4%"><b>1</b></span>
-    <span class="hl" style="left:32%;top:49.8%;width:10%;height:3.4%"><b>2</b></span>
-    <span class="hl" style="left:82%;top:45.8%;width:12.5%;height:3.2%"><b>3</b></span>
-    <span class="hl" style="left:2%;top:53.4%;width:22%;height:2.4%"><b>4</b></span>
+    <span class="hl" style="left:29%;top:41.2%;width:12%;height:3.6%"><b>1</b></span>
+    <span class="hl" style="left:59%;top:53.6%;width:10%;height:3.6%"><b>2</b></span>
+    <span class="hl" style="left:2%;top:57.6%;width:52%;height:2.6%"><b>3</b></span>
   </div>
   <div>
     <figcaption>Tiefenlinien vor Heiligendamm im Demo-Modus, jede mit aufrechter Beschriftung und bewusst ohne Flächenfärbung. Das Demo-Boot hat 1,49 m Tiefgang, betont ist deshalb die 5-m-Linie; die 2-m-Linie am Strand ist gestrichelt und trägt „≈“.</figcaption>
     <ol class="marks">
       <li><b>10-m-Linie</b> — ruhig und durchgezogen; Konturen liegen nur auf Wasser, das Modell und Karte kennen.</li>
       <li><b>5-m-Linie</b> — die Sicherheitskontur zum Tiefgang des Boots, die kräftigste Linie.</li>
-      <li><b>„≈ 2 m“</b> — das Zeichen vor der Zahl heißt „ungefähr“.</li>
-      <li><b>Gestrichelt</b> — dicht am Ufer ist die Lage der Linie nur auf etwa eine Rasterzelle genau.</li>
+      <li><b>Gestrichelt</b> — dicht am Ufer ist die Lage der Linie nur auf etwa eine Rasterzelle genau; die Zahl trägt dann „≈“, das Zeichen heißt „ungefähr“.</li>
     </ol>
   </div>
 </figure>
@@ -1730,22 +1728,24 @@ ohnehin kein Unterschied mehr, und in der Sonne waschen sie aus.</p>
 <p>Die Paketliste zeigt Name (automatisch nach dem Ort in der Mitte), Fortschritt und Größe; Löschen per Wisch mit Bestätigung.</p>
 <p><b>Nur Seezeichen &amp; Tiefen laden.</b> Der zweite Knopf holt Tonnen, Häfen und Tiefenlinien des Ausschnitts, aber keine Kartenkacheln — wenige hundert KB statt hunderter MB. Die Basiskarte bleibt offline dann leer, Flachwasser und Seezeichen sind aber da. In allen Stufen enthalten: Flachwasser ist eine Sicherheitsinformation, das Free-Limit deckelt nur Kartenkacheln. Ohne Knopfdruck holt die Karte diese Daten vorerst nicht (nächster Absatz): Dieser Knopf und das Speichern eines Reviers sind die Wege zu Seezeichen und Tiefen.</p>
 <p><b>Online nachladen — vorerst aus.</b> Das Nachladen von Seezeichen, Häfen und Tiefen ist abgeschaltet, bis es zuverlässig läuft: Sie kommen nur aus Revieren, die du speicherst oder mit „Nur Seezeichen &amp; Tiefen laden“ holst. „Karte online nachladen“ gilt nur für die Basiskarte — deren Kacheln kommen für den Ausschnitt aus dem Netz. Was die Karte in Build 33 selbst geholt hat, bleibt gespeichert und wird gezeichnet; die Zeile „Automatisch geladen“ (unten) bleibt, damit du es leeren kannst. Außerhalb gespeicherter Reviere sagt der Chip oben „Seezeichen &amp; Tiefen hier nicht geladen“ (ohne laufenden Törn führt ein Tipp in die Offline-Karten), mit ausgeschaltetem Schalter „Nur Offline-Karten …“. Der nächste Absatz beschreibt, wie das Nachladen in Build 33 lief.</p>
-<p><b>Wo die geladenen Daten enden.</b> Eine dünne gestrichelte blaugraue Linie <i>(ab Build 43; vorher orange mit dunklem Rand)</i> — eine Auskunft, keine Warnung, in der Sonne trotzdem klar vom hellen Wasser getrennt, nachts Amber — mit der Aufschrift „Ende Tiefen und Seezeichen“ umrandet die Fläche, in der Tiefen und Seezeichen beide auf dem Gerät liegen: deine gespeicherten Reviere und was die Karte in Build 33 selbst geholt hat, im Demo-Modus das Demo-Revier. Wie die Kartengrenze auf dem Plotter zeigt sie die Kante, bevor der Ausschnitt die Lücke zeigt. Reviere, die aneinanderstoßen oder sich überlappen, bekommen einen gemeinsamen Rand ohne Mittelkante; außerhalb fehlen Tonnen, Tiefenlinien oder beides, die Basiskarte läuft weiter. Die Linie steht, solange Seezeichen oder Tiefenlinien eingeblendet sind, von der Übersicht bis zum Hafen; die Aufschrift steht einmal in der Mitte jeder Kante und erscheint, sobald eine Kante auf dem Schirm deutlich länger ist als der Text — in der Übersicht über einem kleinen Revier fehlt sie noch, beim Heranzoomen kommt sie; nah an einer langen Kante kann ihre Mitte außerhalb des Bildes liegen. Antippen kann man die Linie nicht — langes Drücken darauf öffnet wie überall das Kreismenü. In allen Stufen.</p>
+<p><b>Wo die geladenen Daten enden.</b> Eine dünne gestrichelte blaugraue Linie <i>(ab Build 43; vorher orange mit dunklem Rand)</i> — eine Auskunft, keine Warnung, nachts Amber — mit der Aufschrift „Ende Tiefen und Seezeichen“ umrandet die Fläche, in der Tiefen und Seezeichen beide auf dem Gerät liegen: deine gespeicherten Reviere und was die Karte in Build 33 selbst geholt hat, im Demo-Modus das Demo-Revier. Wie die Kartengrenze auf dem Plotter zeigt sie die Kante, bevor der Ausschnitt die Lücke zeigt. Reviere, die aneinanderstoßen oder sich überlappen, bekommen einen gemeinsamen Rand ohne Mittelkante; außerhalb fehlen Tonnen, Tiefenlinien oder beides, die Basiskarte läuft weiter. Die Linie steht, solange Seezeichen oder Tiefenlinien eingeblendet sind, von der Übersicht bis zum Hafen. <i>(ab Build 45)</i> Sie ist fein gestrichelt und blass: eine Hintergrund-Auskunft, die Tonnen, Wind-Ebene und Track nicht übertönt — wer sie sucht, findet sie, und was sie sagt, zeigt die Karte ohnehin: Jenseits enden Tonnen und Tiefenlinien. Die Aufschrift steht erst hineingezoomt, etwa ab dem Maßstab, bei dem eine Bucht wie die Kieler Förde den Schirm füllt (Skala rund 1 sm), und nur an Kanten, die auf dem Schirm mindestens so lang sind wie ein halbes iPhone breit — in der Mitte der Kante, an einer langen Kante auch zweimal im Bild; nah an einer sehr langen Kante kann sie außerhalb des Bildes liegen. Antippen kann man die Linie nicht — langes Drücken darauf öffnet wie überall das Kreismenü. In allen Stufen.</p>
 <figure class="shot">
   <div class="frame">
-    <img src="bilder/grenzlinie.jpg" alt="Hauptkarte bei 1 sm über einem geladenen Revier vor Warnemünde: dünne gestrichelte blaugraue Linie als Rahmen mit der Aufschrift Ende Tiefen und Seezeichen oben und unten, innen Tiefenlinien und Seezeichen, außen nur die Basiskarte" loading="lazy" width="760" height="1652">
-    <span class="hl" style="left:35%;top:37.2%;width:39%;height:2.6%"><b>1</b></span>
-    <span class="hl" style="left:16.5%;top:67.6%;width:6%;height:3%"><b>2</b></span>
-    <span class="hl" style="left:41%;top:48.5%;width:34%;height:12.5%"><b>3</b></span>
-    <span class="hl" style="left:20%;top:20%;width:60%;height:12%"><b>4</b></span>
+    <img src="bilder/grenzlinie.jpg" alt="Hauptkarte im Demo-Modus bei 1 sm an der Westkante des Demo-Reviers vor dem Salzhaff: senkrecht eine fein gestrichelte, blasse blaugraue Linie mit der Aufschrift Ende Tiefen und Seezeichen, rechts davon eine Tonne und Tiefenlinien, links nur Wasser; oben der Chip Seezeichen und Tiefen hier nicht geladen" loading="lazy" width="760" height="1652">
+    <span class="hl" style="left:47%;top:28.5%;width:9%;height:17.5%"><b>1</b></span>
+    <span class="hl" style="left:47%;top:48%;width:9%;height:13%"><b>2</b></span>
+    <span class="hl" style="left:56%;top:46.5%;width:24%;height:40%"><b>3</b></span>
+    <span class="hl" style="left:3%;top:31%;width:40%;height:22%"><b>4</b></span>
+    <span class="hl" style="left:2.5%;top:15.2%;width:73%;height:3.6%"><b>5</b></span>
   </div>
   <div>
-    <figcaption>Ein geladenes Revier vor Warnemünde, tags: Innerhalb des Rahmens liegen Tiefen und Seezeichen auf dem Gerät, außerhalb nicht.</figcaption>
+    <figcaption><i>(ab Build 45)</i> Die Westkante des Demo-Reviers vor dem Salzhaff, tags bei 1 sm: Rechts der Linie liegen Tiefen und Seezeichen auf dem Gerät, links nicht.</figcaption>
     <ol class="marks">
-      <li><b>„Ende Tiefen und Seezeichen“</b> — die Aufschrift läuft längs der Linie, einmal in der Mitte der Kante.</li>
-      <li><b>Die Ecke</b> — die Linie umrandet die ganze Fläche; die Südkante läuft hier über Land.</li>
-      <li><b>Innen</b> — Tiefenlinien vor der Küste, Tonnen und Häfen.</li>
+      <li><b>„Ende Tiefen und Seezeichen“</b> — die Aufschrift läuft längs der Linie, erst hineingezoomt und nur an langen Kanten.</li>
+      <li><b>Die Linie</b> — fein gestrichelt und blass, eine Auskunft im Hintergrund; nachts Amber.</li>
+      <li><b>Innen</b> — eine Tonne und die Tiefenlinien vor der Küste.</li>
       <li><b>Außen</b> — Wasser ohne Tiefenlinien und ohne Tonnen; die Basiskarte läuft weiter.</li>
+      <li><b>„Seezeichen &amp; Tiefen hier nicht geladen“</b> — ein Teil des Bildes liegt außerhalb; der Chip sagt es auch ohne Linie.</li>
     </ol>
   </div>
 </figure>
@@ -1759,10 +1759,10 @@ ohnehin kein Unterschied mehr, und in der Sonne waschen sie aus.</p>
 <figure class="shot">
   <div class="frame">
     <img src="bilder/offline-karten.jpg" alt="Offline-Karten mit Ausschnitt, Detailgrad und Speichern-Knopf" loading="lazy" width="760" height="1652">
-    <span class="hl" style="left:2%;top:17%;width:96%;height:31%"><b>1</b></span>
-    <span class="hl" style="left:6%;top:52.5%;width:88%;height:8.5%"><b>2</b></span>
-    <span class="hl" style="left:6%;top:62%;width:88%;height:8%"><b>3</b></span>
-    <span class="hl" style="left:6%;top:71%;width:88%;height:7.5%"><b>4</b></span>
+    <span class="hl" style="left:2%;top:16.5%;width:96%;height:27%"><b>1</b></span>
+    <span class="hl" style="left:6%;top:49.5%;width:88%;height:8%"><b>2</b></span>
+    <span class="hl" style="left:6%;top:58%;width:88%;height:7.5%"><b>3</b></span>
+    <span class="hl" style="left:6%;top:66.5%;width:88%;height:7%"><b>4</b></span>
   </div>
   <div>
     <figcaption>Offline-Karten: Ausschnitt oben, darunter Detailgrad mit Größenschätzung, „Sichtbaren Ausschnitt speichern“ und „Nur Seezeichen &amp; Tiefen laden“; Paketliste und geladene Reviere folgen weiter unten.</figcaption>
@@ -1905,24 +1905,7 @@ ohnehin kein Unterschied mehr, und in der Sonne waschen sie aus.</p>
   </div>
 </figure>
 
-<p>Sonderfall Jagdstart: Trägt eine Bahn ein Startverfahren, bei dem nicht alle gleichzeitig starten (Känguru-/Jagdstart nach Yardstick, Gruppenstarts), fragt die App direkt nach dem Beitreten zu einer solchen Bahn (etwa einer Bahn aus der Community) nach deiner eigenen Startzeit — sekundengenau, mit eigenem Sekundenfeld unter der Uhrzeit, weil die Segelanweisung sekundengenaues Starten nach Funk- oder GPS-Uhr verlangt. Die Zeit gilt für alle Termine der Bahn; einzelne Renntage änderst du im Kalender.</p>
-
-<figure class="shot">
-  <div class="frame">
-    <img src="bilder/startzeit.jpg" alt="Dialog Deine Startzeit über der Community-Bahn Mittwochsregatta NSV mit Känguru-Start" loading="lazy" width="760" height="1652">
-    <span class="hl" style="left:6%;top:34%;width:88%;height:9.5%"><b>1</b></span>
-    <span class="hl right" style="left:72%;top:79%;width:22%;height:5%"><b>2</b></span>
-    <span class="hl right" style="left:60%;top:85.5%;width:34%;height:5.5%"><b>3</b></span>
-  </div>
-  <div>
-    <figcaption>Beitritt zu einer Bahn mit Jagdstart: Die App fragt nach der eigenen Startzeit — sekundengenau.</figcaption>
-    <ol class="marks">
-      <li><b>Startverfahren an der Bahn</b> — „Känguru-Start (Jagdstart)“: Jedes Boot startet versetzt nach Yardstick; der Kalendertermin ist nur der erste Start.</li>
-      <li><b>Deine Startzeit</b> — die Uhrzeit aus der Ausschreibung; gilt für alle Termine der Bahn.</li>
-      <li><b>Sekunden</b> — tippbar oder über −/+, weil der iOS-Zeitwähler keine Sekunden kann.</li>
-    </ol>
-  </div>
-</figure>
+<p>Sonderfall Jagdstart: Trägt eine Bahn ein Startverfahren, bei dem nicht alle gleichzeitig starten (Känguru-/Jagdstart nach Yardstick, Gruppenstarts), fragt die App direkt nach dem Beitreten zu einer solchen Bahn (etwa einer Bahn aus der Community) nach deiner eigenen Startzeit, solange die Bahn noch kommende Termine hat — sekundengenau, mit eigenem Sekundenfeld unter der Uhrzeit, weil die Segelanweisung sekundengenaues Starten nach Funk- oder GPS-Uhr verlangt. Die Zeit gilt für alle Termine der Bahn; einzelne Renntage änderst du im Kalender. Die mitgelieferte Mittwochsregatta hat keine kommenden Termine mehr (die Termine im September 2026 sind vorbei) — bei ihr fragt die App deshalb nicht.</p>
 
 <h4>Vorstart: läuft von selbst</h4>
 <p>Ab dem Anlegen musst du nichts mehr auslösen; die App übersteht dabei auch einen Neustart:</p>
@@ -1996,7 +1979,7 @@ ohnehin kein Unterschied mehr, und in der Sonne waschen sie aus.</p>
   <div>
     <figcaption>Regatta-Tab im Demo-Rennen, eine knappe Minute nach dem Schuss. Alle Zahlen kommen aus den simulierten Daten der Demo.</figcaption>
     <ol class="marks">
-      <li><b>Live</b> — hier VMG zur Polare und Abstand zur Layline (braucht Wind vom Bordnetz); der Wendewinkel kommt nach den ersten Wenden dazu.</li>
+      <li><b>Live</b> — hier Wendewinkel (nach der ersten Wende) und Abstand zur Layline, je nach Lage auch VMG zur Polare (braucht Wind vom Bordnetz).</li>
       <li><b>Erledigt</b> — die Startlinie, leise mit Häkchen.</li>
       <li><b>Nächste</b> — die Luvtonne an Backbord, fett und mit dem Wort „nächste“.</li>
       <li><b>Bahn</b> — öffnet den Editor an Bord; im Rennen nennt die Zeile die nächste Marke.</li>
@@ -2021,11 +2004,11 @@ ohnehin kein Unterschied mehr, und in der Sonne waschen sie aus.</p>
     <span class="hl right" style="left:74%;top:48.8%;width:17.5%;height:8.2%"><b>5</b></span>
   </div>
   <div>
-    <figcaption>Regatta-Demo „Vorstart“ im Logbuch: gut zweieinhalb Minuten bis zum Schuss, das Demo-Boot unter der Linie. Alle Zahlen kommen aus den simulierten Daten der Demo.</figcaption>
+    <figcaption>Regatta-Demo „Vorstart“ im Logbuch: knapp vier Minuten bis zum Schuss, das Demo-Boot unter der Linie. Alle Zahlen kommen aus den simulierten Daten der Demo.</figcaption>
     <ol class="marks">
       <li><b>Countdown</b> — bis zum Schuss; die letzte Minute rot.</li>
       <li><b>Abstand und Time-to-burn</b> — Lot-Abstand zur Linie und die Zeit, die bei der jetzigen Annäherung übrig bleibt.</li>
-      <li><b>Linien-Bias</b> — hier „Schiff +17° · 35 m“: das Schiffsende liegt in Luv; rechts die Windrichtung, in der Demo vom simulierten Windgeber. <i>(ab Build 43)</i></li>
+      <li><b>Linien-Bias</b> — hier „Linie neutral“: kein Ende liegt in Luv, sonst etwa „Schiff +17° · 35 m“; rechts die Windrichtung, in der Demo vom simulierten Windgeber. <i>(ab Build 43)</i></li>
       <li><b>Pin und Schiff</b> — beide Enden gepingt, sonst fehlen Abstand und Time-to-burn.</li>
       <li><b>MOB</b> — rechts in der ersten Reihe, 0,6 s halten; die Kartenvorschau des Törns entfällt im Vorstart, die Griffe stehen direkt unter dem Countdown. <i>(ab Build 44)</i></li>
     </ol>
@@ -2048,7 +2031,7 @@ ohnehin kein Unterschied mehr, und in der Sonne waschen sie aus.</p>
 
 <article id="c6">
 <h3><span class="num">C6</span>Regatta-Bahn Schritt für Schritt: Mittwochsregatta NSV</h3>
-<p class="sub">Von der mitgelieferten Vereinsbahn bis zum laufenden Countdown — der komplette Weg am Beispiel der Mittwochsregatta des Neustädter Segler-Vereins: beitreten, Startzeit eintragen, Bahn im Editor verstehen, am Renntag starten.</p>
+<p class="sub">Von der mitgelieferten Vereinsbahn bis zum laufenden Countdown — der komplette Weg am Beispiel der Mittwochsregatta des Neustädter Segler-Vereins: beitreten, Bahn im Editor verstehen, am Renntag starten.</p>
 
 <p>Eine Bahn ist in Etmar die Regattastrecke als Datensatz: Startlinie und Ziellinie aus je zwei Punkten, Bahnmarken mit Erkennungsradius und Rundungsseite, bei Bedarf Tore, Zonen, Info-Punkte und die Zeitregeln der Ausschreibung (Verkürzung, Verlängerung, Zeitlimit je Tonne). Auf der Karte: Startlinie grün, Ziellinie dunkelgrau, Marken gelb, Bahnfolge gestrichelt. Ist die Ziellinie dieselbe Linie wie der Start – beide Enden höchstens 30 m auseinander, wie auf vielen Up-and-down-Bahnen –, steht dort ein Label „Start / Ziel“ statt zweier übereinander. Kreuzen sich zwei Linien oder liegen ihre Mitten dicht beieinander, bleiben es zwei Labels, das des Ziels eine Zeile tiefer.</p>
 
@@ -2082,11 +2065,11 @@ ohnehin kein Unterschied mehr, und in der Sonne waschen sie aus.</p>
   <div class="frame">
     <img src="bilder/community-bahnen.jpg" alt="Bahnen &amp; Wegpunkte ohne eigene Bahn, darunter die Community-Bahn Mittwochsregatta NSV" loading="lazy" width="760" height="1652">
     <span class="hl" style="left:4%;top:14.4%;width:92%;height:3.4%"><b>1</b></span>
-    <span class="hl" style="left:5%;top:45%;width:90%;height:4.6%"><b>2</b></span>
-    <span class="hl" style="left:5%;top:50%;width:90%;height:8.3%"><b>3</b></span>
-    <span class="hl" style="left:5%;top:58.7%;width:90%;height:9.6%"><b>4</b></span>
+    <span class="hl" style="left:5%;top:59.5%;width:90%;height:5.5%"><b>2</b></span>
+    <span class="hl" style="left:5%;top:65%;width:90%;height:8.5%"><b>3</b></span>
+    <span class="hl" style="left:5%;top:73.5%;width:90%;height:8.5%"><b>4</b></span>
     <span class="hl right" style="left:86%;top:7.5%;width:11%;height:4%"><b>5</b></span>
-    <span class="hl" style="left:5%;top:69%;width:90%;height:9.4%"><b>6</b></span>
+    <span class="hl" style="left:5%;top:82%;width:90%;height:7%"><b>6</b></span>
   </div>
   <div>
     <figcaption>Noch keine eigene Bahn — aber die Mittwochsregatta NSV wartet in der Community-Sektion.</figcaption>
@@ -2127,49 +2110,8 @@ ohnehin kein Unterschied mehr, und in der Sonne waschen sie aus.</p>
 </li>
 
 <li>
-<p>Direkt nach dem Beitreten fragt die App nach deiner Startzeit, weil beim Känguru-Start (Jagdstart) nicht alle gleichzeitig starten: Jedes Boot startet versetzt nach seinem Yardstick, der Kalendertermin ist nur der erste Start, deine Zeit steht in der Ausschreibung oder am Aushang. Eingegeben wird sekundengenau — unter der Uhrzeit liegt ein eigenes Sekundenfeld, tippbar oder über die Pfeile, weil der iOS-Zeitwähler keine Sekunden kann, die Segelanweisung aber sekundengenaues Starten nach Funk- oder GPS-Uhr verlangt.</p>
-<figure class="shot">
-  <div class="frame">
-    <img src="bilder/startzeit.jpg" alt="Blatt Deine Startzeit über der Community-Bahn mit Uhrzeit und Sekundenfeld" loading="lazy" width="760" height="1652">
-    <span class="hl" style="left:5%;top:60%;width:90%;height:12%"><b>1</b></span>
-    <span class="hl right" style="left:72%;top:78.5%;width:22%;height:5%"><b>2</b></span>
-    <span class="hl right" style="left:58%;top:85%;width:36%;height:5.5%"><b>3</b></span>
-    <span class="hl" style="left:6%;top:50.5%;width:20%;height:4%"><b>4</b></span>
-  </div>
-  <div>
-    <figcaption>Nach dem Beitreten: „Wann startest du?“ — die Zeit aus der Ausschreibung, sekundengenau.</figcaption>
-    <ol class="marks">
-      <li><b>Erklärung</b> — beim Känguru-Start ist der übernommene Termin nur der erste Start.</li>
-      <li><b>Deine Startzeit</b> — die Uhrzeit aus Ausschreibung oder Aushang, hier 18:41.</li>
-      <li><b>Sekunden</b> — eigenes Feld, tippbar oder mit den Pfeilen.</li>
-      <li><b>Später</b> — schließt ohne eigene Zeit; dann bleibt der erste Start im Kalender.</li>
-    </ol>
-  </div>
-</figure>
-</li>
-
-<li>
-<p>„Startzeit übernehmen“ speichert die Zeit für alle Termine dieser Bahn; einzelne Renntage änderst du im Kalender. „Später“ lässt den ersten Start stehen — der Countdown liefe zu früh ab. Bei einer neuen Fassung fragt die App erneut, weil sich die Einstufung von Saison zu Saison ändert.</p>
-<figure class="shot">
-  <div class="frame">
-    <img src="bilder/startzeit-uebernehmen.jpg" alt="Blatt Deine Startzeit mit 18:41, Sekunden 0 und Knopf Startzeit übernehmen" loading="lazy" width="760" height="1652">
-    <span class="hl right" style="left:72%;top:39.5%;width:22%;height:5%"><b>1</b></span>
-    <span class="hl right" style="left:58%;top:46.5%;width:36%;height:5.5%"><b>2</b></span>
-    <span class="hl" style="left:5%;top:53.5%;width:90%;height:8%"><b>3</b></span>
-    <span class="hl" style="left:6%;top:65%;width:88%;height:7%"><b>4</b></span>
-    <span class="hl" style="left:5%;top:74%;width:90%;height:5.5%"><b>5</b></span>
-  </div>
-  <div>
-    <figcaption>Startzeit eingetragen — „Startzeit übernehmen“ gilt für alle Termine der Bahn.</figcaption>
-    <ol class="marks">
-      <li><b>Uhrzeit</b> — 18:41, der eigene Start nach Yardstick.</li>
-      <li><b>Sekunden</b> — hier 0; bei 18:41:30 stünde hier 30.</li>
-      <li><b>Geltung</b> — für alle Termine dieser Bahn; einzelne Renntage im Kalender nachträglich ändern.</li>
-      <li><b>Startzeit übernehmen</b> — speichert und schließt das Blatt.</li>
-      <li><b>Hinweis</b> — ohne eigene Zeit bleibt der erste Start im Kalender, also zu früh.</li>
-    </ol>
-  </div>
-</figure>
+<p>Beim Känguru-Start (Jagdstart) starten nicht alle gleichzeitig: Jedes Boot startet versetzt nach seinem Yardstick, der Kalendertermin ist nur der erste Start, deine Zeit steht in der Ausschreibung oder am Aushang. Hat eine solche Bahn noch kommende Termine, fragt die App direkt nach dem Beitreten nach deiner Startzeit — sekundengenau, mit eigenem Sekundenfeld unter der Uhrzeit, tippbar oder über die Pfeile, weil der iOS-Zeitwähler keine Sekunden kann, die Segelanweisung aber sekundengenaues Starten nach Funk- oder GPS-Uhr verlangt. „Startzeit übernehmen“ speichert die Zeit für alle Termine dieser Bahn; einzelne Renntage änderst du im Kalender. „Später“ lässt den ersten Start stehen — der Countdown liefe zu früh ab. Bei einer neuen Fassung fragt die App erneut, weil sich die Einstufung von Saison zu Saison ändert.</p>
+<p>Die mitgelieferten Termine der Mittwochsregatta (September 2026) sind vorbei — beim Beitreten fragt die App deshalb nicht nach der Startzeit, und die Bahn liegt gleich in deinen Bahnen (nächster Schritt). In der Demo stehen die Renntage trotzdem im Kalender: Die Demo legt die Mittwochsregatta als eigene Wochenserie an.</p>
 </li>
 
 <li>
@@ -2250,7 +2192,7 @@ ohnehin kein Unterschied mehr, und in der Sonne waschen sie aus.</p>
     <ol class="marks">
       <li><b>Bearbeiten</b> — Reihenfolge per Ziehen ändern, Marken entfernen.</li>
       <li><b>Name</b> — der Name der Vorlage; die Termine im Kalender tragen ihn ebenfalls.</li>
-      <li><b>Startverfahren</b> — Känguru-Start (Jagdstart); die App fragt deshalb nach deiner Startzeit.</li>
+      <li><b>Startverfahren</b> — Känguru-Start (Jagdstart); mit kommenden Terminen fragt die App deshalb nach deiner Startzeit.</li>
       <li><b>Bahnreihenfolge mit Rundungsseiten</b> — Chips Stb/Bb je Durchfahrt, aus der Reihenfolge abgeleitet, per Tipp änderbar.</li>
     </ol>
   </div>
@@ -2350,19 +2292,19 @@ ohnehin kein Unterschied mehr, und in der Sonne waschen sie aus.</p>
 <p>Den zweiten Editor triffst du an Bord: Im Kontext-Tab „Regatta“ öffnet „Bahn“ das Bahnprofil des laufenden Törns, im Kapitel Bahn der Auswertung heißt der Weg „Bahn anpassen“. Gleiche Vollbild-Karte, gleiche Palette, gleiches Bahn-Blatt — nur die Reichweite ist anders: In der Vorlage pflegst du, was jede Woche gilt; hier, was heute gilt. Verlegt die Wettfahrtleitung kurzfristig eine Tonne, korrigierst du sie hier, ohne die Vorlage anzufassen, und sicherst die geänderte Bahn bei Bedarf über das Menü als neue Vorlage.</p>
 <figure class="shot">
   <div class="frame">
-    <img src="bilder/editor-an-bord.jpg" alt="Bahn-Editor im Törn mit leerer Karte vor Neustadt, Werkzeugleiste oben und Palette rechts" loading="lazy" width="760" height="1652">
+    <img src="bilder/editor-an-bord.jpg" alt="Bahn-Editor im Törn der Regatta-Demo mit Werkzeugleiste oben, Palette rechts und der Bahnfolge unten" loading="lazy" width="760" height="1652">
     <span class="hl" style="left:3%;top:7.5%;width:27%;height:4.5%"><b>1</b></span>
     <span class="hl right" style="left:42%;top:7.5%;width:55%;height:4.5%"><b>2</b></span>
     <span class="hl right" style="left:79%;top:35%;width:18%;height:46%"><b>3</b></span>
     <span class="hl" style="left:2%;top:85.5%;width:70%;height:4%"><b>4</b></span>
   </div>
   <div>
-    <figcaption>Der Editor an Bord bei einem Törn ohne Bahn — deshalb leer; dieselbe Karte und Palette wie in der Vorlage.</figcaption>
+    <figcaption>Der Editor an Bord in der Regatta-Demo, kurz nach dem Schuss: dieselbe Karte und Palette wie in der Vorlage, unten die Bahnfolge des Rennens.</figcaption>
     <ol class="marks">
       <li><b>Zurück „Bahn“</b> — führt in den Kontext-Tab des Törns.</li>
       <li><b>Rückgängig, ?, Liste, Menü</b> — wie in der Vorlage; über das Menü lässt sich die geänderte Bahn als neue Vorlage sichern.</li>
       <li><b>Werkzeug-Palette</b> — Marke, Tor, Info, Zone, Start, Ziel.</li>
-      <li><b>Hinweiszeile</b> — „Tippe auf eine Tonne oder aufs Wasser“: die erste Marke entsteht mit einem Tipp.</li>
+      <li><b>Bahnfolge</b> — die Marken des Rennens der Reihe nach, hier Startlinie, Luvtonne, Leetonne. Bei einem Törn ohne Bahn steht hier „Tippe auf eine Tonne oder aufs Wasser“: Die erste Marke entsteht mit einem Tipp.</li>
     </ol>
   </div>
 </figure>
@@ -2372,16 +2314,16 @@ ohnehin kein Unterschied mehr, und in der Sonne waschen sie aus.</p>
 <h4>Teil 3: Vom Termin zum Startschuss</h4>
 <ol class="steps" start="15">
 <li>
-<p><span class="path">Werkzeuge → Kalender</span> zeigt unter „Demnächst“ die Serie: jeden Mittwoch „Mittwochsregatta NSV“ um 18:41 — deine Startzeit, nicht der erste Start. Am Renntag tippst du „Starten“ im Termin. Über „+“ legst du eigene Regatta-Termine an, mit der Zeile „Bahn-Vorlage“. Serien lassen sich gesammelt bearbeiten: „Auf künftige Termine der Serie anwenden“ übernimmt Name, Uhrzeit, Boot, Bahn und Notizen für alle ausstehenden Termine.</p>
+<p><span class="path">Werkzeuge → Kalender</span> zeigt unter „Demnächst“ die Serie: jeden Mittwoch „Mittwochsregatta NSV“ — beim Jagdstart mit deiner Startzeit, nicht dem ersten Start; in der Demo um 18:00. Am Renntag tippst du „Starten“ im Termin. Über „+“ legst du eigene Regatta-Termine an, mit der Zeile „Bahn-Vorlage“. Serien lassen sich gesammelt bearbeiten: „Auf künftige Termine der Serie anwenden“ übernimmt Name, Uhrzeit, Boot, Bahn und Notizen für alle ausstehenden Termine.</p>
 <figure class="shot">
   <div class="frame">
-    <img src="bilder/kalender-termine.jpg" alt="Kalender-Liste mit den Serien-Terminen der Mittwochsregatta NSV am 2. und 9. September und Starten-Knöpfen" loading="lazy" width="760" height="1652">
-    <span class="hl" style="left:5%;top:23.5%;width:68%;height:15%"><b>1</b></span>
-    <span class="hl right" style="left:73%;top:35.5%;width:21%;height:4.5%"><b>2</b></span>
+    <img src="bilder/kalender-termine.jpg" alt="Kalender-Liste der Demo mit den Serien-Terminen der Mittwochsregatta NSV und Starten-Knöpfen" loading="lazy" width="760" height="1652">
+    <span class="hl" style="left:5%;top:48%;width:68%;height:23%"><b>1</b></span>
+    <span class="hl right" style="left:73%;top:52.5%;width:21%;height:4.5%"><b>2</b></span>
     <span class="hl right" style="left:84%;top:7.5%;width:12%;height:4.5%"><b>3</b></span>
   </div>
   <div>
-    <figcaption>Kalender nach dem Beitreten: die Wochenserie mit der eigenen Startzeit 18:41 und dem Boot „Seewind“.</figcaption>
+    <figcaption>Kalender in der Demo: die Wochenserie der Mittwochsregatta um 18:00 mit dem Boot „Vertigo Express“, dazwischen andere Termine.</figcaption>
     <ol class="marks">
       <li><b>Serien-Termine</b> — jeder Mittwoch mit Bahn, Startzeit und Boot; einzelne Tage lassen sich ändern.</li>
       <li><b>Starten</b> — legt am Renntag die Regatta samt Bahn und Countdown an, nach Rückfrage.</li>
@@ -2434,7 +2376,7 @@ ohnehin kein Unterschied mehr, und in der Sonne waschen sie aus.</p>
 </li>
 
 <li>
-<p>„Starten“ im Kalender fragt vorher nach — „Regatta anlegen“: „Mittwochsregatta NSV“ wird mit Bahn und Countdown angelegt, Start 18:41. „Jetzt anlegen“ erstellt die Regatta mit Bahnprofil, Zeitregeln und deiner Startzeit; ein Fehltipp auf „Starten“ bleibt folgenlos.</p>
+<p>„Starten“ im Kalender fragt vorher nach — „Regatta anlegen“: „Mittwochsregatta NSV“ wird mit Bahn und Countdown angelegt, in der Demo „Start 18:00“. „Jetzt anlegen“ erstellt die Regatta mit Bahnprofil, Zeitregeln und deiner Startzeit; ein Fehltipp auf „Starten“ bleibt folgenlos.</p>
 <figure class="shot">
   <div class="frame">
     <img src="bilder/starten-rueckfrage.jpg" alt="Rückfrage Regatta anlegen über der Kalender-Liste mit Knopf Jetzt anlegen" loading="lazy" width="760" height="1652">
@@ -2444,7 +2386,7 @@ ohnehin kein Unterschied mehr, und in der Sonne waschen sie aus.</p>
   <div>
     <figcaption>Rückfrage beim „Starten“ aus dem Kalender.</figcaption>
     <ol class="marks">
-      <li><b>Was angelegt wird</b> — Name, Bahn, Countdown und der Start um 18:41.</li>
+      <li><b>Was angelegt wird</b> — Name, Bahn, Countdown und der Start, hier 18:00.</li>
       <li><b>Jetzt anlegen</b> — erst dieser Tipp erstellt die Regatta.</li>
     </ol>
   </div>
@@ -2561,7 +2503,7 @@ ohnehin kein Unterschied mehr, und in der Sonne waschen sie aus.</p>
 
 <div class="box test"><b class="lbl">Bitte testen</b>
 <ul>
-<li>Ist der Weg Beitreten → Startzeit → Kalender ohne Anleitung verständlich? Wo hättest du gestockt?</li>
+<li>Ist der Weg Beitreten → Kalender ohne Anleitung verständlich? Wo hättest du gestockt?</li>
 <li>Stimmen Marken, Rundungsseiten, Zeitregeln und Termine der NSV-Bahn mit der Ausschreibung überein? Nenne jede Abweichung.</li>
 <li>Findest du im Editor die Rundungsseite und das Zeitlimit einer einzelnen Tonne, ohne diesen Artikel zu lesen?</li>
 </ul>
@@ -2607,8 +2549,8 @@ ohnehin kein Unterschied mehr, und in der Sonne waschen sie aus.</p>
 <figure class="shot">
   <div class="frame">
     <img src="bilder/auswertung.jpg" alt="Überblick der Regatta-Auswertung: Rennkarte mit Platzierung und Kernzahlen" loading="lazy" width="760" height="1652">
-    <span class="hl" style="left:4%;top:19.5%;width:92%;height:15.5%"><b>1</b></span>
-    <span class="hl" style="left:4%;top:52%;width:92%;height:17.5%"><b>2</b></span>
+    <span class="hl" style="left:4%;top:34%;width:92%;height:25%"><b>1</b></span>
+    <span class="hl" style="left:4%;top:68%;width:92%;height:17%"><b>2</b></span>
   </div>
   <div>
     <figcaption>Ebene 1, oberer Teil: die Rennkarte und darunter die kostenlosen Kernzahlen aus dem GPS; „Zeiten stimmen nicht?“ und der Wasserfall folgen weiter unten.</figcaption>
@@ -3290,7 +3232,7 @@ der Zeile noch einmal: Uhrzeit, Dauer, Strecke, Fahrt.</p>
 
 <figure class="shot">
   <div class="frame">
-    <img src="bilder/instrumente-ohne-bordnetz.jpg" alt="Dashboard, Seite Wind, mit eingerichtetem Gateway ohne Verbindung: AWS, AWA, TWS und TWD ohne Wert, je mit dem Satz braucht Bordnetz, unten der Knopf NMEA verbinden" loading="lazy" width="760" height="1652">
+    <img src="bilder/instrumente-ohne-bordnetz.jpg" alt="Dashboard, Seite Wind, mit eingerichtetem Gateway ohne Verbindung: AWS, AWA, TWS und TWD ohne Wert, je mit dem Satz braucht Bordnetz, unten der laufende Versuch Verbinde mit NMEA-Gateway" loading="lazy" width="760" height="1652">
     <span class="hl" style="left:3%;top:14.5%;width:94%;height:40%"><b>1</b></span>
     <span class="hl" style="left:3%;top:55%;width:94%;height:32%"><b>2</b></span>
     <span class="hl" style="left:23%;top:87.5%;width:54%;height:7.5%"><b>3</b></span>
@@ -3394,7 +3336,7 @@ der Zeile noch einmal: Uhrzeit, Dauer, Strecke, Fahrt.</p>
 <figure class="shot">
   <div class="frame">
     <img src="bilder/osm-hafen.jpg" alt="Karte mit angetipptem OSM-Hafen Gedser: Kreis mit dem Ankunftsradius, Datenkarte mit Name, Peilung, Distanz, Einrichtungen und dem Hinweis zum Kreis, darunter Go To und Ins Hafenhandbuch" loading="lazy" width="760" height="1652">
-    <span class="hl" style="left:16%;top:40%;width:58%;height:13.5%"><b>1</b></span>
+    <span class="hl" style="left:16%;top:29%;width:58%;height:25%"><b>1</b></span>
     <span class="hl" style="left:21.5%;top:54.5%;width:74%;height:17%"><b>2</b></span>
     <span class="hl" style="left:24%;top:72%;width:70%;height:8%"><b>3</b></span>
     <span class="hl right" style="left:24%;top:81%;width:70%;height:7.5%"><b>4</b></span>
@@ -3488,17 +3430,15 @@ der Zeile noch einmal: Uhrzeit, Dauer, Strecke, Fahrt.</p>
     <img src="bilder/ankeralarm.jpg" alt="Ankeralarm-Sheet mit Radius, aktueller Distanz zum Anker und Aktionen" loading="lazy" width="760" height="1652">
     <span class="hl" style="left:4%;top:19%;width:92%;height:17%"><b>1</b></span>
     <span class="hl" style="left:4%;top:37%;width:92%;height:11%"><b>2</b></span>
-    <span class="hl" style="left:4%;top:62%;width:92%;height:7%"><b>3</b></span>
-    <span class="hl" style="left:4%;top:70%;width:92%;height:9%"><b>4</b></span>
-    <span class="hl" style="left:4%;top:88%;width:92%;height:7%"><b>5</b></span>
+    <span class="hl" style="left:4%;top:64%;width:92%;height:7%"><b>3</b></span>
+    <span class="hl" style="left:4%;top:81%;width:92%;height:7.5%"><b>4</b></span>
   </div>
   <div>
-    <figcaption>Einstell-Sheet des Ankeralarms im Alarmfall: Radius 50 m, das Boot liegt 246 m vom Anker.</figcaption>
+    <figcaption>Einstell-Sheet des Ankeralarms gleich nach dem Setzen: Radius 50 m, das Boot liegt am Anker. Im Alarmfall wird der Abstand rot, und darunter steht zusätzlich „Alles gut — Kreis weiten“: Kreis auf den jetzigen Abstand plus 10 m, wenn das Boot nur schwojt.</figcaption>
     <ol class="marks">
       <li><b>Radius</b> — in 10-m-Schritten mit großen Knöpfen, wirkt sofort.</li>
       <li><b>Aktuelle Distanz und GPS-Genauigkeit</b> — rot, sobald das Boot außerhalb liegt.</li>
       <li><b>Anker auf aktuelle Position setzen</b> — Kreis neu zentrieren, nachdem sich der Anker eingegraben hat.</li>
-      <li><b>Alles gut — Kreis weiten</b> — Kreis auf den jetzigen Abstand plus 10 m, wenn das Boot nur schwojt.</li>
       <li><b>Tiefenalarm</b> <i>(ab Build 43 frei)</i> — nur mit NMEA-Echolot.</li>
     </ol>
   </div>
@@ -3688,9 +3628,9 @@ der Zeile noch einmal: Uhrzeit, Dauer, Strecke, Fahrt.</p>
 <figure class="shot">
   <div class="frame">
     <img src="bilder/werkstatt-vorher-nachher.jpg" alt="Vorher / Nachher der Demo-Aufgabe Opferanode wechseln: oben das erste Foto als Vorher, darunter das letzte als Nachher" loading="lazy" width="760" height="1652">
-    <span class="hl" style="left:3.5%;top:19.2%;width:93%;height:3.3%"><b>1</b></span>
-    <span class="hl" style="left:3.5%;top:55.3%;width:32%;height:2.8%"><b>2</b></span>
-    <span class="hl" style="left:3.5%;top:60.5%;width:93%;height:3.2%"><b>3</b></span>
+    <span class="hl" style="left:3.5%;top:15%;width:93%;height:3.5%"><b>1</b></span>
+    <span class="hl" style="left:3.5%;top:51%;width:32%;height:3%"><b>2</b></span>
+    <span class="hl" style="left:3.5%;top:56%;width:93%;height:3.5%"><b>3</b></span>
   </div>
   <div>
     <figcaption>„Vorher / Nachher vergleichen“ an der Demo-Aufgabe „Opferanode wechseln“, auf dem iPhone hochkant übereinander.</figcaption>
@@ -3845,7 +3785,7 @@ der Zeile noch einmal: Uhrzeit, Dauer, Strecke, Fahrt.</p>
 <p><b>Neu seit 09/2026: Daten &amp; Datenschutz.</b> Die eine Stelle, an der steht, was das Gerät überhaupt verlässt — und an der du es abschalten kannst. Zwei Schalter, beide auch schon beim Erststart gefragt:</p>
 <ul>
 <li><b>iCloud-Sicherung.</b> An: Törns, Trimm und Boot liegen zusätzlich in deiner <i>privaten</i> iCloud und gleichen sich zwischen deinen Geräten ab. Sie gehen an niemanden sonst — Etmar hat keinen Server und sieht sie nicht. Aus: Sie bleiben auf diesem Gerät. <b>Ausschalten löscht nicht</b>, was früher schon hochgeladen wurde; das steht auch dort, mit dem Weg dorthin (Systemeinstellungen → Apple-ID → iCloud → Speicher verwalten). Die Umstellung wirkt beim nächsten Start der App. <b>„Aus“ heißt aus.</b> Bis Build 33 richtete die App den iCloud-Abgleich auch bei „Aus“ ein, weil die Vorgabe des Systems „spiegeln“ heisst — auf einem Gerät mit angemeldetem iCloud-Konto konnten Törns, Trimm und Boot trotz „Nein“ in deine private iCloud gehen. Wer das betrifft und es nicht will, löscht die Daten dort einmal von Hand (Weg oben); die App legt sie nicht wieder an. Ist die Sicherung aus, steht in der Ablegeklarliste unter „Planung“ die Zeile „iCloud-Sicherung aus“ – als Hinweis mit „i“, nicht als Warnung, und nicht im Logbuch-Kopf „Vor dem Ablegen“; ein Tipp führt hierher.</li>
-<li><b>Karte online nachladen.</b> Warum das eine Datenschutzfrage ist: <b>Eine Kachelanfrage enthält den Ausschnitt, den du gerade ansiehst</b> — sie sagt dem Kartendienst also, wo du bist. Dasselbe gilt für Seezeichen und Hafendaten. An: Mit dem Schalter kommen vorerst nur die Kartenkacheln des Ausschnitts; Seezeichen, Häfen und Tiefen ruft die App nur für Reviere ab, die du lädst. Aus: Es wird nur gezeigt, was du unter <span class="path">Karte → Offline-Karten</span> heruntergeladen hast; fehlt ein Bereich, bleibt er leer statt still nachzuladen, und der Chip auf der Karte sagt „Nur Offline-Karten" statt „Offline" — damit du den Schalter suchst und kein Funkloch. Ein Revier <i>herunterzuladen</i> geht weiterhin: Die Regel heisst „nicht nebenbei", nicht „nie".</li>
+<li><b>Karte online nachladen.</b> Warum das eine Datenschutzfrage ist: <b>Eine Kachelanfrage enthält den Ausschnitt, den du gerade ansiehst</b> — sie sagt dem Kartendienst also, wo du bist. Dasselbe gilt für Seezeichen und Hafendaten. An: Mit dem Schalter kommen vorerst nur die Kartenkacheln des Ausschnitts; Seezeichen, Häfen und Tiefen ruft die App nur für Reviere ab, die du lädst. Aus: Es wird nur gezeigt, was du unter <span class="path">Einstellungen → Karte → Offline-Karten</span> heruntergeladen hast; fehlt ein Bereich, bleibt er leer statt still nachzuladen, und der Chip auf der Karte sagt „Nur Offline-Karten" statt „Offline" — damit du den Schalter suchst und kein Funkloch. Ein Revier <i>herunterzuladen</i> geht weiterhin: Die Regel heisst „nicht nebenbei", nicht „nie".</li>
 </ul>
 <p><b>Für neue Installationen ist die iCloud-Sicherung aus und „Karte online nachladen" an</b> — der Erststart fragt beides; <b>für bestehende bleibt alles wie es war</b> — wer heute synchronisiert, synchronisiert weiter. Ein dritter Abschnitt „Gemeinschaft" steht dort schon, aber leer: Falls einmal Funktionen dazukommen, für die Daten das Gerät verlassen, wirst du dort gefragt — je Zweck einzeln und abschaltbar.</p>
 <p>Die Einstellungen erreichst du über <span class="path">Werkzeuge → Einstellungen</span> — die Zahnrad-Kachel im Abschnitt „App", direkt neben <b>Hilfe &amp; Demo</b>. Sie sind eine Liste von Unterseiten, jede passt auf einen Bildschirm: <b>Stufe &amp; Demo</b> · <b>Profil</b> · <b>Anzeige</b> · <b>Einheiten</b> · <b>Karte</b> · <b>Regatta</b> · <b>Mitteilungen</b> · <b>NMEA-Verbindung</b> · <b>Datensicherung</b> · <b>Daten &amp; Datenschutz</b>, dazu <b>Hilfe</b> (Tutorials, „Was ist neu", Tracking-Diagnose, Feedback) und <b>Über &amp; Rechtliches</b>. Die Zeile „Stufe &amp; Demo" zeigt rechts den aktuellen Stand: Free, Plus, Pro oder „Demo läuft". <i>(ab Build 43)</i></p>
@@ -4534,7 +4474,7 @@ der Zeile noch einmal: Uhrzeit, Dauer, Strecke, Fahrt.</p>
 </div>
 
 <footer>
-<p>Etmar Beta-Handbuch · Stand 23.10.2026 · Build 1.0 (42) · Screenshots aus dem Demo-Modus oder der Free-Fassung, teils vom Stand vor dem aktuellen Build.
+<p>Etmar Beta-Handbuch · Stand 24.10.2026 · Build 1.0 (42) · Screenshots aus dem Demo-Modus oder der Free-Fassung, die meisten vom 24.10.2026; die von Hand aufgenommenen (Apple Watch, Sperrbildschirm, Inventar-PDF, Törn-Story, Wind vom echten Abruf und einige Kartenausschnitte) können einen älteren Stand zeigen.
 Kontakt: <a href="mailto:support@etmar.app">support@etmar.app</a> ·
 <a href="index.html">Startseite</a> · <a href="datenschutz.html">Datenschutz</a> · <a href="impressum.html">Impressum</a></p>
 <p>Etmar ersetzt keine Seekarte und keinen Kartenplotter. Seezeichen und Tiefen stammen aus OpenStreetMap und EMODnet — keine amtlichen Quellen.</p>
