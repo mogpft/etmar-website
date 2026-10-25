@@ -150,7 +150,7 @@
   <p class="lede">Alles, was du für den Testflug brauchst: TestFlight einrichten, die App in zehn Minuten
   verstehen, jede Funktion nachschlagen — und wissen, worauf ich diesmal besonders schaue.
   Das Inhaltsverzeichnis links führt zu jedem Artikel.</p>
-  <p class="stand">Stand 25.10.2026 · Build 1.0 (42) · Fragen und Rückmeldungen: <a href="mailto:support@etmar.app">support@etmar.app</a></p>
+  <p class="stand">Stand 26.10.2026 · Build 1.0 (42) · Fragen und Rückmeldungen: <a href="mailto:support@etmar.app">support@etmar.app</a></p>
 </header>
 
 <div class="cols">
@@ -309,7 +309,9 @@ Ende ein zweiter offener Törn neben dem synchronisierten.
 <h3><span class="num">A3</span>In zehn Minuten startklar</h3>
 <p class="sub">Erst gucken, dann eigenes Boot anlegen — in dieser Reihenfolge geht es am schnellsten.</p>
 <h4>1. Demo-Modus starten</h4>
-<p><span class="path">Werkzeuge → Hilfe &amp; Demo → Demo starten</span>. Die App füllt sich mit
+<p><span class="path">Werkzeuge → Hilfe &amp; Demo → Demo starten</span>. <i>(ab Build 46)</i> Zuerst fragt
+die App: <b>Törn</b> oder <b>Regatta</b>. Der Törn ist die Demo, wie sie hier steht; die Regatta-Demo segelt
+die Mittwochsregatta NSV in der Neustädter Bucht (<a href="#c5">C5</a>, <a href="#c16">C16</a>). Die App füllt sich mit
 Beispieldaten: Demo-Boot „Vertigo Express“, ein Törn Kühlungsborn–Gedser mit Motorstrecke und
 Funkspruch, ein offener Tagestörn mit Etappenplan, eine Regatta mit vollständiger Auswertung,
 Trimm-Einträge, Kalendertermine, Seezeichen und Tiefen der Mecklenburger Bucht.
@@ -1208,7 +1210,7 @@ Bordnetz.“ Braucht eine einzelne Auswertung einen bestimmten Geber, steht er a
     <ol class="marks">
       <li><b>Stufe</b> — welche gerade gilt, hier Free.</li>
       <li><b>„Pro folgt in einem späteren Update“</b> — steht dort, wo später der Kauf liegt. <i>(ab Build 43)</i></li>
-      <li><b>Demo starten</b> — bei laufender Demo stehen hier „Demo aktiv“, die Demo-Stufe (Pro oder Free) und die Regatta-Demo (<a href="#c16">C16</a>). <i>(ab Build 43)</i></li>
+      <li><b>Demo starten</b> — bei laufender Demo stehen hier „Demo aktiv“, die Demo-Stufe (Pro oder Free) und, nur in der Regatta-Demo, „Regatta-Demo“ zum Wechsel zwischen Vorstart und Rennen läuft (<a href="#c16">C16</a>). <i>(ab Build 43; die Wahl Törn oder Regatta beim Start ab Build 46)</i></li>
       <li><b>Was die Stufen sind</b> — Free: alles, was an Bord läuft; Pro: die Auswertung nach der Fahrt, aus dem GPS und mit Wind vom Bordnetz; dazu, dass die Demo ihre Törns beim Beenden löscht. <i>(ab Build 43)</i></li>
     </ol>
   </div>
@@ -2060,31 +2062,35 @@ ohnehin kein Unterschied mehr, und in der Sonne waschen sie aus.</p>
 <p>Woanders mitgesegelt? Über <span class="path">Törn bearbeiten → Boot</span> ordnest du eine Regatta (oder jeden Törn) nachträglich einem anderen deiner Boote zu — oder markierst sie als „Auf fremdem Boot mitgesegelt“ mit dem Namen des Gastboots. Solche Törns bleiben im Logbuch (blaues Badge mit dem Bootsnamen), zählen aber nicht in die Meilen- und Motorstatistik deines eigenen Boots; in der Statistik lassen sie sich per Schalter zuschalten. In der Demo steht dafür der Kalendertermin „Clubregatta — Mitsegeln“ auf dem Gastboot „Freya“.</p>
 
 <h4>Im Demo-Modus</h4>
-<p>Den Vorstart probierst du ohne Boot und ohne Regatta aus: Bei laufender Demo unter <span class="path">Werkzeuge → Einstellungen → Stufe &amp; Demo</span> die Zeile „Regatta-Demo“ auf „Vorstart“ stellen. Die Demo startet neu; danach ist das Demo-Boot „Nordwind“ gewählt, die Startlinie liegt 120 m in Luv, beide Enden sind gepingt, und der Schuss fällt in vier Minuten. Das Boot pendelt um die Linie — mal darunter mit Abstand und Time-to-burn, mal darüber mit dem roten „Über der Linie“. Die Karte öffnet mit Linie und Boot im Bild. Nach dem Schuss bleibt das Boot an der Linie. Das Rennen mit Kreuz, Tonnenrundung und Live-Auswertung zeigt „Rennen läuft“, die zweite Wahl derselben Zeile.</p>
+<p><i>(ab Build 46)</i> Den Vorstart probierst du ohne Boot und ohne Regatta aus: <span class="path">Werkzeuge → Hilfe &amp; Demo → Demo starten</span>, dann <b>Regatta</b> und <b>Vorstart</b> (<a href="#c16">C16</a>). Die Demo zeigt die Mittwochsregatta NSV mit der echten Bahn aus der Bibliothek (<a href="#c6">C6</a>, hier mit „Ziel kurz“ als Ziel) auf dem Demo-Boot „Nordwind“: beide Linienenden gepingt, der Schuss in 20 Minuten. Bis eine Minute vor dem Schuss pendelt das Boot hinter der Linie, dann läuft es an. Danach segelt es die ganze Bahn in echter Zeit nach der Polare der Albin Express: auf der Kreuz mit dem Wendewinkel und Wenden an der Layline, vor dem Wind mit Halsen, jede Marke an ihrer Seite. Bei 12 kn Wind dauert das gerechnet rund anderthalb Stunden; Wenden und Halsen stehen danach im Track. <b>Rennen läuft</b>, die zweite Wahl, setzt den Schuss 40 Minuten zurück: Der Track bis jetzt ist schon da, das Boot ist mitten auf der Bahn. Zwischen beiden wechselst du bei laufender Regatta-Demo unter <span class="path">Werkzeuge → Einstellungen → Stufe &amp; Demo</span> → „Regatta-Demo“; die Demo startet dann neu.</p>
+<p><b>Der Wind der Regatta-Demo.</b> <i>(ab Build 46)</i> Mit „Wind aus offenen Quellen“ und Netz holt die Demo den aktuellen Wind der nächsten Station und die GFS-Vorhersage für die Neustädter Bucht — nicht für deine Position. „Wind gegen die Bahn“ sagt dann „Wind: echt (GFS/Station) · Boot: simuliert“, und der simulierte Windgeber folgt diesem Wind, so passen Zeile, Skizze und Instrumente zusammen. Ohne Netz oder mit ausgeschaltetem Schalter segelt die Demo mit eingebautem Wind (Südwest 12 kn, langsam rechtsdrehend), an der Quelle steht „(Demo)“. Strom, Land, Tiefen und andere Boote kennt die Fahrt nicht; Seezeichen und Tiefen der Demo liegen vor Kühlungsborn, in der Neustädter Bucht sagt die Karte „Seezeichen &amp; Tiefen hier nicht geladen“.</p>
 
 <figure class="shot">
   <div class="frame">
-    <img src="bilder/vorstart-demo.jpg" alt="Logbuch der Demo im Vorstart: Countdown, Abstand zur Linie, Time-to-burn, Linien-Bias, beide Enden gepingt, darunter Pin, Schiff, Sync und MOB in einer Reihe" loading="lazy" width="760" height="1652">
-    <span class="hl" style="left:28%;top:21%;width:44%;height:7.2%"><b>1</b></span>
+    <img src="bilder/vorstart-demo.jpg" alt="Logbuch der Regatta-Demo im Vorstart: Countdown, Abstand zur Linie, Linien-Bias, beide Enden gepingt, darunter Pin, Schiff, Sync und MOB in einer Reihe und die Zeile Wind gegen die Bahn" loading="lazy" width="760" height="1652">
+    <span class="hl" style="left:22%;top:21%;width:56%;height:7.2%"><b>1</b></span>
     <span class="hl" style="left:25%;top:29.3%;width:50%;height:4%"><b>2</b></span>
     <span class="hl" style="left:2.5%;top:34.4%;width:95%;height:5.6%"><b>3</b></span>
     <span class="hl" style="left:33%;top:40.8%;width:34%;height:3%"><b>4</b></span>
     <span class="hl right" style="left:74%;top:48.8%;width:17.5%;height:8.2%"><b>5</b></span>
+    <span class="hl" style="left:4%;top:67.6%;width:92%;height:6.4%"><b>6</b></span>
   </div>
   <div>
-    <figcaption>Regatta-Demo „Vorstart“ im Logbuch: knapp vier Minuten bis zum Schuss, das Demo-Boot unter der Linie. Alle Zahlen kommen aus den simulierten Daten der Demo.</figcaption>
+    <figcaption><i>(ab Build 46)</i> Regatta-Demo „Vorstart“ im Logbuch: Mittwochsregatta NSV, knapp 20 Minuten bis zum Schuss. Alle Zahlen kommen aus den simulierten Daten der Demo, der Wind hier vom eingebauten Demo-Wind (Aufnahme ohne Netz).</figcaption>
     <ol class="marks">
       <li><b>Countdown</b> — bis zum Schuss; die letzte Minute rot.</li>
-      <li><b>Abstand und Time-to-burn</b> — Lot-Abstand zur Linie und die Zeit, die bei der jetzigen Annäherung übrig bleibt.</li>
-      <li><b>Linien-Bias</b> — hier „Linie neutral“: kein Ende liegt in Luv, sonst etwa „Schiff +17° · 35 m“; rechts die Windrichtung, in der Demo vom simulierten Windgeber. <i>(ab Build 43)</i></li>
+      <li><b>Abstand und Time-to-burn</b> — Lot-Abstand zur Linie; hält das Boot auf die Linie zu, kommt die Zeit dazu, die bei der jetzigen Annäherung übrig bleibt.</li>
+      <li><b>Linien-Bias</b> — welches Ende in Luv liegt, etwa „Schiff +17° · 35 m“ oder „Linie neutral“; ist der erste Schenkel keine Kreuz, steht „Kein Luv-Start“. Rechts die Windrichtung, in der Demo vom simulierten Windgeber. <i>(ab Build 43)</i></li>
       <li><b>Pin und Schiff</b> — beide Enden gepingt, sonst fehlen Abstand und Time-to-burn.</li>
       <li><b>MOB</b> — rechts in der ersten Reihe, 0,6 s halten; die Kartenvorschau des Törns entfällt im Vorstart, die Griffe stehen direkt unter dem Countdown. <i>(ab Build 44)</i></li>
+      <li><b>Wind gegen die Bahn</b> — bis zum Schuss die Abkürzung zur Tabelle: Kursart des ersten Schenkels und die Zahl der Grenzfälle. <i>(ab Build 46)</i></li>
     </ol>
   </div>
 </figure>
 
 <div class="box test"><b class="lbl">Bitte testen</b>
 <ul>
+<li><i>(ab Build 46)</i> Starte die Regatta-Demo mit „Vorstart“ und lass sie bis zum Ende laufen: Rundet das Demo-Boot jede Marke an der richtigen Seite, schreibt die App nach rund anderthalb Stunden den Ziel-Eintrag, und findet die Auswertung danach die Wenden und Halsen?</li>
 <li>Lege eine Regatta mit Startschuss in 20 Minuten an, sperre das iPhone und steck es weg: Kommen Vorstart- und Start-Mitteilung pünktlich, ohne dass du die App öffnest?</li>
 <li>Tippe „Sync“ beim Signal: Stimmt der Countdown danach auf die Sekunde mit der Uhr des Wettfahrtleiters?</li>
 <li>Hör dir im Vorstart die Signale an, Telefon in der Halterung und App vorn: Kommen Ton und Ansage pünktlich zur Uhr des Wettfahrtleiters, und sind sie gegen Wind und Wasser laut genug? Und mit gesperrtem Telefon in der Tasche, schon vor dem Vorstartbeginn weggesteckt: Kommen Ton und Ansage auch dort an — der Doppelton zum Vorstartbeginn eingeschlossen —, und läuft deine Musik danach wieder laut weiter?</li>
@@ -2367,7 +2373,7 @@ ohnehin kein Unterschied mehr, und in der Sonne waschen sie aus.</p>
     <span class="hl" style="left:2%;top:85.5%;width:70%;height:4%"><b>4</b></span>
   </div>
   <div>
-    <figcaption>Der Editor an Bord in der Regatta-Demo, kurz nach dem Schuss: dieselbe Karte und Palette wie in der Vorlage, unten die Bahnfolge des Rennens.</figcaption>
+    <figcaption>Der Editor an Bord, aufgenommen in der früheren Regatta-Demo (Up-and-down bis Build 45) kurz nach dem Schuss: dieselbe Karte und Palette wie in der Vorlage, unten die Bahnfolge des Rennens.</figcaption>
     <ol class="marks">
       <li><b>Zurück „Bahn“</b> — führt in den Kontext-Tab des Törns.</li>
       <li><b>Rückgängig, ?, Liste, Menü</b> — wie in der Vorlage; über das Menü lässt sich die geänderte Bahn als neue Vorlage sichern.</li>
@@ -2473,7 +2479,7 @@ ohnehin kein Unterschied mehr, und in der Sonne waschen sie aus.</p>
     <span class="hl" style="left:27.5%;top:91%;width:24%;height:6%"><b>5</b></span>
   </div>
   <div>
-    <figcaption>Kontext-Tab „Regatta“ vor dem Schuss, hier in der Regatta-Demo: vier Marken und Linien.</figcaption>
+    <figcaption>Kontext-Tab „Regatta“ vor dem Schuss, aufgenommen in der früheren Regatta-Demo (Up-and-down bis Build 45): vier Marken und Linien.</figcaption>
     <ol class="marks">
       <li><b>Bahn als Liste</b> — eine Zeile je Durchfahrt mit Nummer, Name und Seite; im Rennen ist die nächste fett und trägt „nächste“. <i>(ab Build 44)</i></li>
       <li><b>Bahn</b> — Bahnprofil des Törns, öffnet den Editor an Bord.</li>
@@ -3936,6 +3942,26 @@ der Zeile noch einmal: Uhrzeit, Dauer, Strecke, Fahrt.</p>
 
 <h4>Demo-Modus und Demo-Stufe</h4>
 <p><span class="path">Werkzeuge → Hilfe &amp; Demo → Demo starten</span>. Der Demo-Modus simuliert NMEA-Daten und Bewegung und legt Beispieldaten an: das Demo-Boot „Vertigo Express", einen Törn Kühlungsborn–Gedser mit Motorstrecke und Funkspruch, einen offenen Tagestörn mit Etappenplan „Warnemünde oder Poel?" (Quick-Buttons, „Nächste Etappe" und Etappenziele auf der Karte inklusive), die Mittwochsregatta mit kompletter Auswertung, Trimm-Einträge und Kalendertermine. Alle Plus- und Pro-Funktionen sind damit voll ausprobierbar, auch ohne Instrumente an Bord. Ein magentafarbener Banner zeigt den Demo-Zustand, ein Tipp darauf beendet die Demo. Magenta heißt in der App „simuliert“ — Orange bleibt der Warnung vorbehalten. Beim Beenden werden alle Demo-Daten gelöscht.</p>
+<p><b>Törn oder Regatta.</b> <i>(ab Build 46)</i> „Demo starten“ fragt zuerst, was die Demo zeigen soll — hier, unter <span class="path">Einstellungen → Stufe &amp; Demo</span> und im Willkommen („Ich schau mich erst um — Demo starten“). <b>Törn</b> ist die Demo wie oben, mit dem Simulator vor Kühlungsborn. <b>Regatta</b> fragt weiter: <b>Vorstart</b> (Schuss in 20 Minuten) oder <b>Rennen läuft</b> (Start vor 40 Minuten) — beide mit der Mittwochsregatta NSV auf dem zweiten Demo-Boot „Nordwind“, das die Bahn in echter Zeit segelt (<a href="#c5">C5</a>). Die Knöpfe gehen über die ganze Breite; „Zurück“ und „Abbrechen“ stehen oben, gestartet wird erst mit der letzten Wahl. Ohne Frage, als Törn, starten „Mit Beispieldaten ansehen“ aus einem leeren Bereich, „Im Demo-Modus ausprobieren“ in der Vorschau von Pro und die NMEA-Einstellungen. Den Punkt „Regatta-Demo“ unter Stufe &amp; Demo gibt es nur noch, solange die Regatta-Demo läuft — zum Wechsel zwischen Vorstart und Rennen läuft.</p>
+
+<figure class="shot">
+  <div class="frame">
+    <img src="bilder/demo-wahl.jpg" alt="Wahlblatt beim Demo-Start nach Regatta: Zurück, die Knöpfe Vorstart und Rennen läuft und ein Satz, woher der Wind kommt" loading="lazy" width="760" height="1652">
+    <span class="hl" style="left:5.5%;top:49.5%;width:20%;height:4.4%"><b>1</b></span>
+    <span class="hl" style="left:5.5%;top:59.8%;width:89%;height:11.2%"><b>2</b></span>
+    <span class="hl" style="left:5.5%;top:73%;width:89%;height:9.2%"><b>3</b></span>
+    <span class="hl" style="left:5%;top:83.4%;width:90%;height:8.8%"><b>4</b></span>
+  </div>
+  <div>
+    <figcaption><i>(ab Build 46)</i> Wahl beim Demo-Start, zweiter Schritt nach „Regatta“.</figcaption>
+    <ol class="marks">
+      <li><b>Zurück</b> — zur ersten Frage, Törn oder Regatta; dort steht an derselben Stelle „Abbrechen“.</li>
+      <li><b>Vorstart</b> — vorgewählt: Schuss in 20 Minuten, danach segelt das Boot die ganze Bahn.</li>
+      <li><b>Rennen läuft</b> — Start vor 40 Minuten, das Boot ist mitten auf der Bahn.</li>
+      <li><b>Woher der Wind kommt</b> — echt mit „Wind aus offenen Quellen“ und Netz, für die Neustädter Bucht, nicht für deine Position; sonst eingebauter Demo-Wind.</li>
+    </ol>
+  </div>
+</figure>
 <p><b>Demo-Stufe</b>: Unter „Demo aktiv" wählst du Pro oder Free. <i>(ab Build 43)</i> Die Demo simuliert weiter Bewegungs- und Beispieldaten, verhält sich aber wie die gewählte Stufe — gesammelte Stufen-Zeilen, Stufen-Übersicht, keine Wind-Auswertung; der Banner nennt die Stufe. <i>(ab Build 43)</i> Instrumente, Bug-Färbung und Laylines laufen in jeder Demo-Stufe mit den simulierten Bordnetz-Daten. So siehst du, was ohne Pro bleibt: alles an Bord. Die Wahl sperrt nie unter deine gekaufte Stufe, wirkt nur, solange die Demo läuft, und bleibt über App-Neustarts erhalten.</p>
 
 <figure class="shot">
@@ -4542,7 +4568,7 @@ der Zeile noch einmal: Uhrzeit, Dauer, Strecke, Fahrt.</p>
 </div>
 
 <footer>
-<p>Etmar Beta-Handbuch · Stand 25.10.2026 · Build 1.0 (42) · Screenshots aus dem Demo-Modus oder der Free-Fassung, die meisten vom 24.10.2026; die von Hand aufgenommenen (Apple Watch, Sperrbildschirm, Inventar-PDF, Törn-Story, Wind vom echten Abruf und einige Kartenausschnitte) können einen älteren Stand zeigen.
+<p>Etmar Beta-Handbuch · Stand 26.10.2026 · Build 1.0 (42) · Screenshots aus dem Demo-Modus oder der Free-Fassung, die meisten vom 24.10.2026; die von Hand aufgenommenen (Apple Watch, Sperrbildschirm, Inventar-PDF, Törn-Story, Wind vom echten Abruf und einige Kartenausschnitte) können einen älteren Stand zeigen.
 Kontakt: <a href="mailto:support@etmar.app">support@etmar.app</a> ·
 <a href="index.html">Startseite</a> · <a href="datenschutz.html">Datenschutz</a> · <a href="impressum.html">Impressum</a></p>
 <p>Etmar ersetzt keine Seekarte und keinen Kartenplotter. Seezeichen und Tiefen stammen aus OpenStreetMap und EMODnet — keine amtlichen Quellen.</p>
