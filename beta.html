@@ -1910,6 +1910,34 @@ ohnehin kein Unterschied mehr, und in der Sonne waschen sie aus.</p>
 
 <p>Sonderfall Jagdstart: Trägt eine Bahn ein Startverfahren, bei dem nicht alle gleichzeitig starten (Känguru-/Jagdstart nach Yardstick, Gruppenstarts), fragt die App direkt nach dem Beitreten zu einer solchen Bahn (etwa einer Bahn aus der Community) nach deiner eigenen Startzeit, solange die Bahn noch kommende Termine hat — sekundengenau, mit eigenem Sekundenfeld unter der Uhrzeit, weil die Segelanweisung sekundengenaues Starten nach Funk- oder GPS-Uhr verlangt. Die Zeit gilt für alle Termine der Bahn; einzelne Renntage änderst du im Kalender. Die mitgelieferte Mittwochsregatta hat keine kommenden Termine mehr (die Termine im September 2026 sind vorbei) — bei ihr fragt die App deshalb nicht.</p>
 
+<h4>Wind gegen die Bahn <i>(ab Build 46)</i></h4>
+<p>Welcher Schenkel ist Kreuz, welcher Anlieger, welcher Raum, welcher Vorwind — und auf welchem Bug? Daran hängen Vorsegel, Spi und die Arbeit vor der Luvmarke. Vor dem Start steht dafür im <span class="path">Regatta-Detail</span> oben die Zeile <b>Wind gegen die Bahn</b>: Wind am Start und am Ziel nach der GFS-Vorhersage, die Grenzfälle mit Raute und wie viele Schenkel Kreuz oder Vorwind sind. Im Rennen steht sie unter der Auswertung, nach dem Ziel nicht mehr. Bis zum Schuss führt im Logbuch eine Zeile unter den Regatta-Knöpfen direkt hin („1. Schenkel Halbwind · 2 Grenzfälle“).</p>
+<p>Ein Tipp öffnet die Tabelle — bei Standardschrift ohne Scrollen. Die Kursart vor dem Start rechnet gegen die hinterlegte Polare: spitzer als ihr Wendewinkel wird gekreuzt, tiefer als ihr Halsewinkel vor dem Wind gekreuzt, dazwischen Anlieger bis 70°, Halbwind bis 110°, darüber Raum. Das ist bewusst nicht die Grenze der Auswertung, die jeden gesegelten Schlag bis 75° zum Wind als Kreuz zählt.</p>
+<figure class="shot">
+  <div class="frame">
+    <img src="bilder/bahnwind-tabelle.jpg" alt="Bildschirm Wind gegen die Bahn: Quelle und Wind im Kopf, sieben Schenkel mit Kursart, Winkel zum Wind und Bug, zwei Grenzfälle mit Raute, unten der Umschalter Tabelle und Skizze" loading="lazy" width="760" height="1652">
+    <span class="hl" style="left:3%;top:14.5%;width:73%;height:5.5%"><b>1</b></span>
+    <span class="hl right" style="left:76%;top:15%;width:21%;height:5.5%"><b>2</b></span>
+    <span class="hl" style="left:3%;top:21.3%;width:94%;height:6.4%"><b>3</b></span>
+    <span class="hl" style="left:3%;top:28.5%;width:94%;height:6.6%"><b>4</b></span>
+    <span class="hl" style="left:1%;top:35.5%;width:98%;height:8.8%"><b>5</b></span>
+    <span class="hl" style="left:4%;top:82.5%;width:92%;height:7%"><b>6</b></span>
+  </div>
+  <div>
+    <figcaption>Mittwochsregatta NSV mit der Polare der Albin Express. Die Vorhersage ist für das Bild ausgedacht (Wind 250° dreht auf 267°), damit zwei Grenzfälle zu sehen sind.</figcaption>
+    <ol class="marks">
+      <li><b>Quelle und Wind</b> — woher der Wind kommt, steht immer dabei; darunter Wind am Start → am Ziel. Ab einer Stunde vor dem Start gilt am Start der Wind vor Ort (Bordnetz, sonst Handwind, sonst eine Station), danach dreht er wie die Vorhersage: „Handwind im Vorstart, Verlauf nach GFS“.</li>
+      <li><b>Neu abrufen</b> — holt den neuesten GFS-Lauf. Die App holt auch beim Öffnen, ab 5 Tagen vor dem Start und nur mit „Wind aus offenen Quellen“.</li>
+      <li><b>Lauf, Gültigkeit, Alter</b> — welcher GFS-Lauf, für welche Zeit, wann geholt. Der Stand bleibt auf dem Gerät: Auf See ohne Netz rechnet die Seite damit weiter. Darunter der Vorbehalt: GFS kennt die Küste nicht, die Richtung liegt oft 10–20° daneben.</li>
+      <li><b>Ein Schenkel</b> — Nummer und Abfahrt, Kursart als Wort, Ziel-Marke, rechts der Winkel zum wahren Wind und der Bug. Die erste Abfahrt ist die Startzeit, ab dem zweiten Schenkel „≈“ auf 5 Minuten.</li>
+      <li><b>Grenzfall</b> — Raute, Balken und die Frage „Kreuz oder Anlieger?“ bzw. „Raum oder Vorwind?“: Der Schenkel liegt näher als 10° am Wende- bzw. Halsewinkel, oder die Vorhersage dreht während des Schenkels über die Grenze. Darunter der Grund in Grad.</li>
+      <li><b>Tabelle · Skizze</b> — unten am Daumen. Die Skizze zeigt die Bahn mit dem Wind oben und einem Nordpfeil; Zickzack heißt Kreuz oder Vorwind, Grenzfälle sind gestrichelt.</li>
+    </ol>
+  </div>
+</figure>
+<p><b>Zeiten nur mit Polare.</b> Die Abfahrten rechnet die App aus der <b>hinterlegten</b> Polare des Boots: Kreuz und Vorwind über die VMG, die anderen Kurse über die Fahrt auf dem Kurs, jeder Schenkel mit dem Wind seiner geschätzten Abfahrt. Die gefahrene Polare nimmt sie dafür nicht; gemessene Werte kommen über „In hinterlegte Polare übernehmen“ hinein. Ohne Polare gilt der Wind der Startzeit für alle Schenkel, Kreuz und Vorwind beginnen bei angenommenen 45° und 150°, und statt der Zeiten steht „Zeiten je Schenkel brauchen eine Polare.“ Verlängerungsschenkel rechnet die App nicht.</p>
+<p><b>Leer heißt nicht weg.</b> Ohne Bahn sagt die Zeile „Ohne Bahn keine Schenkel.“ und führt zur Bahn; liegt der Start weiter als 5 Tage entfernt, nennt sie den Tag, ab dem die Vorhersage geht; ohne Netz und ohne gespeicherten Stand „Vorhersage braucht einmal Netz.“ In der Demo trägt die Regatta von „Nordwind“ eine ausgedachte Vorhersage — die Quelle sagt dann „(Demo)“.</p>
+
 <h4>Vorstart: läuft von selbst</h4>
 <p>Ab dem Anlegen musst du nichts mehr auslösen; die App übersteht dabei auch einen Neustart:</p>
 <ul>
