@@ -1670,25 +1670,26 @@ ohnehin kein Unterschied mehr, und in der Sonne waschen sie aus.</p>
 </figure>
 
 <h4>Tiefenlinien und Sicherheitskontur</h4>
-<p>Tiefenkonturen bei 2, 5, 10 und 20 m — dezent, geglättet, jede Linie mit aufrechter Tiefenangabe wie auf der Seekarte. Flächenfärbung gibt es bewusst nicht: Mit dem groben Modellraster wurden gefärbte Flächen treppig oder lagen neben den Linien, das war irreführend. Die Tiefen sind eine eigene Ebene im Leuchtturm-Menü, unabhängig von den Seezeichen, und werden wie diese mit jedem Offline-Paket geladen (ein Abruf des EMODnet-Rasters pro Revier, lokal verarbeitet, offline verfügbar). Von selbst lädt die Karte beide vorerst nicht nach (siehe „Online nachladen — vorerst aus“ unter Offline-Pakete): Sie kommen nur mit einem gespeicherten Revier. Der Demo-Modus bringt die Tiefen der Mecklenburger Bucht mit.</p>
+<p>Tiefenkonturen bei 2, 5, 10 und 20 m — dezent, geglättet, jede Linie mit aufrechter Tiefenangabe wie auf der Seekarte. <i>(ab Build 46)</i> Die App rechnet das Modellraster vor dem Zeichnen auf die doppelte Dichte hoch und glättet zweimal: Die Linien laufen ruhiger, die Zacken an den Rasterzellen sind kleiner. Genauer werden sie dadurch nicht — ihre Lage bleibt die des Modells. Die Tiefen sind eine eigene Ebene im Leuchtturm-Menü, unabhängig von den Seezeichen, und werden wie diese mit jedem Offline-Paket geladen (ein Abruf des EMODnet-Rasters pro Revier, lokal verarbeitet, offline verfügbar). Von selbst lädt die Karte beide vorerst nicht nach (siehe „Online nachladen — vorerst aus“ unter Offline-Pakete): Sie kommen nur mit einem gespeicherten Revier. Der Demo-Modus bringt die Tiefen der Mecklenburger Bucht mit.</p>
 <p><b>Gegen das Wasser der Karte geprüft.</b> Linien und Lotungen gibt es nur, wo das Tiefenmodell und die Wasserflächen der Karte übereinstimmen — quer über Land läuft keine Linie; nur am Ufer selbst kann eine noch bis zu einer Rasterzelle neben dem Kartenufer liegen. In Flüssen und Hafenbecken, die schmaler als rund 800 m (sieben Rasterzellen) sind, zeigt die Karte gar keine Tiefenlinien und Lotungen — gleich, in welche Richtung das Gewässer verläuft. Die 800 m gelten für die 120-m-Zellen eines normalen Reviers, in großen Revieren mit gröberem Raster liegt die Grenze entsprechend höher. So gibt es in der Schlutuper Bucht und auf dem engen Stück der Trave bis zur Pötenitzer Wiek keine Tiefenlinien, ebenso im Seekanal von Warnemünde und auf der Unterwarnow bis Rostock; vor der Einfahrt und in den breiten Hafenbecken bleiben sie. Das ist Absicht, kein Fehler: Dort gilt die Seekarte mit Fahrrinne und Tonnenstrich, eine Modell-Linie läge innerhalb ihres eigenen Fehlers. Breitere Wasserflächen wie die Pötenitzer Wiek oder der Dassower See behalten ihre Linien. Konnte die App das Wasser der Karte beim Laden nicht holen, sagt es die Revier-Zeile unter <span class="path">Einstellungen → Karte → Offline-Karten</span>, mit „Erneut versuchen“ darunter.</p>
 <p><b>Sicherheitskontur.</b> Ist am Boot ein Tiefgang hinterlegt (<span class="path">Werkzeuge → Boot</span>), betont die Karte genau eine Linie: die flachste Kontur, die noch tiefer liegt als Tiefgang plus Puffer (mindestens 1 m, bei tiefem Kiel die Hälfte des Tiefgangs — bei 1,65 m Tiefgang also die 5-m-Linie). Alle anderen Konturen sind zurückgenommen, denn auf dem Plotter zählt genau die eine Linie, die du nicht überfährst.</p>
 <p>Ohne Tiefgang gilt die 2-m-Linie als Standard: Sie ist betont und trägt die Beschriftung „2 m (Standard)“; im Ebenen-Menü trägt „Tiefenlinien“ eine zweite Zeile, die sagt, wo du den Tiefgang einträgst (<span class="path">Werkzeuge → Boot</span>). Die Zahl der Sicherheitskontur hat Vorrang vor Seezeichen-Namen und Lotungen — vorher konnte ein Tonnenname oder eine Lotung sie verdrängen. Den Seezeichen selbst weicht sie aus, damit sie kein Topzeichen verdeckt; die Namen stehen unter ihrer Tonne. Tiefenzahlen folgen der Einheit unter <span class="path">Einstellungen → Einheiten</span>: an den Linien mit Einheit („16,4 ft“), die Lotungen in derselben Einheit ohne.</p>
+<p><b>Flachwasser getönt.</b> <i>(ab Build 46)</i> Wasser, das flacher ist als die Sicherheitskontur, ist leicht getönt — wie das Flachwasser auf der Papierkarte und die Flachwasser-Schattierung eines Plotters: Wo es für dein Boot knapp wird, siehst du mit einem Blick, ohne Zahlen zu lesen. Die Tönung steht nur dort, wo das Tiefenmodell etwas weiß. Sie endet an der Sicherheitskontur, am Rand des geladenen Reviers, vor Binnenseen, die das Modell nicht kennt, und vor Flüssen und Hafenbecken, die schmaler als rund 800 m sind — dort, wo auch keine Tiefenlinien stehen. Zum Ufer hin endet sie, wo das Modell die Küste sieht; das ist nicht genau das Ufer der Karte, je nach Stelle bleibt ein schmaler Saum ungetönt oder ein wenig Tönung liegt auf Land. Ohne Tiefgang am Boot reicht sie bis zur 2-m-Linie. Die Sicherheitskontur ist etwas schmaler als vorher, weil die Tönung sie mitträgt, und bleibt die kräftigste Linie. Im dunklen Erscheinungsbild ist die Tönung ein dunkles Blau; im Nachtmodus verschwindet sie, damit keine helle Fläche die Nachtsicht kostet — dann trägt die Sicherheitskontur in Amber allein. Reviere, die du mit einem früheren Build geladen hast, zeigen die Tönung erst, wenn ihre Tiefen neu geladen sind: Ist „Karte online nachladen“ an, lädt die App sie still neu, beim ersten Öffnen der Karte nach einem App-Start, wenn dann Netz da ist; sonst bleiben ihre Linien ohne Tönung, bis du die Tiefen unter <span class="path">Einstellungen → Karte → Offline-Karten</span> mit dem Pfeil in der Paket-Zeile aktualisierst. Die Tiefen eines Reviers brauchen dafür mehr Platz, beim Demo-Revier dreimal so viel (etwa 860 statt 280 KB).</p>
 <p><b>Wie fein die Tiefen sind.</b> Das Raster hängt am Ausschnitt, nicht am Detailgrad. Bis zu einem Revier von rund 80 × 80 sm liegt es bei etwa 120 m, der Auflösung des EMODnet-Modells; größere Ausschnitte werden gedeckelt und damit gröber. Für die Ansteuerung also das kleinere Revier laden, für die Törnplanung reicht das große. Modelldaten — für die Planung, nicht fürs Ankern auf den Meter.</p>
 <p><b>Gestrichelt heißt ungefähr.</b> Eine Tiefenlinie, deren Lage das Modell nicht genau hergibt, ist gestrichelt — so zeichnet die Seekarte eine ungefähre Tiefenlinie — und trägt „≈“ vor der Zahl: „≈ 2 m“, bei der Standard-Kontur „≈ 2 m (Standard)“. Das kommt an drei Stellen vor — dicht am Ufer, bei grobem Raster und dort, wo EMODnet die Vermessung als gering einstuft oder nicht bewertet (Absatz „Güte der Vermessung“ unten). <b>Dicht am Ufer:</b> Wo eine Linie über eine Rasterzelle läuft, die an Land grenzt oder selbst Land ist, ist ihre Lage nur auf etwa eine Zelle genau, bei einem normalen Revier also auf rund 120 m; dort wird nur dieses Stück gestrichelt. <b>Grobes Raster:</b> In einem Revier, dessen Raster gröber als 200 m ist — das beginnt bei rund 60 000 km², etwa 130 × 130 sm —, ist jede Linie gestrichelt, und die Revier-Zeile unter <span class="path">Einstellungen → Karte → Offline-Karten</span> sagt „gröber als 200 m — Linien gestrichelt“. Farbe und Stärke bleiben dabei, wie sie sind: Auch gestrichelt ist die Sicherheitskontur die kräftigste Linie, nachts in Amber. Kräftig und gestrichelt heißt: „Hier wird es flach — wo genau, weiß das Modell nicht.“ Der Seekarten-Hinweis oben sagt es in einem Satz.</p>
 
 <figure class="shot">
   <div class="frame">
-    <img src="bilder/tiefen.jpg" alt="Tiefenlinien vor Heiligendamm im Demo-Modus: 10-m-Linie ruhig, 5-m-Linie als Sicherheitskontur kräftig, 2-m-Linie am Strand gestrichelt mit ≈" loading="lazy" width="760" height="1652">
+    <img src="bilder/tiefen.jpg" alt="Tiefenlinien vor Heiligendamm im Demo-Modus: 10-m-Linie ruhig, 5-m-Linie als Sicherheitskontur kräftig, 2-m-Linie am Strand gestrichelt mit ≈, das Wasser zwischen Strand und 5-m-Linie leicht getönt" loading="lazy" width="760" height="1652">
     <span class="hl" style="left:29%;top:41.2%;width:12%;height:3.6%"><b>1</b></span>
     <span class="hl" style="left:59%;top:53.6%;width:10%;height:3.6%"><b>2</b></span>
     <span class="hl" style="left:2%;top:57.6%;width:52%;height:2.6%"><b>3</b></span>
   </div>
   <div>
-    <figcaption>Tiefenlinien vor Heiligendamm im Demo-Modus, jede mit aufrechter Beschriftung und bewusst ohne Flächenfärbung. Das Demo-Boot hat 1,49 m Tiefgang, betont ist deshalb die 5-m-Linie; die 2-m-Linie am Strand ist gestrichelt und trägt „≈“.</figcaption>
+    <figcaption>Tiefenlinien vor Heiligendamm im Demo-Modus, jede mit aufrechter Beschriftung. Das Demo-Boot hat 1,49 m Tiefgang, betont ist deshalb die 5-m-Linie; die 2-m-Linie am Strand ist gestrichelt und trägt „≈“. <i>(ab Build 46)</i> Zwischen Strand und 5-m-Linie ist das Wasser leicht getönt.</figcaption>
     <ol class="marks">
       <li><b>10-m-Linie</b> — ruhig und durchgezogen; Konturen liegen nur auf Wasser, das Modell und Karte kennen.</li>
-      <li><b>5-m-Linie</b> — die Sicherheitskontur zum Tiefgang des Boots, die kräftigste Linie.</li>
+      <li><b>5-m-Linie</b> — die Sicherheitskontur zum Tiefgang des Boots, die kräftigste Linie; bis zu ihr ist das flachere Wasser getönt <i>(ab Build 46)</i>.</li>
       <li><b>Gestrichelt</b> — dicht am Ufer ist die Lage der Linie nur auf etwa eine Rasterzelle genau; die Zahl trägt dann „≈“, das Zeichen heißt „ungefähr“.</li>
     </ol>
   </div>
@@ -1699,21 +1700,23 @@ ohnehin kein Unterschied mehr, und in der Sonne waschen sie aus.</p>
 
 <figure class="shot">
   <div class="frame">
-    <img src="bilder/tiefen-guete.jpg" alt="Tiefenlinien vor Gedser im Demo-Modus: alle gestrichelt mit ≈, die 5-m-Sicherheitskontur kräftig gestrichelt, Lotungen und im Wasser der Vermerk „Güte unbekannt“" loading="lazy" width="760" height="1652">
-    <span class="hl" style="left:0%;top:41%;width:9%;height:3.2%"><b>1</b></span>
-    <span class="hl" style="left:27%;top:45.5%;width:55%;height:5%"><b>2</b></span>
-    <span class="hl" style="left:39.5%;top:69%;width:22%;height:2.6%"><b>3</b></span>
-    <span class="hl" style="left:61%;top:53.4%;width:7.5%;height:2.6%"><b>4</b></span>
-    <span class="hl" style="left:73%;top:24.3%;width:12%;height:2.8%"><b>5</b></span>
+    <img src="bilder/tiefen-guete.jpg" alt="Tiefenlinien vor Gedser im Demo-Modus: alle gestrichelt mit ≈, die 5-m-Sicherheitskontur kräftig gestrichelt, das Wasser zwischen Küste und 5-m-Linie leicht getönt, die Rinne nach Gedser hell, Lotungen und im Wasser der Vermerk „Güte unbekannt“" loading="lazy" width="760" height="1652">
+    <span class="hl" style="left:90.5%;top:53.6%;width:9.5%;height:2.6%"><b>1</b></span>
+    <span class="hl" style="left:5%;top:60%;width:75%;height:7%"><b>2</b></span>
+    <span class="hl" style="left:53.5%;top:76.6%;width:23%;height:2.8%"><b>3</b></span>
+    <span class="hl" style="left:69.5%;top:68%;width:6.5%;height:2.8%"><b>4</b></span>
+    <span class="hl" style="left:76%;top:51.6%;width:12%;height:3.2%"><b>5</b></span>
+    <span class="hl" style="left:3%;top:42%;width:18%;height:10%"><b>6</b></span>
   </div>
   <div>
-    <figcaption>Vor Gedser im Demo-Modus: Für dieses Wasser stuft EMODnet die Vermessung als gering ein oder bewertet sie nicht — jede Linie ist gestrichelt und trägt „≈“, auch die Sicherheitskontur zum Tiefgang des Demo-Boots.</figcaption>
+    <figcaption>Vor Gedser im Demo-Modus: Für dieses Wasser stuft EMODnet die Vermessung als gering ein oder bewertet sie nicht — jede Linie ist gestrichelt und trägt „≈“, auch die Sicherheitskontur zum Tiefgang des Demo-Boots. <i>(ab Build 46)</i> Zwischen Küste und 5-m-Linie ist das Wasser leicht getönt.</figcaption>
     <ol class="marks">
       <li><b>„≈ 5 m“</b> — die Zahl der Sicherheitskontur, ungefähr.</li>
       <li><b>Sicherheitskontur</b> — kräftig und gestrichelt: Hier wird es flach, wo genau, weiß das Modell nicht.</li>
       <li><b>„Güte unbekannt“</b> — nicht bewertete Wasserfläche ab 5 km²: vermessen, aber ohne Bewertung.</li>
       <li><b>Lotung</b> — die Zahlen bleiben auch dort stehen, wo die Güte unbekannt ist.</li>
       <li><b>„≈ 2 m“</b> — die 2-m-Linie an der Küste, gestrichelt wie alle Linien hier.</li>
+      <li><b>Getönt</b> <i>(ab Build 46)</i> — flacher als die Sicherheitskontur. Die Rinne nach Gedser liegt im Modell tiefer und bleibt hell.</li>
     </ol>
   </div>
 </figure>
@@ -1732,11 +1735,11 @@ ohnehin kein Unterschied mehr, und in der Sonne waschen sie aus.</p>
 <figure class="shot">
   <div class="frame">
     <img src="bilder/grenzlinie.jpg" alt="Hauptkarte im Demo-Modus bei 1 sm an der Westkante des Demo-Reviers vor dem Salzhaff: senkrecht eine fein gestrichelte, blasse blaugraue Linie mit der Aufschrift Ende Tiefen und Seezeichen, rechts davon eine Tonne und Tiefenlinien, links nur Wasser; oben der Chip Seezeichen und Tiefen hier nicht geladen" loading="lazy" width="760" height="1652">
-    <span class="hl" style="left:47%;top:28.5%;width:9%;height:17.5%"><b>1</b></span>
-    <span class="hl" style="left:47%;top:48%;width:9%;height:13%"><b>2</b></span>
-    <span class="hl" style="left:56%;top:46.5%;width:24%;height:40%"><b>3</b></span>
-    <span class="hl" style="left:3%;top:31%;width:40%;height:22%"><b>4</b></span>
-    <span class="hl" style="left:2.5%;top:15.2%;width:73%;height:3.6%"><b>5</b></span>
+    <span class="hl" style="left:47%;top:18.5%;width:9%;height:17.5%"><b>1</b></span>
+    <span class="hl" style="left:47%;top:37%;width:9%;height:16%"><b>2</b></span>
+    <span class="hl" style="left:53%;top:35.5%;width:32%;height:33%"><b>3</b></span>
+    <span class="hl" style="left:3%;top:28%;width:42%;height:24%"><b>4</b></span>
+    <span class="hl" style="left:3%;top:15.2%;width:73%;height:3.6%"><b>5</b></span>
   </div>
   <div>
     <figcaption><i>(ab Build 45)</i> Die Westkante des Demo-Reviers vor dem Salzhaff, tags bei 1 sm: Rechts der Linie liegen Tiefen und Seezeichen auf dem Gerät, links nicht.</figcaption>
@@ -4239,7 +4242,7 @@ der Zeile noch einmal: Uhrzeit, Dauer, Strecke, Fahrt.</p>
 <li>Flugmodus ein (WLAN und Mobilfunk aus), App aus dem App-Umschalter beenden, neu starten, Karte öffnen. <b>Erwartung:</b> Oben ein Chip „Offline: &lt;Paket&gt;“ — orange „kein Paket für diesen Ausschnitt“, sobald du herausschiebst. Im Paket bleibt die Karte bis zum gewählten Detailgrad scharf. Unter <span class="path">Werkzeuge → Einstellungen → Karte</span> den Kartenstil zwischen „Kontrast“ und „Seekarte“ wechseln und zur Karte zurück: Beide müssen offline funktionieren, die Kacheln werden nur umgefärbt.</li>
 <li>Leuchtturm-Menü: Seezeichen, Häfen &amp; Ankerplätze (OSM), Tiefenlinien und Mein Hafenhandbuch einzeln ein- und ausschalten. <b>Erwartung:</b> Jede Ebene schaltet für sich, das Symbol ist gefüllt, solange eine an ist. Seezeichen in Seekarten-Formen: laterale Tonnen rot (stumpf) und grün (spitz), Kardinaltonnen gelb-schwarz mit Topzeichen, Sondertonnen gelb, Ansteuerungstonnen rot-weiß, Leuchtfeuer als Magenta-Stern. Leuchttürme, Kardinal- und Ansteuerungszeichen schon in der Revierübersicht, Lateraltonnen ab Revier-Zoom, Molenfeuer als kleinerer Stern ebenfalls erst ab Revier-Zoom, Baken erst nah dran; Namen ab nahem Zoom.</li>
 <li>Eine Tonne antippen. <b>Erwartung:</b> Name, Typ, Peilung und Distanz von deinem Boot, dazu „Go To“ — das blaue Banner mit Peilung, Distanz und Kursfehler läuft ohne Netz.</li>
-<li>Tiefenlinien prüfen. <b>Erwartung:</b> Konturen bei 2/5/10/20 m mit aufrechter Beschriftung, nur auf Wasserflächen, keine Flächenfärbung. Mit hinterlegtem Tiefgang ist genau eine Linie betont — die flachste, die noch tiefer liegt als Tiefgang plus Puffer (bei 1,65 m Tiefgang die 5-m-Linie).</li>
+<li>Tiefenlinien prüfen. <b>Erwartung:</b> Konturen bei 2/5/10/20 m mit aufrechter Beschriftung, nur auf Wasserflächen. <i>(ab Build 46)</i> Wasser flacher als die betonte Linie ist leicht getönt, die Tönung endet an der Linie und am Rand des Reviers. Mit hinterlegtem Tiefgang ist genau eine Linie betont — die flachste, die noch tiefer liegt als Tiefgang plus Puffer (bei 1,65 m Tiefgang die 5-m-Linie).</li>
 <li>Einen OSM-Hafen (indigo Anker) antippen → „Ins Hafenhandbuch“. <b>Erwartung:</b> Name, Typ, Liegeplätze, VHF-Kanal und Einrichtungen in der Karte, darunter, über den Knöpfen, der Hinweis zum Kreis ganz lesbar; das Zielort-Formular ist vorbelegt, erst „Sichern“ legt den Datensatz an. Lässt du die Karte offen und gehst über <span class="path">Werkzeuge → Hafenhandbuch</span> auf das Karten-Symbol, ist sie danach zu. Auch die Zielort-Auswahl (z. B. Endstation im Törn-Formular) zeigt die Seekarten-Häfen offline, nach Entfernung sortiert.</li>
 <li>Flugmodus aus. Unter Offline-Karten „Kartenspeicher“ ansehen und „Zwischenspeicher leeren“. <b>Erwartung:</b> Nur nebenbei angesehene Kacheln verschwinden; Pakete, Seezeichen und Tiefen bleiben.</li>
 </ol>
