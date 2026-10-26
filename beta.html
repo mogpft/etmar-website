@@ -458,6 +458,11 @@ die Beta-Stufe aus dem Kasten oben, weil die Demo nur mit Beispieldaten läuft.<
 <h3><span class="num">A5</span>Worauf ich diesmal schaue</h3>
 <p class="sub">Die Punkte aus dem aktuellen Build. Alles andere ist trotzdem willkommen.</p>
 
+<p><i>(ab Build 46)</i> <b>Build 46 — Luftdruck ohne Bordbarometer</b></p>
+<ul>
+<li><i>(ab Build 46)</i> <b>Luftdruck vom iPhone im Logbuch</b> (<a href="#c1">C1</a>, <a href="#c11">C11</a>): Leg ohne Barometer am Bordnetz einen neuen Logbuch-Eintrag an. iOS fragt dabei nach „Bewegung &amp; Fitness“ – erst hier, nicht beim Start der App. Nach dem Erlauben steht kurz darauf ein Luftdruck mit der Marke „iPhone“ im Feld. Lass die App gut eine Stunde offen oder zeichne eine Fahrt auf und leg dann wieder einen neuen Eintrag an: Unter „Mehr“ nennt die Zeile „Tendenz“ jetzt Wort und Zahl. Lehnst du die Rückfrage ab, bleibt das Feld leer, und die Zeile unter dem Abschnitt Wetter sagt, wo du es einschaltest (<span class="path">Einstellungen → Etmar → Bewegung &amp; Fitness</span>). <i>Kommt die Rückfrage im richtigen Moment? Passt die Tendenz nach einer Stunde zu dem, was Himmel und Wind tun – und zu einem Barometer an Bord, falls du eins hast?</i></li>
+</ul>
+
 <p><i>(ab Build 44)</i> <b>Build 44 — Wind für Fahrten ohne Windgeber</b></p>
 <ul>
 <li><i>(ab Build 44)</i> <b>Im Training „Daten sammeln“ öffnen, eine Wendenserie fahren</b> (<a href="#c8">C8</a>): Leg ein Training an, tippe zwischen zwei Läufen auf „Daten sammeln“ und starte die Wendenserie. <i>Liest du das Ziel über „Lauf beenden“ bei Welle mit einem Blick? Passt der Titel einer Wind-Zeile („Polare: Kreuz unter 8 kn“) zu dem, was deinem Boot wirklich fehlt?</i></li>
@@ -1341,7 +1346,26 @@ ohnehin kein Unterschied mehr, und in der Sonne waschen sie aus.</p>
 <li><b>Anlegen</b>: der Abschluss mit einem Tap. Bei einem Tagestörn schließt die App sofort ab (Ankunfts-Eintrag, rückdatiert auf den Stillstand, Rückgängig-Balken statt Rückfrage). Bei einem Mehrtagestörn – offene Etappen oder Start vor heute – fragt ein Dialog: „Anlegen (Etappe)“, der Törn bleibt offen, oder „Törn abschließen“.</li>
 </ul>
 <p>MOB und Anker liegen ebenfalls in der Knopfgruppe, an festem Platz – beide sind in <a href="#c13">C13</a> beschrieben. „Trimm“ hält den aktuellen Trimm fest und gehört zum Trimm-Tagebuch.</p>
-<p><b>Wind als Vorschlag.</b> <i>(ab Build 44)</i> Beim Anlegen eines Eintrags steht für Wind und Windrichtung ein grauer Vorschlag in den leeren Feldern – der aktuelle Wert der nächsten Station (DWD, DMI; <i>ab Build 45</i> in Schweden das SMHI, in den USA die Bojen und Küstenstationen der NOAA, dort in Messhöhe, nicht auf 10 m umgerechnet), sonst des Wettermodells GFS, derselbe wie „Wind jetzt“ oben auf der Karte (<a href="#c3">C3</a>); unter dem Abschnitt steht, woher er kommt. In den Eintrag kommt er erst mit „Übernehmen“ im Kopf des Abschnitts Wetter – vorher wird nichts gespeichert. Ohne Netz steht der zuletzt geholte Wert, solange er höchstens drei Stunden alt ist, und die Zeile unter dem Abschnitt nennt dann sein Alter; sonst bleiben die Felder leer. Apple Weather fragt die App nicht mehr ab (bis Build 43 kam der Vorschlag von dort, mit Böen, Luftdruck und Wetterlage). Böen, Luftdruck, Sicht, Temperatur und Wetterlage sind ohne Bordnetz Handeinträge. Mit Bordelektronik am NMEA-Netz haben die eigenen Instrumente Vorrang: Bus-Wind und Bus-Barometer füllen die Felder, und beim Abschließen des Törns wird der Wind von Ablege- und Ankunfts-Eintrag aus den ersten bzw. letzten zehn Minuten der Aufzeichnung gemittelt – der Momentwert im Hafen ist Böe und Abdeckung, das Mittel draußen der ehrliche Wind. Von Hand eingetragener Wind bleibt dabei immer stehen. <i>(ab Build 43)</i></p>
+<p><b>Wind als Vorschlag.</b> <i>(ab Build 44)</i> Beim Anlegen eines Eintrags steht für Wind und Windrichtung ein grauer Vorschlag in den leeren Feldern – der aktuelle Wert der nächsten Station (DWD, DMI; <i>ab Build 45</i> in Schweden das SMHI, in den USA die Bojen und Küstenstationen der NOAA, dort in Messhöhe, nicht auf 10 m umgerechnet), sonst des Wettermodells GFS, derselbe wie „Wind jetzt“ oben auf der Karte (<a href="#c3">C3</a>); unter dem Abschnitt steht, woher er kommt. In den Eintrag kommt er erst mit „Übernehmen“ im Kopf des Abschnitts Wetter – vorher wird nichts gespeichert. Ohne Netz steht der zuletzt geholte Wert, solange er höchstens drei Stunden alt ist, und die Zeile unter dem Abschnitt nennt dann sein Alter; sonst bleiben die Felder leer. Apple Weather fragt die App nicht mehr ab (bis Build 43 kam der Vorschlag von dort, mit Böen, Luftdruck und Wetterlage). Böen, Sicht, Temperatur und Wetterlage sind ohne Bordnetz Handeinträge, bis Build 45 auch der Luftdruck – <i>(ab Build 46)</i> belegt ihn der Sensor im iPhone vor (siehe unten). Mit Bordelektronik am NMEA-Netz haben die eigenen Instrumente Vorrang: Bus-Wind und Bus-Barometer füllen die Felder, und beim Abschließen des Törns wird der Wind von Ablege- und Ankunfts-Eintrag aus den ersten bzw. letzten zehn Minuten der Aufzeichnung gemittelt – der Momentwert im Hafen ist Böe und Abdeckung, das Mittel draußen der ehrliche Wind. Von Hand eingetragener Wind bleibt dabei immer stehen. <i>(ab Build 43)</i></p>
+<p><b>Luftdruck vom iPhone.</b> <i>(ab Build 46)</i> Liefert kein Barometer am Bordnetz frisch den Luftdruck, belegt die App „Luftdruck (hPa)“ mit dem Sensor im iPhone vor – auch im kurzen Formular, das den Wert mitspeichert. Daneben steht die Marke „iPhone“, solange der vorbelegte Wert unverändert im Feld steht; vom Bordbarometer gibt es keine Marke. Im Abschnitt Wetter (hinter „Mehr“) folgen bei neuen Einträgen die Zeile „Tendenz“ – Pfeil, Wort und Zahl, etwa „↓ fällt schnell · −1,4 hPa/h“ – und die Kurve der gemessenen Zeit, höchstens drei Stunden. Die Tendenz gilt ab einer Stunde Messung, vorher sagt die Zeile, wie lange noch. Das Wort folgt der angezeigten Zahl: unter 0,2 gleichbleibend, bis 1,0 langsam, bis 2,0 schnell, darüber sehr schnell (hPa je Stunde). Tendenz und Kurve kommen immer aus einer Quelle, Bordbarometer oder iPhone, nie gemischt. Gemessen wird nur bei offener App oder laufender Aufzeichnung, alle fünf Minuten. Der Sensor kann 1–2 hPa vom Bordbarometer abweichen, und 8 m Höhenunterschied machen rund 1 hPa – die Tendenz ist verlässlich, solange das iPhone auf gleicher Höhe bleibt. Nach der Erlaubnis „Bewegung &amp; Fitness“ fragt iOS beim ersten neuen Eintrag ohne Druck vom Bordnetz; ist sie abgelehnt, sagt die Fußzeile, wo du sie einschaltest. Beim Bearbeiten eines Eintrags gibt es weder Vorbelegung noch Tendenz oder Kurve – die gehören zu „jetzt“. Gespeichert wird nur der Wert in ganzen hPa.</p>
+<figure class="shot">
+  <div class="frame">
+    <img src="bilder/barometer-eintrag.jpg" alt="Neuer Logbuch-Eintrag ohne Bordnetz, Abschnitt Wetter: Luftdruck 1009 hPa mit Marke iPhone, Tendenz fällt schnell minus 1,4 hPa je Stunde, Kurve der letzten drei Stunden, darunter die Herkunft" loading="lazy" width="760" height="1652">
+    <span class="hl" style="left:4%;top:38%;width:92%;height:6%"><b>1</b></span>
+    <span class="hl" style="left:4%;top:44.3%;width:92%;height:5.5%"><b>2</b></span>
+    <span class="hl" style="left:4%;top:50.5%;width:92%;height:15%"><b>3</b></span>
+    <span class="hl" style="left:4%;top:89%;width:92%;height:7.5%"><b>4</b></span>
+  </div>
+  <div>
+    <figcaption><i>(ab Build 46)</i> Neuer Eintrag ohne Bordnetz, Abschnitt Wetter hinter „Mehr“. Luftdruck, Tendenz und Kurve stammen hier von einem simulierten Sensor; der graue Wind-Vorschlag ist ein echter Stationswert.</figcaption>
+    <ol class="marks">
+      <li><b>Luftdruck</b> — vom Sensor im iPhone vorbelegt, daneben die Marke „iPhone“; vom Bordbarometer ohne Marke.</li>
+      <li><b>Tendenz</b> — Pfeil und Wort kräftig, die Zahl in hPa je Stunde dahinter; ab einer Stunde Messung.</li>
+      <li><b>Kurve</b> — die gemessene Zeit, höchstens drei Stunden, von „−3 h“ bis „jetzt“.</li>
+      <li><b>Herkunft</b> — woher der Wert kommt und wie weit er vom Bordbarometer abweichen kann.</li>
+    </ol>
+  </div>
+</figure>
 <p><b>Fotos</b> liegen vollständig in der App: Jedes Bild wird beim Sichern auf Bildschirmgröße gerechnet und lokal abgelegt – es ist auch ohne Netz scharf und bleibt erhalten, wenn die Fotomediathek später aufgeräumt wird. Auf die übrigen Fotos des Geräts greift Etmar nicht zu; mit der Kamera aufgenommene Fotos werden zusätzlich in der Mediathek gesichert. Bei mehreren Bildern in einem Eintrag: Bild gedrückt halten und „Als Vorschaubild“ wählen (Stern) – dieses Bild erscheint als Foto-Pin auf der Karte.</p>
 <p><b>Fehltouch folgenlos.</b> Nach jeder Ein-Tap-Aktion – Quick Log, Motor an/aus, Ablegen, Törn abschließen, Start- oder Ziellinie pingen – erscheint 6 Sekunden lang ein großer Rückgängig-Balken am unteren Rand; die ganze Fläche ist tippbar. Ein Tipp nimmt die Aktion zurück: Eintrag gelöscht, Törn wieder offen und Tracking wieder an, Ping auf dem vorherigen Stand. Bestätigungsdialoge vor der Aktion gibt es bewusst nicht – die kosten an Deck Blickzeit; die Rücknahme danach ist der bessere Schutz. Im Dialog „Offenen Törn abschließen?“ (bei einer Regatta „Laufende Regatta beenden?“) ist das Abschließen bewusst nicht rot — wie überall trägt der Rückgängig-Balken danach die Tragweite.</p>
 <p><b>Formulare schützen Eingaben.</b> Runterwischen oder „Abbrechen“ fragt in jedem Formular nach, sobald wirklich etwas Ungesichertes drin ist – und nur dann; unveränderte Formulare schließen mit einem Tap. Zahlenfelder nehmen Komma und Punkt gleichermaßen. Und Speichern schlägt nie still fehl: Geht ein Datenbank-Save schief, erscheint in jedem Screen ein roter Balken „Speichern fehlgeschlagen – Änderung eventuell verloren“, tippbar zum Wegwischen, sonst 8 Sekunden sichtbar.</p>
@@ -1430,7 +1454,7 @@ ohnehin kein Unterschied mehr, und in der Sonne waschen sie aus.</p>
 <p>Die Berechtigung für Mitteilungen wird erst angefragt, wenn Tracking oder eine Regatta aktiviert wird – nicht beim App-Start.</p>
 
 <h4>Törn-Detail: Export, Karte und Nachbearbeitung</h4>
-<p>Das Törn-Detail erreichst du aus dem Karussell (Vorschau antippen öffnet die Törn-Karte, „Zurück“ führt ins Detail), über „Alle Törns“ oder über den Kontext-Tab „Törn“. Es bündelt alles zu einem Törn: Zusammenfassung (Status, Zeitraum, Dauer, Distanz, Ø SOG, Motorzeit, Max-Wind, gefahrene Segelkombinationen), den Etappenplan, den Auto-Tracking-Schalter, die Karte, den Tagesbericht und alle Einträge chronologisch. „Bearbeiten“ öffnet das Törn-Formular, in dem du die Endstation und den Rückkehr-Zeitraum festlegst.</p>
+<p>Das Törn-Detail erreichst du aus dem Karussell (Vorschau antippen öffnet die Törn-Karte, „Zurück“ führt ins Detail), über „Alle Törns“ oder über den Kontext-Tab „Törn“. Es bündelt alles zu einem Törn: Zusammenfassung (Status, Zeitraum, Dauer, Distanz, Ø SOG, Motorzeit, Max-Wind, gefahrene Segelkombinationen), den Etappenplan, den Auto-Tracking-Schalter, die Karte, den Tagesbericht, <i>(ab Build 46)</i> den Luftdruck und alle Einträge chronologisch. „Bearbeiten“ öffnet das Törn-Formular, in dem du die Endstation und den Rückkehr-Zeitraum festlegst.</p>
 
 <figure class="shot">
 <div class="frame">
@@ -1471,6 +1495,23 @@ ohnehin kein Unterschied mehr, und in der Sonne waschen sie aus.</p>
     <ol class="marks">
       <li><b>Herkunft</b> — „Wind laut Station“, „Wind laut Modell“ oder beides; der Fuß darunter nennt Mittelung und Quelle.</li>
       <li><b>Je Stunde</b> — Station und Abstand zur Fahrt, hier „Pelzerhaken (Demo) · 2 km“; aus dem Wettermodell steht „Modell“ und kein „max“.</li>
+    </ol>
+  </div>
+</figure>
+<p><b>Luftdruck.</b> <i>(ab Build 46)</i> Nach Karte und Tagesbericht zeigt der Abschnitt „Luftdruck“ den Barographen der Fahrt: ein Punkt je Logbuch-Eintrag mit Luftdruck, gerade verbunden – zwischen zwei Einträgen weiß niemand, wie der Druck lief. Der stärkste Fall ist dick gezeichnet und beschriftet; darunter stehen „Stärkster Fall“ mit Uhrzeiten und hPa je Stunde und „Über die Fahrt“ mit erstem und letztem Wert. Den Fall rechnet die App über mindestens 30 Minuten, damit 1 hPa zwischen zwei schnell aufeinander folgenden Einträgen kein Sturm wird; steigt der Druck nur oder bleibt er gleich, steht dort „kein Fall“. Ohne Eintrag kein Punkt: Die Kurve ist so dicht wie dein Logbuch. Mit weniger als zwei Werten bleibt der Abschnitt stehen und sagt, woher der Luftdruck kommt. Im Demo-Törn „Kühlungsborn – Gedser – Kühlungsborn“ stehen Demo-Werte.</p>
+<figure class="shot">
+  <div class="frame">
+    <img src="bilder/barometer-toern.jpg" alt="Törn-Detail, Abschnitt Luftdruck: Barograph von 1014 über 1007 auf 1010 hPa, der stärkste Fall dick gezeichnet und mit minus 1,8 hPa je Stunde beschriftet, darunter Stärkster Fall 10:26 bis 12:36 und Über die Fahrt 1014 nach 1010 hPa" loading="lazy" width="760" height="1652">
+    <span class="hl" style="left:4%;top:45%;width:92%;height:17.5%"><b>1</b></span>
+    <span class="hl" style="left:4%;top:64.5%;width:92%;height:5.5%"><b>2</b></span>
+    <span class="hl" style="left:4%;top:70.5%;width:92%;height:5.5%"><b>3</b></span>
+  </div>
+  <div>
+    <figcaption><i>(ab Build 46)</i> Abschnitt „Luftdruck“ im Demo-Törn Kühlungsborn – Gedser – Kühlungsborn (Demo-Werte).</figcaption>
+    <ol class="marks">
+      <li><b>Barograph</b> — ein Punkt je Eintrag mit Luftdruck, gerade verbunden; der stärkste Fall dick und mit hPa je Stunde beschriftet.</li>
+      <li><b>Stärkster Fall</b> — Uhrzeiten und Rate; ohne Fall steht dort „kein Fall“.</li>
+      <li><b>Über die Fahrt</b> — erster und letzter Wert des Törns.</li>
     </ol>
   </div>
 </figure>
@@ -3301,8 +3342,24 @@ der Zeile noch einmal: Uhrzeit, Dauer, Strecke, Fahrt.</p>
 <li><b>Smart Fields</b> (<span class="path">Instrumente → Seiten verwalten → Smart Fields</span>): regelbasierte Kacheln, die je nach Situation den passenden Wert zeigen — läuft ein Countdown, den Countdown, sonst SOG; mit Windgeber am Bordnetz auf der Kreuz VMG, auf Raumkursen SOG. Die Regeln werden von oben nach unten geprüft, die erste zutreffende gewinnt. Im Editor ordnet „Reihenfolge ändern“ unter den Regeln sie neu (am Griff rechts ziehen) – die strengere Bedingung gehört nach oben, etwa TWS &gt; 25 vor TWS &gt; 15. <i>(ab Build 43)</i></li>
 <li><b>Segelkompass</b>: Kompassrose mit Kurs, wahrem und scheinbarem Windpfeil und grün/roten Bug-Sektoren — das von B&amp;G bekannte Pattern. Braucht Windgeber und Kompass am NMEA-Netz. <i>(ab Build 43)</i></li>
 <li><b>Regatta-Seite</b> (Windgeber und Logge am NMEA-Netz), beim ersten Öffnen angelegt: VMG Δ (gefahrene VMG gegen das Polar-Ziel, mit Vorzeichen), Wende ∠ (mittlerer Wendewinkel der letzten Schläge aus dem Track), Layline (Abstand zur Layline der Marke, auf die du steuerst) und TWD Trend (Windrichtung gegen das 10-Minuten-Mittel, Pfeil nach rechts = Rechtsdreher; erst ab fünf Minuten Datenlage), dazu Countdown und Leistung. Alle vier Felder stehen auch im Seiten-Manager. <i>(ab Build 43)</i></li>
-<li><b>Luftdruck, Druck-Trend, Log und Trip</b> — vier Werte, die nur vom Bus kommen (Barometer und Lograd am NMEA-Netz): „Druck-Trend" zeigt die Änderung in hPa je Stunde mit Vorzeichen, erst nach einer Stunde Datenlage — mehr als 1 hPa Fall je Stunde heißt Wind, mehr als 2 deutlich mehr. Log und Trip messen die Strecke durchs Wasser, nicht über Grund; die Differenz zur GPS-Strecke über dieselbe Zeit ist der Versatz durch Strom. <i>(ab Build 43)</i></li>
+<li><b>Luftdruck, Druck-Trend, Log und Trip</b> — vier Werte vom Bus (Barometer und Lograd am NMEA-Netz): „Druck-Trend" zeigt die Änderung in hPa je Stunde mit Vorzeichen, erst nach einer Stunde Datenlage — mehr als 1 hPa Fall je Stunde heißt Wind, mehr als 2 deutlich mehr. Log und Trip messen die Strecke durchs Wasser, nicht über Grund; die Differenz zur GPS-Strecke über dieselbe Zeit ist der Versatz durch Strom. <i>(ab Build 43)</i> Ohne Barometer am Bordnetz zeigen „Luftdruck“ und „Druck-Trend“ die Werte des Sensors im iPhone, in der Zeile unter dem Wert steht dann „iPhone“ (in der ersten Stunde „ab 1 h · iPhone“); gemessen wird nur bei offener App oder laufender Aufzeichnung. <i>(ab Build 46)</i></li>
 </ul>
+<figure class="shot">
+  <div class="frame">
+    <img src="bilder/barometer-kacheln.jpg" alt="Eigene Instrumentenseite ohne Bordnetz mit den Kacheln Luftdruck 1009 und Druck-Trend minus 1,4, je mit der Herkunft iPhone in der Zeile darunter" loading="lazy" width="760" height="1652">
+    <span class="hl" style="left:18%;top:27.5%;width:64%;height:13%"><b>1</b></span>
+    <span class="hl" style="left:57%;top:48.5%;width:40%;height:6%"><b>2</b></span>
+    <span class="hl" style="left:18%;top:68%;width:64%;height:13%"><b>3</b></span>
+  </div>
+  <div>
+    <figcaption><i>(ab Build 46)</i> Eine eigene Seite mit „Luftdruck“ und „Druck-Trend“, ohne Barometer am Bordnetz. Die Werte stammen hier von einem simulierten Sensor.</figcaption>
+    <ol class="marks">
+      <li><b>Luftdruck</b> — in hPa, vom Sensor im iPhone.</li>
+      <li><b>Herkunft</b> — „hPa · iPhone“; vom Bordbarometer steht nur die Einheit, in der ersten Stunde des Trends „ab 1 h · iPhone“.</li>
+      <li><b>Druck-Trend</b> — Änderung in hPa je Stunde mit Vorzeichen, aus denselben Messwerten.</li>
+    </ol>
+  </div>
+</figure>
 
 <figure class="shot">
   <div class="frame">
