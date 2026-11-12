@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Terms of Use, text version 1 – Etmar</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { margin: 0 auto; max-width: 42rem; padding: 2rem 1.25rem 4rem;
+         font: 1rem/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+  h1 { font-size: 1.6rem; margin-bottom: 0.5rem; }
+  h2 { font-size: 1.1rem; margin-top: 1.8rem; margin-bottom: 0.3rem; }
+  p  { margin: 0.4rem 0; }
+  ol { margin: 0.2rem 0 0.6rem; padding-left: 1.6rem; }
+  li { margin: 0.2rem 0; }
+  nav { margin-bottom: 1.5rem; font-size: 0.9rem; }
+  nav a { margin-right: 1rem; }
+  footer { margin-top: 3rem; font-size: 0.85rem; opacity: 0.7; }
+</style>
+</head>
+<body>
+<nav><a href="index.html">Home</a> <a href="impressum.html">Legal notice (German)</a> <a href="privacy.html">Privacy policy</a> <a href="nutzungsbedingungen-v1.html">Deutsche Fassung</a></nav>
+<h1>Terms of Use for Etmar</h1>
+<p><strong>Text version 1 of 11 November 2026</strong></p>
+<p><em>Earlier text version. The current one is at <a href="terms.html">Terms of Use</a>. If you agreed to this version and not yet to the new one, it continues to apply to you (section 13(3)).</em></p>
+<h2>1 Provider, scope</h2>
+<p>(1) Etmar is provided by Morten Göpfert, sole trader, c/o IP-Management #12860, Ludwig-Erhard-Str. 18, 20459 Hamburg, Germany, phone +49 151 68477264, email support@etmar.app (“the Provider”). Please send any questions, complaints or claims about Etmar to this address.</p>
+<p>(2) These terms apply to the use of the Etmar app on iPhone and iPad, including its extensions, in the free version (Free) and with the Etmar Pro subscription.</p>
+<p>(3) A consumer is anyone who uses Etmar mainly for private purposes. Where these terms treat consumers and businesses differently, they say so.</p>
+<h2>2 What Etmar is — and what it is not</h2>
+<p>(1) Etmar is a logbook, a racing and trim aid and an addition on board recreational boats. Etmar is <strong>not navigation equipment</strong>, not approved navigation or safety equipment, and not intended for commercial shipping.</p>
+<p>(2) Etmar is <strong>no substitute for official nautical charts, a chartplotter, a depth sounder, a lookout, a watch, the official marine weather forecast or good seamanship.</strong> The emergency functions are <strong>no substitute for a marine radio or an emergency call</strong>: Etmar does not send a distress call.</p>
+<p>(3) <strong>Map.</strong> The map is based on OpenStreetMap: seamarks are community data, the depth contours come from a model on a roughly 100 m grid (EMODnet). Neither is an official source, neither is corrected from Notices to Mariners, and neither is a basis for navigation. Dashed depth contours marked ≈ are approximate. Go-To and routes show bearing and distance to points you set; they check neither land nor depth nor obstacles.</p>
+<p>(4) <strong>Wind and weather.</strong> Wind from open sources comes from weather stations and from a weather model. It arrives with a delay, applies to the station's location or to a coarse grid, and is neither a marine weather forecast nor a gale warning.</p>
+<p>(5) <strong>Instruments.</strong> Etmar shows values from the onboard network (NMEA) as they arrive from the gateway. Etmar cannot tell whether a sensor is miscalibrated.</p>
+<p>(6) <strong>Radio procedure cards.</strong> The SOS view is a reading aid for the radio call. The call goes out over your marine radio (VHF channel 16, DSC) or by phone, not through Etmar.</p>
+<h2>3 Limits of the alarms and emergency functions</h2>
+<p>(1) Anchor watch, depth alarm, wind alarm, AIS warning and MOB help — <strong>they are no substitute for a watch, a lookout or a depth sounder.</strong> They can fail: battery flat, iOS closes the app, no GPS, onboard network down, device out of earshot. The Provider does not promise that an alarm will go off in every situation. In addition, each function has the following limits.</p>
+<p>(2) <strong>Anchor watch.</strong> It watches with the iPhone's GPS and alerts you when the boat leaves the circle you set around the anchor; it allows for GPS accuracy. Limits:</p>
+<ol>
+  <li>With a flat battery there is no alarm.</li>
+  <li>If iOS closes the app, the watch may stop. If you swipe Etmar away in the app switcher, it no longer watches.</li>
+  <li>It needs location access “Always” and “Precise Location”. If no usable position arrives for two minutes, it shows “WATCH BLIND” instead of watching.</li>
+  <li>With the device locked you only hear the alarm if you allow notifications for Etmar. If the iPhone is on silent, the sound only plays with “Critical Alerts” allowed; otherwise you only get the vibration.</li>
+</ol>
+<p>(3) <strong>Depth alarm.</strong> It runs while the anchor is set and needs a depth sounder on the onboard network. Limits:</p>
+<ol>
+  <li>It works with the <strong>depth below the transducer, not below the keel.</strong> It does not apply a keel offset set on the onboard network.</li>
+  <li>It measures the depth now; it does not predict falling water.</li>
+  <li>If no sounding arrives for a minute, it shows “no depth” — then it is not watching.</li>
+</ol>
+<p>(4) <strong>Wind alarm.</strong> It runs while the anchor is set and compares the wind with the wind when you anchored (shifts and increase). Limits:</p>
+<ol>
+  <li>The increase needs a wind sensor on the onboard network. Without a wind sensor it only detects a shift, from the way the boat lies to the anchor. In a current that shows the current, not the wind; closer than 15 m to the anchor the lie is unclear.</li>
+  <li>It assesses averages over three minutes. It does not report a single gust.</li>
+  <li>If neither wind nor a usable lie arrives for a minute, it shows “no wind” — then it is not watching.</li>
+  <li>It is not a gale warning.</li>
+</ol>
+<p>(5) <strong>AIS warning.</strong> It needs AIS data from the onboard network and warns when a vessel, based on its reported position and motion, will come closer than the threshold you set (CPA/TCPA). Limits:</p>
+<ol>
+  <li>It <strong>only sees vessels that transmit AIS.</strong> Many craft do not transmit AIS or have it switched off.</li>
+  <li><strong>If AIS reception drops out, Etmar does not report it.</strong> Only before the first AIS signal has arrived does the layers menu show “AIS on — no targets received yet”.</li>
+  <li>It stops calculating for a vessel from which no new position has arrived for three minutes.</li>
+  <li>Without a current course of your own, it calculates as if your boat were stationary.</li>
+  <li>It is no substitute for a lookout or radar. The Collision Regulations apply.</li>
+</ol>
+<p>(6) <strong>MOB.</strong> When someone presses and holds the MOB button, it records position and time and shows bearing and distance to that point. Limits:</p>
+<ol>
+  <li><strong>MOB does not watch.</strong> Etmar does not detect by itself that someone has gone overboard. The alarm only comes when someone on board holds the button.</li>
+  <li>Etmar does not send a distress call.</li>
+  <li>The position is as accurate as the GPS at the moment of triggering. If the last position is too old, Etmar marks the point as provisional or approximate. Etmar does not account for the drift of the person in the water.</li>
+</ol>
+<p>(7) Alarm and emergency functions are always free and remain usable while consent to these terms or to a new text version is pending (section 13).</p>
+<h2>4 Your responsibility as skipper</h2>
+<p>(1) Responsibility for vessel, crew and navigation lies with the skipper, who handles the vessel according to good seamanship and the applicable rules, in particular the Collision Regulations.</p>
+<p>(2) Anyone using Etmar on board makes sure in particular that</p>
+<ol>
+  <li>navigation is done with official, corrected charts and the required equipment, with Etmar running alongside;</li>
+  <li>a lookout and, where the situation calls for it, an anchor watch are kept;</li>
+  <li>the official marine weather forecast is obtained;</li>
+  <li>the device is charged, protected from water and within earshot, Etmar has the permissions it needs (location “Always”, “Precise Location”, notifications, “Critical Alerts”), and Etmar is not swiped away while a watch is running;</li>
+  <li>they know the alarms before relying on them (for example in demo mode or in harbour), and the thresholds suit their boat and waters;</li>
+  <li>Etmar is only operated when the situation allows. Steering and lookout come first;</li>
+  <li>the crew knows what the alarms do not do, if they rely on Etmar.</li>
+</ol>
+<p>(3) When in doubt, assume the less favourable situation, as good seamanship requires.</p>
+<h2>5 Service: Etmar Free and Etmar Pro</h2>
+<p>(1) <strong>Etmar Free</strong> costs nothing. It contains what a sailor needs for a day on the water, including logbook and recording, map, racing, instruments and all alarm and emergency functions.</p>
+<p>(2) <strong>Etmar Pro</strong> is a subscription. It contains the analyses after the sail and further features. What Pro includes in detail is shown before purchase in the App Store and in the app (“Unlock Pro”). Some Pro analyses need data from the onboard network (for example wind); without it, the analysis says which data are missing.</p>
+<p>(3) Etmar works without a network connection. Functions that fetch data online (loading the map, wind from open sources, place names) need a connection and third-party services, whose availability is outside the Provider's control.</p>
+<h2>6 Purchase, trial, renewal, cancellation and withdrawal — through Apple</h2>
+<p>(1) You buy Pro in the App Store with your Apple Account, as an annual subscription (for new subscribers with a free trial as shown in the App Store before purchase) or as a monthly subscription. The App Store shows price, term and renewal before you buy.</p>
+<p>(2) Payment, renewal, cancellation, withdrawal and refunds are handled by Apple under Apple's Media Services Terms and Conditions. You can cancel in iOS Settings under your Apple Account → Subscriptions or in Etmar under “Manage subscription”. Cancellation takes effect at the end of the current billing period.</p>
+<p>(3) A price increase for a running subscription only applies under Apple's procedure; where your consent is required, Apple asks for it.</p>
+<p>(4) Pro is not available for Family Sharing.</p>
+<h2>7 Further development and updates</h2>
+<p>(1) The Provider develops Etmar further. He provides the updates needed to keep Etmar Pro in conformity with the contract during your subscription, including security updates. If you do not install such an update within a reasonable time, the Provider is not liable for a defect resulting solely from that, provided he informed you about the update and the consequences of not installing it.</p>
+<p>(2) The Provider may change Etmar Pro beyond what is needed for conformity if there is a valid reason, in particular new iOS versions, discontinued or changed third-party data sources, security, legal requirements or technical development. The change costs you nothing extra, and you are informed about it clearly and comprehensibly. If such a change more than minimally impairs your access to Pro or its usability, the Provider informs you in advance on a durable medium about the nature and timing of the change and about your right to end the subscription free of charge, within 30 days of the information or of the change, whichever is later.</p>
+<p>(3) Etmar Free is provided without a claim to particular functions or updates; section 3(7) and section 11 remain unaffected.</p>
+<h2>8 Licence</h2>
+<p>(1) You receive a simple, non-transferable right to use Etmar on Apple devices that you own or control, within the Usage Rules of Apple's Media Services Terms and Conditions.</p>
+<p>(2) You may not modify, resell or let third parties use Etmar, unless the law expressly allows it (sections 69d and 69e of the German Copyright Act remain unaffected).</p>
+<p>(3) Map data from OpenStreetMap are licensed under the Open Database License, depth data from EMODnet under its licence. Etmar lists the sources under “About &amp; legal”.</p>
+<h2>9 Your data</h2>
+<p>(1) Etmar stores your content (boats, voyages, logbook, tracks, trim, photos and anything else you create) <strong>on your device.</strong> If you turn on iCloud backup, it is also stored <strong>in your private iCloud</strong> at Apple. The Provider has no access to either.</p>
+<p>(2) The Provider runs <strong>no server that receives your content</strong>, and there is no account with the Provider.</p>
+<p>(3) Some functions fetch data from third-party services or as ready-made files online: map, seamarks and depths, place names, wind. The service concerned learns your IP address and the requested area. Which services these are and how to turn the requests off (Settings → Data &amp; privacy) is set out in the privacy policy: <a href="privacy.html">https://etmar.app/privacy.html</a>.</p>
+<p>(4) Whatever you send to the Provider yourself, such as an email or a submission, the Provider receives; the privacy policy applies.</p>
+<p>(5) <strong>Back up your content regularly</strong>: with iCloud backup, with the full backup in Etmar or as an export (GPX, CSV). If you delete Etmar without a backup, the content on that device is lost. The Provider cannot restore it.</p>
+<p>(6) If a function is added for which content leaves the device towards a server of the Provider, Etmar asks you separately beforehand. Separate terms then apply to that function, to which you agree separately.</p>
+<h2>10 Defects</h2>
+<p>(1) The statutory rights in the event of defects apply.</p>
+<p>(2) If Etmar Pro fails to conform to a warranty, you can also contact Apple, and Apple will refund the purchase price to you. Beyond that, Apple has no warranty obligations towards you regarding Etmar; claims against the Provider remain unaffected.</p>
+<h2>11 Liability</h2>
+<p>(1) The Provider is liable without limitation</p>
+<ol>
+  <li>for intent and gross negligence,</li>
+  <li>for damage resulting from injury to life, body or health,</li>
+  <li>under the German Product Liability Act,</li>
+  <li>where he fraudulently concealed a defect or gave a guarantee.</li>
+</ol>
+<p>(2) In cases of slight negligence the Provider is liable only if he breaches an <strong>essential contractual obligation</strong>. An obligation is essential if its fulfilment makes the proper performance of the contract possible in the first place and you may regularly rely on its being met. In that case, liability is limited to the damage that was <strong>foreseeable at the time the contract was concluded and is typical for a contract of this kind.</strong></p>
+<p>(3) For loss of data, the Provider is liable in the cases of paragraph 2 only up to the effort that would have been needed to restore the data had you backed up your content regularly (section 9(5)). Paragraph 1 remains unaffected.</p>
+<p>(4) Paragraphs 2 and 3 also apply to the personal liability of persons the Provider uses to perform the contract.</p>
+<h2>12 Apple</h2>
+<p>(1) These terms are concluded between you and the Provider, not with Apple. The Provider alone is responsible for Etmar and its content.</p>
+<p>(2) Apple has no obligation whatsoever to provide maintenance or support for Etmar. Support is provided by the Provider (section 1(1)).</p>
+<p>(3) The Provider, not Apple, is responsible for addressing any claims relating to Etmar, in particular product liability claims, claims that Etmar fails to conform to any applicable legal or regulatory requirement, and claims arising under consumer protection, privacy or similar legislation.</p>
+<p>(4) If a third party claims that Etmar or your use of it infringes that third party's intellectual property rights, the Provider, not Apple, is solely responsible for the investigation, defence, settlement and discharge of that claim.</p>
+<p>(5) You represent that you are not located in a country that is subject to a U.S. Government embargo or that has been designated by the U.S. Government as a “terrorist supporting” country, and that you are not listed on any U.S. Government list of prohibited or restricted parties.</p>
+<p>(6) Apple and Apple's subsidiaries are third-party beneficiaries of these terms. Upon your acceptance, Apple will have the right to enforce these terms against you as a third-party beneficiary.</p>
+<h2>13 Changes to these terms</h2>
+<p>(1) The Provider changes these terms <strong>only with your consent.</strong> A new text version applies only once you tap “Agree” in Etmar.</p>
+<p>(2) Etmar shows you a new text version with a short summary of the changes, when the app starts, not during a running recording, anchor watch or MOB alarm.</p>
+<p>(3) If you do not agree, the previous text version continues to apply to you. <strong>Continued use alone does not count as consent.</strong></p>
+<p>(4) Alarm and emergency functions remain usable while your consent is pending (section 3(7)).</p>
+<h2>14 Governing law, jurisdiction</h2>
+<p>(1) The law of the Federal Republic of Germany applies, excluding the UN Convention on Contracts for the International Sale of Goods.</p>
+<p>(2) If you are a consumer habitually resident in another country, you keep the protection of the mandatory provisions of the law of that country.</p>
+<p>(3) If you are a merchant, a legal entity under public law or a special fund under public law, the place of jurisdiction for all disputes arising from this contract is Neustadt in Holstein, Germany. For consumers, the statutory places of jurisdiction apply; in particular, you can bring proceedings where you live and can only be sued there.</p>
+<h2>15 Dispute resolution</h2>
+<p>(1) If you have a problem, please write to support@etmar.app. The Provider will answer as quickly as he can.</p>
+<p>(2) The Provider is neither willing nor obliged to take part in dispute resolution proceedings before a consumer arbitration board.</p>
+<h2>16 Language, final provisions</h2>
+<p>(1) These terms are available in German and English. Both versions are equally binding.</p>
+<p>(2) If a provision is invalid, the rest of the contract remains valid; the statutory rules take the place of the invalid provision.</p>
+<footer><p>Text version 1 of 11 November 2026 · Etmar – Logbook &amp; Regatta</p></footer>
+</body>
+</html>
