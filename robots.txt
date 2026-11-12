@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://etmar.app/sitemap.xml
