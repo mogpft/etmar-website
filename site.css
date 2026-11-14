@@ -96,7 +96,7 @@ code {
 .knopf:hover { background: #ecb354; }
 .knopf-zeile { display: flex; flex-wrap: wrap; gap: 0.8rem 1.4rem; align-items: center; }
 .knopf-zeile .neben-link { color: var(--tuch); font-weight: 550; }
-.buehne { display: flex; justify-content: center; gap: 1rem; }
+.buehne { display: flex; justify-content: center; align-items: flex-start; gap: 1rem; }
 .geraet { border-radius: 22px; overflow: hidden; border: 1px solid #3e444a; background: #000; line-height: 0; width: 46%; max-width: 15rem; box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45); }
 .geraet:nth-child(2) { margin-top: 2.2rem; }
 .geraet img { width: 100%; display: block; }
