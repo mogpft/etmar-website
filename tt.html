@@ -3,21 +3,84 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Etmar on the App Store</title>
+<title>Etmar – coming soon</title>
 <meta name="robots" content="noindex">
-<link rel="canonical" href="https://apps.apple.com/app/etmar/id6803459955">
-<meta http-equiv="refresh" content="0; url=https://apps.apple.com/app/apple-store/id6803459955?pt=129236816&amp;ct=tiktok&amp;mt=8">
+<meta name="description" content="Etmar is coming soon to the App Store.">
+<meta name="theme-color" content="#161618">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="site.css">
+<!-- Coming soon seit 18.11.2026. Vorher leitete diese Seite in den App Store weiter;
+     zum Zurückholen Weiterleitung (meta refresh + location.replace) auf diesen Link setzen:
+     https://apps.apple.com/app/apple-store/id6803459955?pt=129236816&ct=tiktok&mt=8 -->
 <style>
-  body { margin: 0; min-height: 100vh; display: grid; place-items: center;
-         background: #1E2226; color: #E5E5EA;
-         font: 18px/1.5 Inter, -apple-system, system-ui, sans-serif; text-align: center; }
-  a { color: #E0A33C; font-weight: 600; }
+  /* Sprache: .en oder .de ausblenden, nie einblenden (sonst gingen flex/inline-flex verloren).
+     Klasse "de" setzt das Skript (Sprachwahl, Browsersprache); #de/#en wirken auch ohne Skript. */
+  html:not(.de):not(:has(#de:target)) .de, html:has(#en:target) .de { display: none !important; }
+  html.de:not(:has(#en:target)) .en, html:has(#de:target) .en { display: none !important; }
+  .bald { min-height: calc(100vh - 3.8rem); display: flex; flex-direction: column; }
+  .bald .kopf { flex: 1; display: flex; align-items: center; }
+  .bald .kopf h1 { max-width: 20ch; }
+  .anker { position: absolute; top: 0; }
+  footer.fuss { margin-top: 0; }
 </style>
-<script>location.replace("https://apps.apple.com/app/apple-store/id6803459955?pt=129236816&ct=tiktok&mt=8");</script>
+<script>
+(function () {
+  var h = location.hash;
+  if (h === '#de' || h === '#en') return;
+  var l = null;
+  try { l = localStorage.getItem('etmar-lang'); } catch (e) {}
+  if (l === 'de' || (!l && /^de/i.test(navigator.language || ''))) document.documentElement.className = 'de';
+})();
+</script>
 </head>
 <body>
-<p>Opening Etmar on the App Store …<br>
-<a href="https://apps.apple.com/app/apple-store/id6803459955?pt=129236816&amp;ct=tiktok&amp;mt=8">Continue to the App Store</a></p>
+<span id="de" class="anker"></span><span id="en" class="anker"></span>
+<header class="leiste"><div class="huelle">
+  <a class="marke en" href="index.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1012 1012" aria-hidden="true"><g transform="translate(-100.64,-100.64) scale(1.18483)"><circle cx="512" cy="512" r="410" fill="none" stroke="#8B8D92" stroke-width="24"/><path d="M211,633 A556,556 0 0 1 813,391" fill="none" stroke="#E5E5EA" stroke-width="43" stroke-linecap="round"/><circle cx="211" cy="633" r="32" fill="none" stroke="#E5E5EA" stroke-width="18"/><circle cx="813" cy="391" r="82" fill="#E0A33C"/></g></svg><span>Etmar</span></a>
+  <a class="marke de" href="index-de.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1012 1012" aria-hidden="true"><g transform="translate(-100.64,-100.64) scale(1.18483)"><circle cx="512" cy="512" r="410" fill="none" stroke="#8B8D92" stroke-width="24"/><path d="M211,633 A556,556 0 0 1 813,391" fill="none" stroke="#E5E5EA" stroke-width="43" stroke-linecap="round"/><circle cx="211" cy="633" r="32" fill="none" stroke="#E5E5EA" stroke-width="18"/><circle cx="813" cy="391" r="82" fill="#E0A33C"/></g></svg><span>Etmar</span></a>
+  <div class="sprache" role="group" aria-label="Language" style="margin-left:auto">
+    <span class="en" lang="en" aria-current="true">EN</span><a class="en" href="#de" hreflang="de" lang="de" data-sprache="de">DE</a>
+    <a class="de" href="#en" hreflang="en" lang="en" data-sprache="en">EN</a><span class="de" lang="de" aria-current="true">DE</span>
+  </div>
+</div></header>
+<main class="bald">
+<div class="kopf"><div class="huelle">
+  <div class="en" lang="en">
+    <p class="rubrik">Coming soon</p>
+    <h1>Etmar is coming soon to the App Store.</h1>
+    <p class="lede">Etmar records your voyage, counts down the start, remembers your trim and shows after the race where the time went.</p>
+    <div class="knopf-zeile">
+      <a class="knopf" href="https://www.instagram.com/etmar.app/"><span>Follow Etmar on Instagram</span><small>@etmar.app</small></a>
+      <a class="neben-link" href="index.html">Visit etmar.app →</a>
+    </div>
+  </div>
+  <div class="de" lang="de">
+    <p class="rubrik">Demnächst</p>
+    <h1>Etmar kommt bald in den App Store.</h1>
+    <p class="lede">Etmar zeichnet deinen Törn auf, zählt den Start herunter, merkt sich deinen Trimm und zeigt nach dem Rennen, wo die Zeit geblieben ist.</p>
+    <div class="knopf-zeile">
+      <a class="knopf" href="https://www.instagram.com/etmar.app/"><span>Etmar auf Instagram folgen</span><small>@etmar.app</small></a>
+      <a class="neben-link" href="index-de.html">Zur Startseite →</a>
+    </div>
+  </div>
+</div></div>
+<footer class="fuss"><div class="huelle">
+  <div class="reihe en"><a href="privacy.html">Privacy Policy</a> <a href="impressum.html">Legal notice (Impressum)</a> <a href="mailto:support@etmar.app">support@etmar.app</a></div>
+  <div class="reihe de"><a href="datenschutz.html">Datenschutzerklärung</a> <a href="impressum.html">Impressum</a> <a href="mailto:support@etmar.app">support@etmar.app</a></div>
+  <p class="en">App Store is a trademark of Apple Inc.</p>
+  <p class="de">App Store ist eine Marke der Apple Inc.</p>
+</div></footer>
+</main>
+<script>
+document.querySelectorAll('[data-sprache]').forEach(function (a) {
+  a.addEventListener('click', function () {
+    var l = a.getAttribute('data-sprache');
+    try { localStorage.setItem('etmar-lang', l); } catch (e) {}
+    document.documentElement.className = l === 'de' ? 'de' : '';
+    document.documentElement.lang = l;
+  });
+});
+if (document.documentElement.className === 'de' || location.hash === '#de') document.documentElement.lang = 'de';
+</script>
 </body>
 </html>
